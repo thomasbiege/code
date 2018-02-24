@@ -1,0 +1,6 @@
+Desc: HTTP send file to Client (MIME-Sniffing, Info disclosure)
+
+# impact	CWE identifier		regex
+medium		CWE-115,CWE-200		send_file.*:disposition\s*=>\s*\'inline\'
+medium		CWE-115,CWE-200		send_data.*:disposition\s*=>\s*\'inline\'
+high            CWE-201                 send_file.*params\s*\[

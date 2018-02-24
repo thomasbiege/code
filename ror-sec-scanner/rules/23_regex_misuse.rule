@@ -1,0 +1,5 @@
+Desc: Incorrect RegEx Matching
+
+# impact	comment				regex
+low		CWE-185,CWE-625,CWE-791		\/\^
+low		CWE-185,CWE-625,CWE-791		\$\/

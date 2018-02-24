@@ -1,0 +1,10 @@
+- ignore user-defined rules for whole subtrees
+- count rules even if they are ignored (like with nolow etc)
+- add config option to ignore some rules (special ID) to reduce false-positives (like find(param[:id]) in SLMS)
+- irgnore keyword only for special rules
+- order per impact
+- order per file
+- detect static string arg of function
+- allow negation of rules (i.e. secure flag not set)
+- multi-line rules
+- add support for attack surface reduction

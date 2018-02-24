@@ -1,0 +1,6 @@
+Desc: interesting comments
+# note lines which just contain a comment are ignored before matching
+
+# impact	CWE identifier			regex
+medium		CWE-000				XXX\s+tom
+info		CWE-000				FIXME

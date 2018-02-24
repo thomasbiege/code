@@ -1,0 +1,6 @@
+Desc: possible insecure configuration
+
+# impact	CWE identifier		regex
+info		CWE-000			:session_key\s*=>
+high		CWE-321			:secret\s*=>
+medium		CWE-209			ENV\s*\[.*RAILS_ENV.*\]\s*=\s*(test|development)

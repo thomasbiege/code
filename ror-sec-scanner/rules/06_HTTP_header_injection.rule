@@ -1,0 +1,6 @@
+Desc: HTTP header field usage
+
+# impact	CWE identifier		regex
+medium		CWE-20,CWE-113		env\s*\[.*[\"\']HTTP_
+medium		CWE-20,CWE-113		headers\s*\[.*[\"\']HTTP_
+medium		CWE-113			redirect_to\s+.*params\s*\[

@@ -1,0 +1,13 @@
+Desc: Cross-Site Scripting Issues
+
+# impact	CWE identifier		regex
+medium		CWE-79			send_file.*:disposition\s*=>\s*\'inline\'
+medium		CWE-79			send_data.*:disposition\s*=>\s*\'inline\'
+low		CWE-79			\<\%=.*#\{.*\}.*\%\>
+high		CWE-79			flash\[\:warning\]\s*=\s*.*params\s*\[
+medium          CWE-79                  flash\[\:warning\]\s*=\s*.*#\{
+high            CWE-79                  render_api_error.*params\s*\[
+medium          CWE-79                  render_api_error.*#\{
+low             CWE-79                  logger.*params\s*\[
+low		CWE-79			logger.*#\{
+#info		CWE-000			(mark_as_xss_protected|mark_methods_as_xss_safe)

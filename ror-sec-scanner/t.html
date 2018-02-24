@@ -1,0 +1,256 @@
+<html>
+<head><title>RoR Code Scan of "../hawk"</title></head><body>
+<p>Generated using http://gitorious.org/code-scanner/ror-sec-scanner/</p>
+<h1>Configuration</h1><table width='70%' border='1'>
+	<tr>
+		<td width='30%'><font size="-1"><b>date:</b></font></td>
+		<td><font size="-1">Tue Feb 21 15:07:32 2012</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>rules dir:</b></font></td>
+		<td><font size="-1">rules/</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>ignore info rules:</b></font></td>
+		<td><font size="-1">yes</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>ignore low rules:</b></font></td>
+		<td><font size="-1">yes</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>ignore medium rules:</b></font></td>
+		<td><font size="-1">no</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>ignore high rules:</b></font></td>
+		<td><font size="-1">no</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of rules files:</b></font></td>
+		<td><font size="-1">28</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of rules loaded:</b></font></td>
+		<td><font size="-1">74</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>xcld rules loaded:</b></font></td>
+		<td><font size="-1">11</td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>icld rules loaded:</b></font></td>
+		<td><font size="-1">1</td>
+	</tr>
+</table>
+<p>
+<table width='70%' border='1'>
+	<tr>
+		<td width='30%'><font size="-1"><b>search dir:</b></font></td>
+		<td><font size="-1">../hawk</font></td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>reduce path:</b></font></td>
+		<td><font size="-1">yes</font></td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of code files:</b></font></td>
+		<td><font size="-1">124</font></td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of views files:</b></font></td>
+		<td><font size="-1">51</font></td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of modell files:</b></font></td>
+		<td><font size="-1">14</font></td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of controller files:</b></font></td>
+		<td><font size="-1">19</font></td>
+	</tr>
+	<tr>
+		<td width='30%'><font size="-1"><b>nr. of config files:</b></font></td>
+		<td><font size="-1">1</font></td>
+	</tr>
+</table><p>
+<li>/hawk/app/controllers/explorer_controller.rb:44 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@hb_report = HbReport.new("#{RAILS_ROOT}/tmp/pids/history_report")
+	</pre><br>
+<li>/hawk/app/controllers/explorer_controller.rb:117 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	tpath = "/tmp/#{@report_name}/#{tname}"
+	</pre><br>
+<li>/hawk/app/controllers/explorer_controller.rb:153 [<font color='#FF0000'>03_insecure_function.rule:Insecure function:rule 1:<b>high</b>:<a href='http://cwe.mitre.org/data/definitions/88.html' target='_blank'>CWE-88</a>,<a href='http://cwe.mitre.org/data/definitions/78.html' target='_blank'>CWE-78</a></font>]
+	<pre>
+	stdin, stdout, stderr, thread = Util.popen3("/usr/bin/dot", "-Tpng", tmpfile.path)
+	</pre><br>
+<li>/hawk/app/controllers/explorer_controller.rb:201 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@report_path = "/tmp/#{@report_name}.tar.bz2"
+	</pre><br>
+<li>/hawk/app/controllers/explorer_controller.rb:203 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@hb_report.path = "/tmp/#{@report_name}"
+	</pre><br>
+<li>/hawk/app/controllers/hb_reports_controller.rb:39 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@hb_report = HbReport.new("#{RAILS_ROOT}/tmp/pids/hb_report", "/tmp/hb_report-hawk")
+	</pre><br>
+<li>/hawk/app/controllers/hb_reports_controller.rb:75 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	if File.exists?("/tmp/hb_report-hawk.tar.bz2")
+	</pre><br>
+<li>/hawk/app/controllers/hb_reports_controller.rb:76 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	send_file "/tmp/hb_report-hawk.tar.bz2"
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:144 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	f = File.new("#{RAILS_ROOT}/tmp/sim.in", "w")
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:185 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	f = File.new("#{RAILS_ROOT}/tmp/sim.info", "w")
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:189 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	"-x", "#{RAILS_ROOT}/tmp/sim.in",
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:190 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	"-O", "#{RAILS_ROOT}/tmp/sim.out",
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:191 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	"-G", "#{RAILS_ROOT}/tmp/sim.graph",
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:192 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	"-D", "#{RAILS_ROOT}/tmp/sim.dot",
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:198 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 1:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	f = File.open("#{RAILS_ROOT}/tmp/sim.graph")
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:198 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	f = File.open("#{RAILS_ROOT}/tmp/sim.graph")
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:219 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	File.new("#{RAILS_ROOT}/tmp/sim.info").read.split(/\n/).each do |line|
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:236 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	send_data File.new("#{RAILS_ROOT}/tmp/sim.in").read, :type =&gt; (params[:munge] == "txt" ? "text/plain" : "text/xml"), :disposition =&gt; "inline"
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:238 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	send_data File.new("#{RAILS_ROOT}/tmp/sim.out").read, :type =&gt; (params[:munge] == "txt" ? "text/plain" : "text/xml"), :disposition =&gt; "inline"
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:241 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	send_data File.new("#{RAILS_ROOT}/tmp/sim.graph").read, :type =&gt; (params[:munge] == "txt" ? "text/plain" : "text/xml"), :disposition =&gt; "inline"
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:243 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	stdin, stdout, stderr, thread = Util.popen3("/usr/bin/dot", "-Tpng", "#{RAILS_ROOT}/tmp/sim.dot")
+	</pre><br>
+<li>/hawk/app/controllers/main_controller.rb:243 [<font color='#FF0000'>03_insecure_function.rule:Insecure function:rule 1:<b>high</b>:<a href='http://cwe.mitre.org/data/definitions/88.html' target='_blank'>CWE-88</a>,<a href='http://cwe.mitre.org/data/definitions/78.html' target='_blank'>CWE-78</a></font>]
+	<pre>
+	stdin, stdout, stderr, thread = Util.popen3("/usr/bin/dot", "-Tpng", "#{RAILS_ROOT}/tmp/sim.dot")
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:60 [<font color='#FFAA00'>06_HTTP_header_injection.rule:HTTP header field usage:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/113.html' target='_blank'>CWE-113</a></font>]
+	<pre>
+	redirect_to :action =&gt; 'new', :username =&gt; params[:username]
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:60 [<font color='#FFAA00'>16_HTTP_redirect.rule:HTTP redirects emitted by the Application:rule 1:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/601.html' target='_blank'>CWE-601</a>,<a href='http://cwe.mitre.org/data/definitions/698.html' target='_blank'>CWE-698</a>,<a href='http://cwe.mitre.org/data/definitions/79.html' target='_blank'>CWE-79</a></font>]
+	<pre>
+	redirect_to :action =&gt; 'new', :username =&gt; params[:username]
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:63 [<font color='#FF0000'>03_insecure_function.rule:Insecure function:rule 1:<b>high</b>:<a href='http://cwe.mitre.org/data/definitions/88.html' target='_blank'>CWE-88</a>,<a href='http://cwe.mitre.org/data/definitions/78.html' target='_blank'>CWE-78</a></font>]
+	<pre>
+	IO.popen("#{HAWK_CHKPWD} passwd '#{params[:username]}'", 'w+') do |pipe|
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:75 [<font color='#FFAA00'>06_HTTP_header_injection.rule:HTTP header field usage:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/113.html' target='_blank'>CWE-113</a></font>]
+	<pre>
+	redirect_to :action =&gt; 'new', :username =&gt; params[:username]
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:75 [<font color='#FFAA00'>16_HTTP_redirect.rule:HTTP redirects emitted by the Application:rule 1:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/601.html' target='_blank'>CWE-601</a>,<a href='http://cwe.mitre.org/data/definitions/698.html' target='_blank'>CWE-698</a>,<a href='http://cwe.mitre.org/data/definitions/79.html' target='_blank'>CWE-79</a></font>]
+	<pre>
+	redirect_to :action =&gt; 'new', :username =&gt; params[:username]
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:79 [<font color='#FFAA00'>06_HTTP_header_injection.rule:HTTP header field usage:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/113.html' target='_blank'>CWE-113</a></font>]
+	<pre>
+	redirect_to :action =&gt; 'new', :username =&gt; params[:username]
+	</pre><br>
+<li>/hawk/app/controllers/sessions_controller.rb:79 [<font color='#FFAA00'>16_HTTP_redirect.rule:HTTP redirects emitted by the Application:rule 1:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/601.html' target='_blank'>CWE-601</a>,<a href='http://cwe.mitre.org/data/definitions/698.html' target='_blank'>CWE-698</a>,<a href='http://cwe.mitre.org/data/definitions/79.html' target='_blank'>CWE-79</a></font>]
+	<pre>
+	redirect_to :action =&gt; 'new', :username =&gt; params[:username]
+	</pre><br>
+<li>/hawk/app/models/cib.rb:221 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	cib_path = "#{RAILS_ROOT}/tmp/#{cib_path}"
+	</pre><br>
+<li>/hawk/app/views/hb_reports/create.js.erb:19 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	$("#hbreport-gentime").text("&lt;%= escape_javascript(File.mtime("/tmp/hb_report-hawk.tar.bz2").strftime("%Y-%m-%d %H:%M:%S")) %&gt;");
+	</pre><br>
+<li>/hawk/app/views/hb_reports/new.html.erb:39 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	&lt;% if @hb_report.lastexit == 0 &amp;&amp; File.exists?("/tmp/hb_report-hawk.tar.bz2") %&gt;
+	</pre><br>
+<li>/hawk/app/views/hb_reports/new.html.erb:50 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	$("#hbreport-gentime").text("&lt;%= escape_javascript(File.mtime("/tmp/hb_report-hawk.tar.bz2").strftime("%Y-%m-%d %H:%M:%S")) %&gt;");
+	</pre><br>
+<li>/hawk/lib/crm_history.rb:39 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@pidfile = "#{RAILS_ROOT}/tmp/pids/crm_history.pid"
+	</pre><br>
+<li>/hawk/lib/crm_history.rb:40 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@cmdfile = "#{RAILS_ROOT}/tmp/pids/crm_history.cmd"
+	</pre><br>
+<li>/hawk/lib/crm_history.rb:41 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@outfile = "#{RAILS_ROOT}/tmp/pids/crm_history.stdout"
+	</pre><br>
+<li>/hawk/lib/crm_history.rb:42 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@errfile = "#{RAILS_ROOT}/tmp/pids/crm_history.stderr"
+	</pre><br>
+<li>/hawk/lib/crm_history.rb:43 [<font color='#FFAA00'>09_file_open.rule:Identify all file handling:rule 3:<b>medium</b>:<a href='http://cwe.mitre.org/data/definitions/377.html' target='_blank'>CWE-377</a></font>]
+	<pre>
+	@exitfile = "#{RAILS_ROOT}/tmp/pids/crm_history.exit"
+	</pre><br>
+<h1>Statistics</h1><table width='70%' border='1'>
+	<tr>
+		<td><font size="-1"><b>Lines ignored by keyword:</b></font></td>
+		<td><font size="-1">8</font></td>
+	</tr>
+	<tr>
+		<td><font size="-1"><b>Files ignored by keyword:</b></font></td>
+		<td><font size="-1">0</font></td>
+	</tr>
+	<tr>
+		<td><font size="-1"><b>Lines analyzed:</b></font></td>
+		<td><font size="-1">10224</font></td>
+	</tr>
+	<tr>
+		<td><font size="-1"><b>Physical Source Lines of Code (SLOC):</b></font></td>
+		<td><font size="-1">7253</font></td>
+	</tr>
+	<tr>
+		<td><font size="-1"><b>Hits@level:</b></font></td>
+		<td><font size="-1">[<font color='#0000FF'>info</font>] 0 [<font color='#00AA000'>low</font>] 0 [<font color='#FFAA00'>medium</font>] 35 [<font color='#FF0000'>high</font>] 3</font></td>
+	</tr>
+	<tr>
+		<td><font size="-1"><b>Hits/KSLOC@level+ (KLSOC = 7):</b></font></td>
+		<td><font size="-1">[<font color='#0000FF'>info+</font>] 5 [<font color='#00AA000'>low+</font>] 5 [<font color='#FFAA00'>medium+</font>] 5 [<font color='#FF0000'>high+</font>] 0</font></td>
+	</tr>
+</table>
+</body>
+</html>

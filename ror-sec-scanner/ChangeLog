@@ -1,0 +1,314 @@
+2010-02-11 18:17  thomas
+
+	* README: updated
+
+2010-02-11 18:09  thomas
+
+	* README: updated
+
+2010-02-11 17:21  thomas
+
+	* README: updated
+
+2010-02-11 17:15  thomas
+
+	* main.pl: ksloc as integer not as float
+
+2010-02-11 17:09  thomas
+
+	* main.pl: print ksloc
+
+2010-02-10 14:43  thomas
+
+	* rules/16_HTTP_redirect.rule: [no log message]
+
+2010-02-03 15:08  thomas
+
+	* main.pl: improved html output to not have all entries on one line
+
+2010-02-03 11:50  thomas
+
+	* rules/02_sql_injection.rule: updated rules
+
+2010-02-03 11:42  thomas
+
+	* rules/21_HTTP_auth.rule: updated rules
+
+2010-02-03 10:57  thomas
+
+	* rules/23_regex_misuse.rule: add
+
+2010-02-03 09:02  thomas
+
+	* rules/: 01_xss.rule, 05_mass_assignment.rule,
+	  16_HTTP_redirect.rule, 18_HTTP_send_file.rule,
+	  19_frameworks.rule, 21_HTTP_auth.rule: - aded mass assignment
+	  rule
+
+2010-01-21 10:27  thomas
+
+	* main.pl, rules/04_insecure_config.rule: - rules adjusted -
+	  skipping def position changed
+
+2010-01-21 10:02  thomas
+
+	* xcldfile.txt: add
+
+2010-01-21 10:00  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-21 09:59  thomas
+
+	* README, main.pl, rules/01_xss.rule,
+	  rules/03_insecure_function.rule,
+	  rules/10_info_special_tools.rule,
+	  rules/15_skip_before_filter.rule, rules/21_HTTP_auth.rule: -
+	  ignore method definitions - rules and CWE numbers adjusted -
+	  adjusted README - could be beta1
+
+2010-01-20 17:05  thomas
+
+	* main.pl, rules/01_xss.rule: typo fix
+
+2010-01-20 16:57  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-20 16:57  thomas
+
+	* ChangeLog, main.pl, rules/01_xss.rule,
+	  rules/02_sql_injection.rule, rules/03_insecure_function.rule,
+	  rules/06_HTTP_header_injection.rule,
+	  rules/07_SSL_verify_none.rule, rules/09_file_open.rule,
+	  rules/10_info_special_tools.rule, rules/12_HTTP_request.rule,
+	  rules/13_improper_input_filtering.rule,
+	  rules/14_before_filter.rule, rules/15_skip_before_filter.rule,
+	  rules/19_frameworks.rule, rules/21_HTTP_auth.rule,
+	  rules/22_interesting_comments.rule: - tuned rules and improved
+	  code after 1st run through Studio Onsite code
+
+2010-01-19 14:16  thomas
+
+	* README: keyword_ added RORSCAN_INL_n
+
+2010-01-19 14:12  thomas
+
+	* main.pl: keyword_ added RORSCAN_INL_n
+
+2010-01-19 14:04  thomas
+
+	* main.pl: cmd-line opt nokeyword
+
+2010-01-15 16:29  thomas
+
+	* rules/03_insecure_function.rule: improved
+
+2010-01-15 14:46  thomas
+
+	* rules/03_insecure_function.rule: updated
+
+2010-01-15 14:17  thomas
+
+	* rules/: 03_insecure_function.rule,
+	  100_attack_surface_analysis.rule, 18_HTTP_send_file.rule,
+	  22_interesting_comments.rule: [no log message]
+
+2010-01-15 12:19  thomas
+
+	* main.pl: added IGNORE NEXT LINE keyword
+
+2010-01-15 12:19  thomas
+
+	* rules/03_insecure_function.rule: somehow improved regex
+
+2010-01-14 14:54  thomas
+
+	* TODO, rules/03_insecure_function.rule: - tuned rules
+
+2010-01-14 10:48  thomas
+
+	* README: [no log message]
+
+2010-01-14 10:44  thomas
+
+	* README, TODO, main.pl: - added cmd-opt for include and exclude
+	  filter rules - added unique() funtion
+
+2010-01-13 19:32  thomas
+
+	* TODO, main.pl, rules/02_sql_injection.rule,
+	  rules/03_insecure_function.rule, rules/07_SSL_verify_none.rule,
+	  rules/12_HTTP_request.rule: - updated
+
+2010-01-13 18:19  thomas
+
+	* TODO: [no log message]
+
+2010-01-13 18:11  thomas
+
+	* main.pl: date fixing
+
+2010-01-13 17:49  thomas
+
+	* main.pl: added date
+
+2010-01-13 16:51  thomas
+
+	* main.pl: - fixed output of CWE
+
+2010-01-13 16:43  thomas
+
+	* main.pl: - typo fixed
+
+2010-01-13 16:26  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-13 16:25  thomas
+
+	* README, main.pl, rules/07_SSL_verify_none.rule,
+	  rules/12_HTTP_request.rule, rules/21_HTTP_auth.rule: - HTML
+	  output - refined rules
+
+2010-01-13 15:46  thomas
+
+	* MyUtils.pm: add
+
+2010-01-12 15:40  thomas
+
+	* README, main.pl, rules/01_xss.rule,
+	  rules/03_insecure_function.rule: - tuned rules - added info to
+	  README
+
+2010-01-12 13:18  thomas
+
+	* main.pl, rules/03_insecure_function.rule,
+	  rules/04_insecure_config.rule,
+	  rules/13_improper_input_filtering.rule: added nohigh, nomedium,
+	  nolow cmd line switch
+
+2010-01-12 13:05  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-12 13:04  thomas
+
+	* README, TODO, main.pl, rules/01_xss.rule,
+	  rules/02_sql_injection.rule, rules/03_insecure_function.rule,
+	  rules/04_insecure_config.rule,
+	  rules/06_HTTP_header_injection.rule,
+	  rules/07_SSL_verify_none.rule,
+	  rules/08_HTTP_cookie_handling.rule, rules/09_file_open.rule,
+	  rules/10_info_special_tools.rule, rules/11_HTTP_XMLRPC.rule,
+	  rules/12_HTTP_request.rule,
+	  rules/13_improper_input_filtering.rule,
+	  rules/16_HTTP_redirect.rule, rules/18_HTTP_send_file.rule,
+	  rules/19_frameworks.rule: refined rules based on last years code
+	  reviews
+
+2010-01-12 12:59  thomas
+
+	* rules/101_SLMS_ExtrernalProgram.rule: rm
+
+2010-01-12 11:59  thomas
+
+	* rules/21_HTTP_auth.rule: add
+
+2010-01-12 10:56  thomas
+
+	* main.pl: - allow info rules to be ignored - improved arguments
+	  handling
+
+2010-01-12 10:08  thomas
+
+	* rules/20_HTTP_verify_method.rule: add
+
+2010-01-12 10:02  thomas
+
+	* rules/19_frameworks.rule: add
+
+2010-01-12 09:50  thomas
+
+	* rules/: 17_csrf.rule, 18_HTTP_send_file.rule: add
+
+2010-01-12 09:44  thomas
+
+	* rules/08_HTTP_cookie_handling.rule: add
+
+2010-01-12 09:44  thomas
+
+	* rules/08_HTTP_cookie_key.rule: rm
+
+2010-01-12 09:18  thomas
+
+	* rules/16_HTTP_redirect.rule: add
+
+2010-01-12 09:08  thomas
+
+	* rules/: 14_before_filter.rule, 15_skip_before_filter.rule: add
+
+2010-01-12 08:53  thomas
+
+	* rules/: 11_HTTP_XMLRPC.rule, 12_HTTP_request.rule,
+	  13_improper_input_filtering.rule: add
+
+2010-01-12 08:33  thomas
+
+	* rules/: 09_file_open.rule, 101_SLMS_ExtrernalProgram.rule,
+	  10_info_special_tools.rule: add
+
+2010-01-12 08:19  thomas
+
+	* TODO: add
+
+2010-01-12 06:53  thomas
+
+	* main.pl: - added analyze_files() function - added flawfinder like
+	  statistics
+
+2010-01-12 06:52  thomas
+
+	* AUTHOR, LICENSE, README: add
+
+2010-01-11 16:25  thomas
+
+	* ChangeLog: add
+
+2010-01-11 16:20  thomas
+
+	* main.pl: - create file and rule list - parse rule file
+
+2010-01-11 16:18  thomas
+
+	* rules/: 01_xss.rule, 02_sql_injection.rule,
+	  03_insecure_function.rule, 04_insecure_config.rule,
+	  05_mass_assignment.rule, 06_HTTP_header_injection.rule,
+	  07_SSL_verify_none.rule, 08_HTTP_cookie_key.rule: add
+
+2010-01-11 16:18  thomas
+
+	* rules/: 01_xss, 02_sql_injection, 03_insecure_function,
+	  04_insecure_config, 05_mass_assignment, 06_HTTP_header_injection,
+	  07_SSL_verify_none, 08_HTTP_cookie_key: rm
+
+2010-01-11 15:52  thomas
+
+	* rules/.07_SSL_verify_none.swp: rm
+
+2010-01-11 15:50  thomas
+
+	* main.pl, rules/.07_SSL_verify_none.swp, rules/01_xss,
+	  rules/02_sql_injection, rules/03_insecure_function,
+	  rules/04_insecure_config, rules/05_mass_assignment,
+	  rules/06_HTTP_header_injection, rules/07_SSL_verify_none,
+	  rules/08_HTTP_cookie_key: Initial revision
+
+2010-01-11 15:50  thomas
+
+	* main.pl, rules/.07_SSL_verify_none.swp, rules/01_xss,
+	  rules/02_sql_injection, rules/03_insecure_function,
+	  rules/04_insecure_config, rules/05_mass_assignment,
+	  rules/06_HTTP_header_injection, rules/07_SSL_verify_none,
+	  rules/08_HTTP_cookie_key: ror-sec-scanner
+

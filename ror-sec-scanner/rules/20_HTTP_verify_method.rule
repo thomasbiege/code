@@ -1,0 +1,4 @@
+Desc: HTTP verify method
+
+# impact	CWE identifier		regex
+info		CWE-000			verify\s*:method\s*=>

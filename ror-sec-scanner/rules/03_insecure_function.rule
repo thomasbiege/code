@@ -1,0 +1,33 @@
+Desc: Insecure function
+
+# impact	CWE identifier		regex
+high		CWE-88,CWE-78		[\s\.]+popen[\w\d]*
+high		CWE-88,CWE-78		([\.\s\t\!]|^)(system|spawn|exec|queue_command)\s*[\(]+
+high		CWE-88,CWE-78		([\.\s\t\!]|^)(system|spawn|exec|queue_command)\s+[\"\'\w]+
+high            CWE-95                  ([\.\s\t\!]|^)eval\s*[\(]+
+high            CWE-95                  ([\.\s\t\!]|^)eval\s+[\"\'\w]+
+high		CWE-88,CWE-78		\`.*\`
+
+## Studio: git show 2056b91bd2092e61ac855d78146c8ce6fbb4e1fd, they both can be exploited using $()
+high		CWE-88,CWE-78		FileUtils\.(cp|mv)
+
+high		CWE-502			deserialize
+
+## based on http://whynotwiki.com/Comparison_of_Escape_class_and_String.shell_escape
+## incomplete filtering
+high		CWE-184			Shellwords.escape
+high		CWE-184			shell_escape
+
+# specific to SUSE Appliance Tools
+medium		CWE-88,CWE-78		Scr\.instance\.execute
+medium		CWE-88,CWE-78		ExternalProgram\.new
+high		CWE-88,CWE-78		containment_do
+high		CWE-88,CWE-78		log_system
+high            CWE-88,CWE-78           logged_run
+high            CWE-88,CWE-78           ([\.\s\t\!]|^)run_cmd
+medium          CWE-88,CWE-78           get_bash_errors
+high            CWE-88,CWE-78           \.cmd\s*[\(]+
+high		CWE-88,CWE-78		\.cmd\s+[\"\'\w]+
+high		CWE-88,CWE-78		run_root_script
+high		CWE-88,CWE-78		run_sudo
+high		CWE-88,CWE-78		queue_command

@@ -1,0 +1,4 @@
+Desc: Attack Surface Analysis
+
+# impact	CWE		regex
+ASA		CWE-000		File\.open[\(]*\.*\'[r[wb]*]+\'

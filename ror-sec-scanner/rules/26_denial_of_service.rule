@@ -1,0 +1,4 @@
+Desc: Denial of Service
+
+# impact	CWE identifier		regex
+medium		CWE-400			\.find[\w_]*\s*[\(]*.*(conditions|limit)\s*=>.*LIKE

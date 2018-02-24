@@ -1,0 +1,9 @@
+Desc: Possible injection vulnerabilities
+
+# impact	CWE identifier		regex
+low		CWE-20			logger\.\w+\s*[\(]*.*params\s*\[
+low		CWE-20			params\s*\[:
+info		CWE-000			validates[\w_]*_of\s*:\w*
+low		CWE-20			env\s*\[.*[\"\']HTTP_
+low		CWE-20			headers\s*\[.*[\"\']HTTP_
+medium		CWE-150			\\033\]30;.*\\007

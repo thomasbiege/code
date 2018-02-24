@@ -1,0 +1,6 @@
+Desc: interesting before_filter
+
+# impact	CWE identifier		regex
+info		CWE-000			before_filter.*:login_required
+info		CWE-000			before_filter.*:admin_required
+info		CWE-000			before_filter.*:ensure_write_permissions_for_appliance

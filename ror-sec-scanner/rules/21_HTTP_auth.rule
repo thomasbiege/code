@@ -1,0 +1,7 @@
+Desc: HTTP authentication methods
+
+# impact	CWE identifier			regex
+info		CWE-301,CWE-718			basic_auth
+info		CWE-301,CWE-718			HttpAuthentication
+info		CWE-384				reset_session
+medium		CWE-89,CWE-592			User\.find.*params\s*\[

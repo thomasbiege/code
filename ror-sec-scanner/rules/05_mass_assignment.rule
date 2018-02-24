@@ -1,0 +1,4 @@
+Desc: Mass Assignment
+
+# impact	CWE identifier		regex
+high		CWE-642			\.(create|new|update_attributes)\s*[\(]*\s*params\s*\[

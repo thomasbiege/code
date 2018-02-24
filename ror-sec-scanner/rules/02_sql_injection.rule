@@ -1,0 +1,16 @@
+Desc: SQL injection
+
+# impact	CWE identifier		regex
+low		CWE-89			\.find[\w_]*\s*[\(]*.*params\s*\[
+low		CWE-89			\.find[\w_]*\s*[\(]*.*conditions\s*=>
+medium          CWE-89                  \.find[\w_]*\s*[\(]*.*conditions\s*=>.*#\{.*\}
+high            CWE-89                  \.find[\w_]*\s*[\(]*.*(conditions|limit)\s*=>.*params\s*\[
+high            CWE-89                  \.find[\w_]*\s*[\(]*.*(conditions|limit)\s*=>.*session\s*\[
+info		CWE-89			sanitize_sql
+low		CWE-89			\.execute
+low		CWE-89			\.find_by_sql
+low		CWE-89			\.paginate
+high		CWE-89                  \.execute.*params\s*\[
+high		CWE-89                  \.find_by_sql.*params\s*\[
+high		CWE-89			SELECT.*options\[\:select\].*
+high		CWE-89			SELECT.*params\s*\[

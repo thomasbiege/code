@@ -1,0 +1,9 @@
+Desc: Frameworks
+
+# impact	CWE		regex
+info		CWE-000		(IChain|ichain|Ichain|iChain|ICHAIN|ICSLogin)
+info		CWE-000		HTTP_X_USERNAME
+info		CWE-000		\.xss_safe
+info		CWE-000		\.to_s_xss_protected
+info            CWE-000         (mark_as_xss_protected|mark_methods_as_xss_safe|to_s_xss_protected)
+

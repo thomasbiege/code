@@ -1,0 +1,127 @@
+last update: 2010/01/19
+author: Thomas Biege
+
+
+Purpose:
+--------
+Scan Ruby on Rails (RoR) code for simple security vulnerabilities.
+
+
+Output:
+-------
+Equal to "flawfinder"'s output.
+
+
+Rules:
+------
+Below the rules directory you can specifiy rules that are used for finding
+possible vulnerabilities.
+Example rules file:
+1: Desc: SSL related issues
+2: # impact	CWE identifier				regex
+3: high		CWE-296,CWE-297,CWE-298,CWE-299,CWE-599	OpenSSL::SSL::VERIFY_NONE
+4: medium	CWE-297					OpenSSL::SSL::VERIFY_PEER
+
+This file contains 4 lines with 2 rules (line 3 and 4), a comment starting
+with "#" at line 2 and the rule files description starting with "Desc: ".
+
+The rules are constructed by three fields:
+	1.) impact either "info", "low", "medium" and "high"
+	2.) comment, encouraged to be a CWE-ID from http://cwe.mitre.org
+	3.) regex to match line in file
+
+CWE identifier can be found at cwe.mitre.org and be best searched by using
+google with "site:cwe.mitre.org <vuln description>"
+Note: spaces at the start of a line are removed before regex rules are
+applied!
+
+
+Examples:
+---------
+Valid cmd-line arguments are:
+- dir=			(default is ./, dir with source code)
+- noinfo		(suppress rules with impact "info")
+- nolow			(")
+- nomedium		(")
+- nohigh		(")
+- ignkeyword		(ignore RORSCAN keywords in source-code)
+- output=html		(html output, default ascii)
+- xcldpat=<regex>	(exclude regex pattern)
+- xcldfile=<fname>	(file of exclude regex patterns)
+- icldpat=<regex>	(include regex pattern)
+- icldfile=<fname>	(file of include regex patterns)
+
+The exclude and include filters are applied to build the list of files
+to be abalysed. Note that the include filters are applied first.
+This allows you to include all files for the controller but none of
+the controller files belonging to a debug directory etc.
+
+The first two blocks of output displays the config.
+In the middle lines for positive matches are printed, the format is:
+<filename>:<line> [<rule file>:<description>:<rule nr>:<impact>:<cwe>]
+\t<code line>
+
+-------------------------------------------------------------------------------
+ror-sec-scanner> ./main.pl xcldpat=\/test\/ xcldpat=\/examples\/ dir=src/susestudio/builder/
+rules dir:           rules
+ignore info:         no
+ignore low:          no
+ignore medium:       no
+ignore high:         no
+no rule files:       21
+rules loaded:        49
+
+search dir:          /home/thomas/0_SUSE_CFS/Auditing/Products SUSE/Studio_Onsite/src/susestudio/builder/
+no code files:       2132
+no view files:       344
+no models files:     85
+no controller files: 89
+no config files:     5
+
+/home/thomas/0_SUSE_CFS/Auditing/Products SUSE/Studio_Onsite/src/susestudio/builder/common/lib/bugzilla.rb:42 [rules/12_HTTP_request.rule:HTTP request emitted by the Application:rule 1:low:CWE-441]
+        request = Net::HTTP::Get.new("/show_bug.cgi?ctype=xml&id=#{bug_num}")
+
+[...]
+
+/home/thomas/0_SUSE_CFS/Auditing/Products SUSE/Studio_Onsite/src/susestudio/builder/ui-server/vendor/plugins/xss-shield/test_helper.rb:73 [rules/07_SSL_verify_none.rule:SSL related issues:rule 3:high:CWE-296,CWE-297,CWE-298,CWE-299,CWE-300,CWE-599]
+        request.stubs(:protocol).returns('http://')
+
+
+Hits = 2669
+Lines analyzed = 164695
+Physical Source Lines of Code (SLOC) = 118021
+Hits@level = [info] 1520 [low] 259 [medium] 160 [high] 730
+Hits/KSLOC@level+ = [info] 22.614619 [low+] 9.735556 [medium+] 7.541031 [high+] 6.185340
+-------------------------------------------------------------------------------
+
+At the end a statistic is printed which is equal to the output of "flawfinder".
+- number of total positive matches
+- lines analyzed
+- real code line without comments and empty lines
+- pos. matches of impact level
+- relative pos. matches per 1000 SLOC (SLOC) of impact level + higher levels
+
+It is recommended to use the cmd-line switch "output=html" and redirect the
+output to a file. This html file can be viewed with our any web-browser.
+
+
+Keywords:
+---------
+You can specify the following keywords in a source-code file:
+- RORSCAN_ITL	-> ignore THIS line
+- RORSCAN_INL	-> ignore NEXT line
+- RORSCAN_INL_n	-> ignore next n lines
+- RORSCAN_ICF	-> ignore complete FILE (in 1st line)
+
+
+Howto:
+------
+1. Scan the code using ignkeyword, noinfo and nolow.
+2. Go through the list and
+2.1 fix all bugs with high or medium impact
+2.2 use RORSCAN_(ICF|ITL|INL) to ignore non-issue code next time
+2.3 adjust the rules
+2.4 add rules to the exclude file if possible
+2.5 scan the code again
+3. iterate over 2. until you reach a sufficient code quality
+4. Scan again for low and info impact "bugs"

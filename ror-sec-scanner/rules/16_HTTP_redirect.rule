@@ -1,0 +1,8 @@
+Desc: HTTP redirects emitted by the Application
+
+# impact	CWE identifier		regex
+medium		CWE-601,CWE-698,CWE-79	redirect_to\s+.*params\s*\[
+medium		CWE-441			save_file
+medium		CWE-441			open-uri
+medium		CWE-441			add_file_from_url
+medium		CWE-441			OpenStruct\.new

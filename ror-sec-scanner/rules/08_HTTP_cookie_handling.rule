@@ -1,0 +1,6 @@
+Desc: HTTP cookie handling
+
+# impact	CWE		regex
+info		CWE-000		cookie
+info		CWE-000		session\s*\[
+info		CWE-614		:session_secure

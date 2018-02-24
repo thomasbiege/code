@@ -1,0 +1,4 @@
+Desc: Cross-Site Request Forgery
+
+# impact	CWE identifier		regex
+info		CWE-352			protect_from_forgery

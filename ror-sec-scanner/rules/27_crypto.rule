@@ -1,0 +1,4 @@
+Desc: Cryptographic Issues
+
+# impact	CWE identifier		regex
+medium		CWE-331			(srand|seed|urandom)

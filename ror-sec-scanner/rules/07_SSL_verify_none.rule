@@ -1,0 +1,7 @@
+Desc: SSL related issues
+
+# impact	CWE identifier					regex
+high		CWE-296,CWE-297,CWE-298,CWE-299,CWE-300,CWE-599	OpenSSL::SSL::VERIFY_NONE
+high            CWE-296,CWE-297,CWE-298,CWE-299,CWE-300,CWE-599 ca_(file|path)\s*=\s*snil
+info		CWE-000	i					OpenSSL::SSL::VERIFY_PEER
+low		CWE-319						http\:\/\/

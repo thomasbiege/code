@@ -1,0 +1,7 @@
+Desc: interesting before_filters skipped
+
+# impact	CWE identifier			regex
+medium		CWE-285,CWE-288,CWE-425		skip_before_filter.*:login_required
+medium		CWE-285,CWE-288,CWE-425		skip_before_filter.*:admin_required
+medium		CWE-285,CWE-288,CWE-425		skip_before_filter.*:verify_authenticity_token
+medium          CWE-285,CWE-288,CWE-425         skip_before_filter.*:authenticate

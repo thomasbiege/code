@@ -1,0 +1,4 @@
+Desc: Improper Access Control
+
+# impact	CWE identifier		regex
+medium		CWE-285			\.(new|add|delete)[\w_]*\s*[\(]*.*params\s*\[\s*:id\s*\]

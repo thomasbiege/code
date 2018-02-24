@@ -1,0 +1,9 @@
+Desc: Identify all file handling
+
+# impact	comment		regex
+medium		CWE-377		File\.open[\(]*.*/tmp/.*
+medium          CWE-377         mkdir_p.*tmp
+medium		CWE-377		\/tmp\/
+#medium		CWE-377		Tempfile\.new this is secure: http://www.ruby-doc.org/stdlib/libdoc/tempfile/rdoc/classes/Tempfile.html#M004095
+info		CWE-000		File\.open
+info		CWE-000		FileUtils\.

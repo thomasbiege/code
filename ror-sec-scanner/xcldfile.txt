@@ -1,0 +1,11 @@
+/test/
+/test_steps/
+/testing/
+/manual-test/
+/examples/
+/example_plugin/
+/db/migrate/
+/unit/
+/scripts/
+/sdk/
+/parallel_tests/

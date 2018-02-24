@@ -1,0 +1,4 @@
+Desc: XMPLRPC API
+# does not work because we skip comment in the code
+# impact	CWE identifier		regex
+info		CWE-000			P(UT|OST) .*\.xml

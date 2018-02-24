@@ -1,0 +1,14 @@
+Desc: Special tools
+
+# impact	CWE identifier		regex
+info		CWE-000			(GPG|Gpg|gpg|GpgKey)
+medium		CWE-000			sudo
+# man unzip: -: option allows ../ in archived file path, dir traversal
+medium		CWE-23,CWE-88		[^\w]unzip\s+[^(=|&)]
+high		CWE-23,CWE-88		unzip.*\-\:
+# man tar
+medium		CWE-88			[^\w]tar\s+
+high		CWE-88			tar.*\-\-to\-command
+high            CWE-88                  tar.*\-\-rmt\-command
+# http://www.unix.com/302279785-post3.html tar --rsh-command=`which ssh` -zcvf remote_host:filename.tar.gz -- directory_to_tar
+high            CWE-88                  tar.*\-\-rsh\-command

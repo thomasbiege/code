@@ -1,0 +1,5 @@
+Desc: Information Leak
+
+# impact	CWE identifier		regex
+medium		CWE-200			\.find[\w_]*\s*[\(]*.*params\s*\[\s*:id\s*\]
+info		CWE-200			filter_parameter_logging

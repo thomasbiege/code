@@ -1,0 +1,13 @@
+Desc: HTTP request emitted by the Application
+
+# impact	CWE identifier		regex
+low		CWE-441			Net::HTTP.*\.new[\(]*
+low		CWE-441			Net::HTTP::Proxy
+# SUSE Appliance specific
+low		CWE-441			SLMS::Studio::(Get|Post|Put|Delete)Request\.new
+low		CWE-441			http_do[\s[\(]*]*
+low		CWE-441			direct_http
+low             CWE-441                 ([\.\s\t]|^)(get|do_get)\s*[\(]*
+low             CWE-441                 ([\.\s\t]|^)(get|do_get)\s+(\"|\')
+low		CWE-441			send_redirect
+medium		CWE-441			start_import_image
