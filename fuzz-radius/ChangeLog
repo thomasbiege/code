@@ -1,0 +1,232 @@
+2005-08-25 14:16  thomas
+
+	* include/modules.h, src/main.c, src/modules.c: - fixed packert
+	length - fixed id
+
+2005-08-25 11:58  thomas
+
+	* include/fuzzer.h, include/main.h, include/modules.h,
+	include/rad_send.h, src/fuzzer.c, src/main.c, src/modules.c: -
+	added VSA fuzzing support
+
+2005-08-16 12:33  thomas
+
+	* TODO: - sql attr fuzzing not needed
+
+2005-08-15 13:23  thomas
+
+	* TODO: - updated
+
+2005-08-11 08:38  thomas
+
+	* TODO: - updated
+
+2005-08-10 16:13  thomas
+
+	* include/main.h, src/modules.c: - removed cmdline opt eap, arap,
+	tunneö - print id to identify packages better
+
+2005-08-10 15:31  thomas
+
+	* include/fuzzer.h, include/main.h, include/modules.h,
+	src/fuzzer.c, src/main.c, src/modules.c: - made id per session and
+	increment sequentially - added special username fuzzing - added
+	special realm fuzzing - fixed error in calculating AVP length
+
+2005-08-06 16:25  thomas
+
+	* include/: md4.h, sha1.h: - removed
+
+2005-08-06 00:19  thomas
+
+	* include/main.h: - removed --port
+
+2005-08-06 00:10  thomas
+
+	* config.status, configure.ac, include/modules.h, src/Makefile.am,
+	src/modules.c: - use auth and acct port now - removed some more
+	occurence of libradius
+
+2005-08-05 23:44  thomas
+
+	* config.status, configure.ac, include/config.h.in,
+	include/libradius.h, include/radclient.h, src/Makefile.am,
+	src/main.c, src/modules.c, src/radclient.c: - removed occurence of
+	libradius
+
+2005-08-05 17:21  thomas
+
+	* src/main.c: - fixed SEGV due to missing arg
+
+2005-08-05 17:20  thomas
+
+	* include/fuzzer.h, include/main.h, include/modules.h, src/main.c,
+	src/modules.c: - beta 1
+
+2005-08-05 14:40  thomas
+
+	* src/: fuzzer.c, main.c, modules.c, rad_send.c: - added the other
+	fuzzing functions
+
+2005-08-05 13:32  thomas
+
+	* src/modules.c: - the overflow fuzz is done so far
+
+2005-08-05 13:00  thomas
+
+	* include/main.h, include/modules.h, include/rad_send.h,
+	src/main.c, src/modules.c, src/rad_send.c: - make sending a valid
+	packet work - TODO: send invalid packets ;)
+
+2005-08-04 12:49  thomas
+
+	* Makefile.am, config.status, configure.ac, include/Makefile.am,
+	include/modules.h, include/rad_send.h, include/radclient.h,
+	lib/Makefile.am, lib/stdnet.c, src/Makefile.am, src/main.c,
+	src/modules.c, src/rad_send.c, src/radclient.c: - added own radius
+	packet structures - added own radsend() function - added lib
+
+2005-08-03 16:58  thomas
+
+	* lib/dns_lib.h, lib/setsignal.h, lib/stdnet.h, include/dns_lib.h,
+	include/setsignal.h, include/stdnet.h: - moved
+
+2005-08-03 16:56  thomas
+
+	* include/rad_send.h, src/rad_send.c: - function and structures to
+	send radius packages to avoid libradius
+
+2005-08-03 16:55  thomas
+
+	* lib/: setsignal.c, setsignal.h: - signal helper api
+
+2005-08-03 16:53  thomas
+
+	* lib/: Makefile.am, dns_lib.c, dns_lib.h, stdnet.c, stdnet.h: -
+	added lib dir
+
+2005-08-03 12:58  thomas
+
+	* include/radius.h: - constants for proto
+
+2005-08-03 11:54  thomas
+
+	* ChangeLog, config.status, configure.ac, include/main.h,
+	src/Makefile.am, src/main.c: - added some more command line options
+	- added lradius and lcrypt
+
+2005-08-02 14:45  thomas
+
+	* ChangeLog: - updated
+
+2005-08-02 14:43  thomas
+
+	* libtool, include/Makefile.am, include/fuzzer.h, include/main.h,
+	src/Makefile.am, src/fuzzer.c, src/modules.c: - make it compile
+
+2005-08-02 14:26  thomas
+
+	* include/modules.h, src/fuzzer.c, src/main.c, src/modules.c: -
+	added skeleton for module functions - added fuzzer functions stubs
+
+2005-08-02 09:21  thomas
+
+	* include/fuzzer.h: - new header file for fuzzer functions
+
+2005-08-02 09:19  thomas
+
+	* include/main.h: - renamed fuzzer.h to main.h
+
+2005-08-01 18:40  thomas
+
+	* ChangeLog, include/fuzzer.h, include/modules.h, src/Makefile.am,
+	src/main.c, src/modules.c: - added full command line option support
+	- started adding modules code for session managing
+
+2005-08-01 18:17  thomas
+
+	* include/fuzzer.h: - added header file
+
+2005-08-01 15:37  thomas
+
+	* src/main.c: - fixed get_range(), seems to work now
+
+2005-08-01 14:59  thomas
+
+	* INSTALL, aclocal.m4: - rm superfluous file
+
+2005-08-01 14:58  thomas
+
+	* include/config.h.in, include/modules.h, src/main.c: - make it
+	compile
+
+2005-08-01 14:47  thomas
+
+	* config.status, configure.ac, libtool, include/modules.h,
+	include/radclient.h, src/main.c, src/modules.h, src/radclient.h: -
+	moved header files to include/
+
+2005-08-01 14:44  thomas
+
+	* include/: libradius.h, md4.h, radius.h, sha1.h: - added missing
+	header files from freeradius
+
+2005-08-01 13:44  thomas
+
+	* INSTALL: - described compiling process
+
+2005-08-01 13:41  thomas
+
+	* configure.ac, src/Makefile.am: - fixed files - configure doesn't
+	detect libradius
+
+2005-08-01 10:45  thomas
+
+	* ChangeLog: - updated
+
+2005-07-29 15:47  thomas
+
+	* src/: main.c, modules.h: - added command-line opt parsing
+
+2005-07-29 15:08  thomas
+
+	* src/modules.h: - this headr file should serve es an intrface to
+	the fuzzr modules
+
+2005-07-29 15:02  thomas
+
+	* src/: radclient.c, radclient.h: - some source snippets from
+	freeradius' radclient
+
+2005-07-29 15:02  thomas
+
+	* include/config.h.in: - added undef
+
+2005-07-29 15:01  thomas
+
+	* configure.ac: - added check for libradius
+
+2005-07-29 14:48  thomas
+
+	* include/libradius.h: - added libradius header
+
+2005-07-28 10:17  thomas
+
+	* configure.ac: - removed stuff from old project
+
+2005-07-28 10:05  thomas
+
+	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, NEWS, README,
+	TODO, aclocal.m4, config.guess, config.status, config.sub,
+	configure.ac, depcomp, install-sh, libtool, ltmain.sh, missing,
+	include/Makefile.am, include/config.h.in, src/Makefile.am,
+	src/main.c: RADIUS Protocol Fuzzer
+
+2005-07-28 10:05  thomas
+
+	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, NEWS, README,
+	TODO, aclocal.m4, config.guess, config.status, config.sub,
+	configure.ac, depcomp, install-sh, libtool, ltmain.sh, missing,
+	include/Makefile.am, include/config.h.in, src/Makefile.am,
+	src/main.c: Initial revision
+

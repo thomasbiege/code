@@ -1,0 +1,6 @@
+- aclocal
+- automake
+- autoconf -i
+- ./configure
+- make
+- sudo make install
