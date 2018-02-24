@@ -1,0 +1,1 @@
+https://spacewalk.xx.yy	POST[/rhn/LoginSubmit.do username=__USER__&password=__PASS__&login_cb=login] login_cb

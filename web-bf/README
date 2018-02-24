@@ -1,0 +1,13 @@
+example target file:
+	https://login.example.de	POST[/Login.php username=__USER__&password=__PASS__] Login failed
+
+field #1: URL to target site
+field #2: auth method, POST = HTTP forms, [] contains auth parameters
+field #2.1: login page
+field #2.2: HTTP POST request string
+field #3: (optional) regex to detect invalid logins
+
+Please adjust  $cnf_csrf_token_name and $cnf_csrf_token_regex in bf.pl.
+
+
+enjoy! thomas@suse.de

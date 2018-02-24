@@ -1,0 +1,1 @@
+https://login.example.de	POST[/Login.php username=__USER__&password=__PASS__] Login failed

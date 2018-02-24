@@ -1,0 +1,6 @@
+- add HTTP basic and digest auth
+- shorter output mode, only success etc
+- revert loop logic for guessing passwd -> user, instead of user -> password to bypass
+  login delays
+- README
+- specify cookie to get after successful login, currently we use any cookie as indicator
