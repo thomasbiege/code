@@ -1,0 +1,17 @@
+CREATE TABLE alert_entry  ( alertid           TEXT,
+                            alertdesc         TEXT,
+                            classification    TEXT,
+                            date              DATE,
+                            time              TIME,
+                            analyzerid	      TEXT,
+                            source_address    TEXT,
+                            source_user       TEXT,
+                            source_process    TEXT,
+                            source_service    TEXT,
+                            target_address    TEXT,
+                            target_user       TEXT,
+                            target_process    TEXT,
+                            target_service    TEXT,
+                            idmefmsg          TEXT,
+                            signature         TEXT );
+

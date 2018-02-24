@@ -1,0 +1,30 @@
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT mice_mod_pop_mysql.lo -MD -MP -MF ".deps/mice_mod_pop_mysql.Tpo" \
+  -c -o mice_mod_pop_mysql.lo `test -f 'mice_mod_pop_mysql.c' || echo './'`mice_mod_pop_mysql.c; \
+then mv -f ".deps/mice_mod_pop_mysql.Tpo" ".deps/mice_mod_pop_mysql.Plo"; \
+else rm -f ".deps/mice_mod_pop_mysql.Tpo"; exit 1; \
+fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_pop_mysql.lo -MD -MP -MF .deps/mice_mod_pop_mysql.Tpo -c mice_mod_pop_mysql.c  -fPIC -DPIC -o .libs/mice_mod_pop_mysql.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_pop_mysql.lo -MD -MP -MF .deps/mice_mod_pop_mysql.Tpo -c mice_mod_pop_mysql.c -o mice_mod_pop_mysql.o >/dev/null 2>&1
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF ".deps/parsecfg.Tpo" \
+  -c -o parsecfg.lo `test -f 'parsecfg.c' || echo './'`parsecfg.c; \
+then mv -f ".deps/parsecfg.Tpo" ".deps/parsecfg.Plo"; \
+else rm -f ".deps/parsecfg.Tpo"; exit 1; \
+fi
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF .deps/parsecfg.Tpo -c parsecfg.c  -fPIC -DPIC -o .libs/parsecfg.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF .deps/parsecfg.Tpo -c parsecfg.c -o parsecfg.o >/dev/null 2>&1
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT syscall.lo -MD -MP -MF ".deps/syscall.Tpo" \
+  -c -o syscall.lo `test -f 'syscall.c' || echo './'`syscall.c; \
+then mv -f ".deps/syscall.Tpo" ".deps/syscall.Plo"; \
+else rm -f ".deps/syscall.Tpo"; exit 1; \
+fi
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT syscall.lo -MD -MP -MF .deps/syscall.Tpo -c syscall.c  -fPIC -DPIC -o .libs/syscall.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT syscall.lo -MD -MP -MF .deps/syscall.Tpo -c syscall.c -o syscall.o >/dev/null 2>&1
+/bin/sh ../../../libtool --mode=link gcc  -I../../../include -I/usr/include/libxml2  -L../../../libs -L/usr/lib -lxml2 -lz -lpthread -lm -o mice_mod_pop_mysql.la -rpath /usr/lib -L/usr/lib/mysql/ -module -version-info 1:0:0 mice_mod_pop_mysql.lo parsecfg.lo syscall.lo -lmysqlclient -llaussrv   
+gcc -shared  .libs/mice_mod_pop_mysql.o .libs/parsecfg.o .libs/syscall.o  -Wl,--rpath -Wl,/usr/lib/mysql -Wl,--rpath -Wl,/usr/lib/mysql -L/home/thomas/Arbeit/CVS-Projects/m-ice/libs -L/usr/lib /usr/lib/libxml2.so -lz -lpthread -lm -L/usr/lib/mysql/ /usr/lib/mysql/libmysqlclient.so /usr/lib/liblaussrv.so  -Wl,-soname -Wl,mice_mod_pop_mysql.so.1 -o .libs/mice_mod_pop_mysql.so.1.0.0
+(cd .libs && rm -f mice_mod_pop_mysql.so.1 && ln -s mice_mod_pop_mysql.so.1.0.0 mice_mod_pop_mysql.so.1)
+(cd .libs && rm -f mice_mod_pop_mysql.so && ln -s mice_mod_pop_mysql.so.1.0.0 mice_mod_pop_mysql.so)
+ar cru .libs/mice_mod_pop_mysql.a  mice_mod_pop_mysql.o parsecfg.o syscall.o
+ranlib .libs/mice_mod_pop_mysql.a
+creating mice_mod_pop_mysql.la
+(cd .libs && rm -f mice_mod_pop_mysql.la && ln -s ../mice_mod_pop_mysql.la mice_mod_pop_mysql.la)

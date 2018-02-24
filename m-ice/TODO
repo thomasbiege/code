@@ -1,0 +1,38 @@
+This file contains various jobs that need to be done, a time span, and
+the name of the developer working on it.
+The time span is just an estimation and is defined as followed:
+	- short:	< 3 month
+	- middle:	~ 6 month
+	- long:		> 12month
+
+Due to the fact that some jobs depend on others to be finished even if
+they are short time goals I need to reflect that by putting these jobs
+in lower rows. For example full testing doesn't make sense without
+"everything" implemented so far. 
+A more comprehensive schedule will be published at http://m-ice.sf.net/ .
+For technical details take a look at the TODO files of every component's
+directory.
+
+Please note, that multiple developers can work on the same task.
+
+
+todo				short	middle	long	developer
+-------------------------------------------------------------------------------
+prepare release 0.2 (RPM)	x	-	-	Thomas
+packaging			x	-	-	Thomas
+IDXP decoding module		x	-	-	
+heartbeat daemon		x	-	-	
+snort integration		x	-	-	
+PIX/Cisco support		x	-	-	
+more reaction modules		x	-	-
+switch to postgresql		x	-	-
+state machine analysis		-	x	-	Francois
+statistical analysis		-	x	-	Thomas
+multiple analyzer engines	-	x	-	Thomas
+more stable code		-	x	-
+implement missing basic feat.	x	-	-
+improve crypto protocols	-	x	-	Thomas
+GUI				-	-	x
+full testing			x	-	-
+
+

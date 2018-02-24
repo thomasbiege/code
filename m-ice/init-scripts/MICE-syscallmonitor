@@ -1,0 +1,46 @@
+#! /bin/bash
+#
+# /etc/init.d/cfs
+#
+### BEGIN INIT INFO
+# Provides:       MICE-syscallmonitor
+# Required-Start: $local_fs
+# Required-Stop:
+# Default-Start:  3 5
+# Default-Stop:   0 1 2 6
+# Description:    M-ICE: Starts SCSLog LKM for Syscall Monitoring
+### END INIT INFO
+
+. /etc/rc.status
+#. /etc/rc.config
+
+return=$rc_done
+case "$1" in
+    start)
+    echo -n "M-ICE IDS: Starting SCSLog"
+    insmod /lib/modules/$(uname -r)/scslog.o
+    scslog-ctrl -s 11,23,83,102	# in rc.config eintragen
+    startproc /usr/sbin/scslog2syslog  || return=$rc_failed
+    echo -e "$return"
+    ;;
+    stop)
+    echo -n "M-ICE IDS: Stopping SCSLog"
+    killproc /usr/sbin/scslog2syslog
+    scslog-ctrl -u 11,23,83,102
+    rmmod scslog || return=$rc_failed
+    echo -e "$return"
+    ;;
+    restart)
+    $0 stop && $0 start
+    rc_status
+    ;;
+    status)
+    lsmod | grep scslog
+    ;;
+    *)
+    echo "Usage: $0 {start|stop|status|restart}"
+    exit 1
+esac
+test "$return" = "$rc_done" || exit 1
+exit 0
+

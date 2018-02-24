@@ -1,0 +1,44 @@
+#! /bin/bash
+#
+# /etc/init.d/MICE-bufferdaemon-mngmthost
+#
+### BEGIN INIT INFO
+# Provides:       MICE-bufferdaemon-mngmthost
+# Required-Start: $network
+# Required-Stop:
+# Default-Start:  3 5
+# Default-Stop:   0 1 2 6
+# Description:    M-ICE: Starts BufferDaemon for Management Host
+### END INIT INFO
+
+. /etc/rc.status
+#. /etc/rc.config
+
+return=$rc_done
+case "$1" in
+    start)
+	echo -n "M-ICE IDS: Starting BufferDaemon (Management Host)"
+	/usr/sbin/bufferdaemon -f /etc/M-ICE/bufferdaemon-mngmthost.conf || return=$rc_failed
+	echo -e "$return"
+	;;
+    stop)
+	echo -n "M-ICE IDS: Stopping BufferDaemon (Management Host)"
+	PID2KILL=`(ps waux | grep bufferdaemon-mngmthost | grep -v grep | awk -F' ' '{printf("%s "), $2}';echo)`
+	kill $PID2KILL || return=$rc_failed
+	echo -e "$return"
+	;;
+    restart)
+	$0 stop && $0 start
+	;;
+    status)
+	echo "M-ICE IDS: Status BufferDaemon (Management Host):"
+	(ps waux | grep bufferdaemon-mngmthost | grep -v grep | awk -F' ' '{printf("%s "), $2}';echo) || return=$rc_failed
+        echo -e "$return"
+	;;
+    *)
+	echo "Usage: $0 {start|stop|status|restart}"
+	exit 1
+esac
+test "$return" = "$rc_done" || exit 1
+exit 0
+

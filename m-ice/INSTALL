@@ -1,0 +1,4 @@
+
+- autoreconf --install
+- ./configure --prefix=/usr --sysconfdir=/etc
+- make

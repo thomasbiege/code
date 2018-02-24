@@ -1,0 +1,151 @@
+#
+# First we have to describe the Alarm we detect.
+# This depends on the Analysis Module
+#
+
+
+# AlertID from IDMEF Classification-->name
+[ALERT_ID]
+AID = 0x1010    # RT_AUTH_S
+AID = 0x1020    # RT_AUTH_F
+
+AID = 0x2010    # RT_ROOT_W
+AID = 0x2020    # RT_ROOT_O
+AID = 0x2030    # RT_ROOT_R
+AID = 0x2040    # RT_ROOT_S
+AID = 0x2050    # RT_ROOT_E
+
+AID = 0x3010    # RT_READ_S
+AID = 0x3020    # RT_READ_F
+
+AID = 0x4010    # RT_WRITE_S
+AID = 0x4020    # RT_WRITE_F
+
+AID = 0x5010    # RT_MONI_U
+AID = 0x5020    # RT_MONI_G
+
+AID = 0x6010    # RT_APPS_N
+
+AID = 0x7010    # RT_EXPL
+
+AID = 0x8010    # RT_FW_D
+AID = 0x8020    # RT_FW_R
+AID = 0x8030    # RT_FW_A
+AID = 0x8040    # RT_FW_I
+
+
+
+# Description for AlertID
+[ALERT_ID_DESCRIPTION]
+AID_DESC = "Authentication Success"
+AID_DESC = "Authentication Failure"
+AID_DESC = "Superuser writes to File"
+AID_DESC = "Superuser opens File"
+AID_DESC = "Superuser reads from File"
+AID_DESC = "Superuser does Operation on Socket"
+AID_DESC = "Superuser executes Code"
+AID_DESC = "Read Success"
+AID_DESC = "Read Failure"
+AID_DESC = "Write Success"
+AID_DESC = "Write Failure"
+AID_DESC = "Monitoring UserID"
+AID_DESC = "Monitoring GroupID"
+AID_DESC = "Monitoring Application"
+AID_DESC = "Exploit Signature detected"
+AID_DESC = "Firewall Rule: Drop"
+AID_DESC = "Firewall Rule: Reject"
+AID_DESC = "Firewall Rule: Accept"
+AID_DESC = "Firewall Rule: Illegal"
+
+
+#
+# Which Reaction should be triggered by which Alert(s)?
+#
+
+# Write to Syslog
+[RID_1]
+AID_1 = 0x1010
+AID_1 = 0x1020
+AID_1 = 0x2010
+AID_1 = 0x2020
+AID_1 = 0x2030
+AID_1 = 0x2040
+AID_1 = 0x2050
+AID_1 = 0x3010
+AID_1 = 0x3020
+AID_1 = 0x4010
+AID_1 = 0x4020
+AID_1 = 0x5010
+AID_1 = 0x5020
+AID_1 = 0x6010
+AID_1 = 0x7010
+
+# Send to Alert DB
+[RID_2]
+AID_2 = 0x1010
+AID_2 = 0x1020
+AID_2 = 0x2010
+AID_2 = 0x2020
+AID_2 = 0x2030
+AID_2 = 0x2040
+AID_2 = 0x2050
+AID_2 = 0x3010
+AID_2 = 0x3020
+AID_2 = 0x4010
+AID_2 = 0x4020
+AID_2 = 0x5010
+AID_2 = 0x5020
+AID_2 = 0x6010
+AID_2 = 0x7010
+AID_2 = 0x8010
+AID_2 = 0x8020
+AID_2 = 0x8030
+AID_2 = 0x8040
+
+
+# Save to File
+[RID_3]
+AID_3 = 0x1010
+AID_3 = 0x1020
+AID_3 = 0x2010
+AID_3 = 0x2020
+AID_3 = 0x2030
+AID_3 = 0x2040
+AID_3 = 0x2050
+AID_3 = 0x3010
+AID_3 = 0x3020
+AID_3 = 0x4010
+AID_3 = 0x4020
+AID_3 = 0x5010
+AID_3 = 0x5020
+AID_3 = 0x6010
+AID_3 = 0x7010
+
+
+# Countermeasure
+[RID_4]
+AID_4 = 0x6010
+AID_4 = 0x7010
+
+
+# EMPTY
+[RID_5]
+
+# EMPTY
+[RID_6]
+
+# EMPTY
+[RID_7]
+
+# EMPTY
+[RID_8]
+
+# EMPTY
+[RID_9]
+
+# EMPTY
+[RID_10]
+
+
+# EOF
+

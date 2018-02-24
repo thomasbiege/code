@@ -1,0 +1,51 @@
+- LogFormat
+	* add timezone
+	* add counter to detect replay-attacks
+	* use secure, crypthographic hash-function instead of crc32
+	* cryptographic signature
+ 
+
+
+- reading data
+	* the dataforwarder seems to have problems to read log-lines that were
+	  created very fast (like logger line1;logger line2)
+	* problems reading from device files
+
+
+- security
+	* use close_on_exec flag for every opened file!
+	* create IV by using secret key and avoid sending it along the message
+	* write pseudonymizer module
+	* support chroot()
+	* identify data that was created by users/attackers to protect the
+	  analysis engine against false information ()
+	  + like: Jan 14 22:00:26 OnoSendai thetom: this message is fake
+	  + check the user-name field 
+
+- config file
+	* using SIGHUP doesnt work: "Error while parsing config file"
+	  + maybe we should rewind the file
+	  + reinit globals
+	  + maybe switch to fles+yacc
+	* some variables should not be updated
+	  + filter
+	  + logfiles
+	  + key
+	  + encryption
+	  + ...
+
+- debugging
+	* SIGUSR1/2 increment/decrement debug-level
+	  + test for "errno = EINTR" in LogWatch process
+
+- synchronization of dataforwarder processes should be improved
+
+- design
+	* add another module-type to send data
+
+- misc
+	* we do not need exit(child_process)
+
+Jul 23 16:22:09 idoru BufferDaemon[2805]: BufferDaemon: Waiting for Client Requests...
+Jul 23 16:22:09 idoru BufferDaemon[2909]: BufferDaemon/HandleClientRequest - Thread: Accept Connection from [0.0.0.0:1288]
+Jul 23 16:22:09 idoru BufferDaemon[2909]: BufferDaemon/HandleClientRequest - Thread: Error: Setting Keepalive Option for Socket | Syserror: Bad file descriptor

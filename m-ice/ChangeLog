@@ -1,0 +1,1732 @@
+2005-02-23 12:50  thetom
+
+	* include/laus/: laus.h, laus_tags.h, laussrv.h:  just added laus
+	headers to make the stuff compile even if laus is not installed in
+	on the build-system
+
+2004-09-06 14:20  thetom
+
+	* client/dataforwarder/readfile.c: - fixed typo
+
+2004-09-06 12:45  thetom
+
+	* client/dataforwarder/readfile.c: - fixed adjustment of file
+	offset pointer for laus files - code seems much more stable now -
+	OPEN: still needs testing
+
+2004-09-05 19:04  thetom
+
+	* ChangeLog: - updated
+
+2004-09-05 18:55  thetom
+
+	* client/dataforwarder/readfile.c: - usinig fread_unlock()
+
+2004-09-05 18:46  thetom
+
+	* modules/: format/enhanced/mice_mod_fmt_enhanced.c,
+	postprocessing/mysql/mice_mod_pop_mysql.c: - code seems to work -
+	OPEN: still loosing laus entries
+
+2004-09-05 18:40  thetom
+
+	* libs/: libmice_parse/libmice_parse.c, libmice_parse/syscall.h,
+	libmice_pseudo/Makefile.am, libmice_pseudo/libmice_pseudo.c: - add
+	missing config.h - fixed parse_laus_* code
+
+2004-09-05 18:40  thetom
+
+	* include/: logformat.h, mice_parse.h: - minor bug fixes
+
+2004-09-05 18:00  thetom
+
+	* client/dataforwarder/: Makefile.am, dataforwarder.h, main.c,
+	readfile.c: - put intReadFile() function in an own file - switched
+	from successive reading of laus file to memory mapped parsing
+
+2004-09-03 19:32  thetom
+
+	* TODO, libs/libmice/errormsg.c, libs/libmice/errormsg.h,
+	libs/libmice_pseudo/libmice_pseudo.c,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c: - made some
+	updates and minor bugixes, and cosmetic changes
+
+2004-09-03 19:24  thetom
+
+	* client/dataforwarder/main.c: - reviewed intReadFile() and made
+	some bug fixes
+
+2004-08-22 13:41  thetom
+
+	* etc/Makefile.am, etc/mice_mod_pop_mysql.conf,
+	include/Makefile.am, modules/postprocessing/mysql/Makefile.am,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c: - added some
+	de-pseudonymisation code to mysql module
+
+2004-08-22 12:28  thetom
+
+	* include/Makefile.am, configure.ac: - added Makefile for header
+	files
+
+2004-08-21 14:40  thetom
+
+	* include/logformat.h,
+	modules/pseudo/symmetric/mice_mod_psd_symmetric.c: - added
+	uiPseudonymized flag
+
+2004-08-08 18:03  thetom
+
+	* utils/pseudonymizer/main.c: - make it work with numbers
+
+2004-08-08 17:58  thetom
+
+	* utils/pseudonymizer/main.c: - added number support for testing
+
+2004-08-08 17:42  thetom
+
+	* etc/mice_mod_psd_symmetric.conf,
+	libs/libmice_pseudo/libmice_pseudo.c,
+	modules/pseudo/symmetric/mice_mod_psd_symmetric.c,
+	utils/pseudonymizer/main.c: - make "symmetric" pseudo module
+	compile
+
+2004-08-08 17:19  thetom
+
+	* libs/libmice_pseudo/libmice_pseudo.c: - added function to set
+	already combuned binary key - removed unneccessary char * key from
+	deidentify and reidentify function
+
+2004-08-08 17:14  thetom
+
+	* include/mice_pseudo.h: - added function to set pseudo_key without
+	XORing
+
+2004-08-08 16:53  thetom
+
+	* modules/pseudo/: Makefile.am, symmetric/Makefile.am,
+	symmetric/intl.h, symmetric/mice_mod_psd_symmetric.c,
+	symmetric/mice_mod_psd_symmetric.h, symmetric/parsecfg.c,
+	symmetric/parsecfg.h: - added pseudo. module that uses symmetric
+	crypto
+
+2004-08-08 16:51  thetom
+
+	* libs/libmice_pseudo/libmice_pseudo.c: - added functions to
+	pseudonymize numbers
+
+2004-08-08 16:51  thetom
+
+	* include/mice_pseudo.h: - added declaration for num-functions
+
+2004-08-08 16:51  thetom
+
+	* configure.ac: - added pseudo/symmetric
+
+2004-08-08 13:54  thetom
+
+	* etc/mice_mod_psd_symmetric.conf: - added config file for
+	"symmetric" pseudonymisation module
+
+2004-07-16 14:56  thetom
+
+	*
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.c
+	: - SECURITY: added extra check for DataSize to avoid pointing
+	structure element to outside of the stack
+
+2004-07-10 02:35  thetom
+
+	* ChangeLog: - updated
+
+2004-07-10 02:34  thetom
+
+	* Makefile.am, configure.ac, include/mice_pseudo.h,
+	libs/libmice_pseudo/Makefile.am, libs/libmice_pseudo/base64.c,
+	libs/libmice_pseudo/libmice_pseudo.c, utils/Makefile.am,
+	utils/pseudo_key_gen/Makefile.am, utils/pseudo_key_gen/main.c,
+	utils/pseudonymizer/main.c: - added base64 support for
+	libmice_pseudo - added tool for pseudonymisation key generation
+
+2004-07-10 01:27  thetom
+
+	* libs/libmice_pseudo/base64.c: - added third party source code for
+	base64 encoding
+
+2004-07-09 16:15  thetom
+
+	* utils/pseudonymizer/: Makefile.am, main.c: - initial version
+
+2004-07-09 15:38  thetom
+
+	* ChangeLog, configure.ac, utils/Makefile.am,
+	utils/pseudonymizer/Makefile.am, utils/pseudonymizer/main.c: -
+	added makefiles and such for pseudonymizer util
+
+2004-07-09 15:23  thetom
+
+	* include/mice_pseudo.h, libs/libmice_pseudo/libmice_pseudo.c: -
+	added base64 encoding/decoding functions
+
+2004-07-09 11:01  thetom
+
+	* client/dataforwarder/exchangefd.h,
+	client/dataforwarder/unixdomainsocket.h,
+	modules/filter/regex/mice_mod_flt_regex.h,
+	modules/format/enhanced/mice_mod_fmt_enhanced.h,
+	modules/format/simple/mice_mod_fmt_simple.h,
+	modules/pseudo/dummy/mice_mod_psd_empty.h: - finished support for
+	new libs
+
+2004-07-09 10:38  thetom
+
+	* configure.ac, client/dataforwarder/exchangefd.c,
+	client/dataforwarder/main.c, client/dataforwarder/pv.c,
+	libs/libmice_parse/libmice_parse.c,
+	libs/libmice_pseudo/libmice_pseudo.c,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.c,
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.c
+	,
+	modules/decoding/webstat_unixdomain/mice_mod_dec_webstat_unixdomain
+	.c, modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.c,
+	modules/postprocessing/act_generic/mice_mod_pop_act_generic.c,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c,
+	modules/postprocessing/syslog/main.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.c,
+	modules/reaction/dummy/mice_mod_rct_dummy.c,
+	reaction-agents/rid_1_write_to_syslog/main.c,
+	reaction-agents/rid_2_send_to_alert_db/main.c,
+	reaction-agents/rid_3_save_to_file/main.c,
+	reaction-agents/rid_4_countermeasure/main.c,
+	server/buffer-daemon/main.c, server/reaction-daemon/main.c: -
+	renamed header files
+
+2004-07-09 10:35  thetom
+
+	* include/: mice_parse.h, mice_pseudo.h: - added header files for
+	libs
+
+2004-07-09 10:25  thetom
+
+	* include/: libmice.h, mice.h: - renamed
+
+2004-07-09 10:15  thetom
+
+	* modules/format/enhanced/Makefile.in: - removed
+
+2004-07-09 10:14  thetom
+
+	* libs/libmice_pseudo/libmice_pseudo.c,
+	modules/format/enhanced/Makefile.in,
+	modules/postprocessing/mysql/Makefile.am: -
+	modules/format/enhanced/Makefile.in shouldnt be in CVS! -
+	libs/libmice_pseudo/libmice_pseudo.c: finished reidentify function
+	- modules/postprocessing/mysql/Makefile.am removed syscall.c
+
+2004-07-09 10:06  thetom
+
+	* libs/: libsecprog.c, secprog.h, stdnet.h, libmice/stdnet.h,
+	libmice_pseudo/libmice_pseudo.c: - moved some files around
+
+2004-07-09 09:58  thetom
+
+	* libs/libmice_pseudo/libmice_pseudo.c: - updated but ascii
+	encoding functions still missing
+
+2004-07-07 00:46  thetom
+
+	* modules/postprocessing/mysql/: syscall.c, syscall.h: - removed
+
+2004-07-07 00:39  thetom
+
+	* modules/postprocessing/mysql/Makefile.am: - added support for
+	libmice and libmice_parse
+
+2004-07-07 00:38  thetom
+
+	* modules/postprocessing/mysql/: mice_mod_pop_mysql.c,
+	mice_mod_pop_mysql.h: - remove parsing and put it in libparse
+
+2004-07-07 00:37  thetom
+
+	* libs/: Makefile.am, dns_lib.c, dns_lib.h, errormsg.c, errormsg.h,
+	pid_file.c, setsignal.c, setsignal.h, stdnet.c,
+	libmice/Makefile.am, libmice/dns_lib.c, libmice/dns_lib.h,
+	libmice/errormsg.c, libmice/errormsg.h, libmice/pid_file.c,
+	libmice/setsignal.c, libmice/setsignal.h, libmice/stdnet.c,
+	libmice_parse/Makefile.am, libmice_parse/libmice_parse.c,
+	libmice_parse/syscall.c, libmice_parse/syscall.h,
+	libmice_pseudo/Makefile.am, libmice_pseudo/libmice_pseudo.c: -
+	added subdir for libmice, libmice_parse and libmice_pseudo - wrote
+	libmice_parse - started writing libmice_pseudo
+
+2004-07-07 00:33  thetom
+
+	* include/logformat.h: - logformat structure was heavily
+	enhanced!!!
+
+2004-07-07 00:30  thetom
+
+	* modules/format/enhanced/: syscall.c, syscall.h: - moved to
+	libmice_parse
+
+2004-07-07 00:28  thetom
+
+	* modules/format/enhanced/: Makefile.am, mice_mod_fmt_enhanced.c,
+	mice_mod_fmt_enhanced.h: - alpha version of enhanced logformat
+	module
+
+2004-07-07 00:24  thetom
+
+	* configure.ac: - added support for different mice libs
+
+2004-06-24 20:38  thetom
+
+	* ChangeLog: - updated
+
+2004-06-24 20:32  thetom
+
+	* include/logformat.h: - logformat a bit enhanced - removed deleted
+	pop modules from Makefile.am
+
+2004-06-24 20:30  thetom
+
+	* modules/format/enhanced/: mice_mod_fmt_enhanced.c,
+	mice_mod_fmt_enhanced.h: - just copied the functions from
+	mice_mod_pop_mysql - OPEN: functions need to be modified for format
+	module - OPEN: logformat.h needs to be enhanced
+
+2004-06-24 20:03  thetom
+
+	* modules/format/enhanced/: syscall.c, syscall.h: - added for
+	parsing
+
+2004-06-24 18:45  thetom
+
+	* etc/mice_mod_fmt_enhanced.conf, include/logformat.h,
+	modules/filter/regex/mice_mod_flt_regex.c,
+	modules/format/Makefile.am, modules/format/enhanced/Makefile.am,
+	modules/format/enhanced/Makefile.in, modules/format/enhanced/TODO,
+	modules/format/enhanced/checksum.c,
+	modules/format/enhanced/checksum.h, modules/format/enhanced/intl.h,
+	modules/format/enhanced/mice_mod_fmt_enhanced.c,
+	modules/format/enhanced/mice_mod_fmt_enhanced.conf,
+	modules/format/enhanced/mice_mod_fmt_enhanced.h,
+	modules/format/enhanced/parsecfg.c,
+	modules/format/enhanced/parsecfg.h: - added format module
+	"enhanced" - changed logformat structure
+
+2004-06-24 18:31  thetom
+
+	* client/dataforwarder/main.c: - changed argument list of modules -
+	changed calling-order of modules to format -> filter ->
+	pseudonymizer to ease the work of the modules by processing already
+	parsed data
+
+2004-06-24 18:27  thetom
+
+	* modules/postprocessing/mysql/mice_mod_pop_mysql.c: - fixed typo
+
+2004-06-24 18:24  thetom
+
+	*
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.c
+	: - changes cLogLine to cLogdata
+
+2004-06-24 18:19  thetom
+
+	* modules/filter/regex/mice_mod_flt_regex.c: - changed arguments
+
+2004-06-24 18:09  thetom
+
+	* modules/: filter/regex/mice_mod_flt_regex.c,
+	filter/regex/mice_mod_flt_regex.h,
+	format/simple/mice_mod_fmt_simple.c,
+	format/simple/mice_mod_fmt_simple.h,
+	pseudo/dummy/mice_mod_psd_empty.c,
+	pseudo/dummy/mice_mod_psd_empty.h: - added filetype argument for
+	*_func functions
+
+2004-06-24 17:41  thetom
+
+	* modules/postprocessing/: aa_regex/mice_mod_pop_aa_regex.c,
+	mysql/mice_mod_pop_mysql.c: - changes cLogLine to cLogdata to
+	reflect new data structure for binary data
+
+2004-06-20 13:23  thetom
+
+	* client/dataforwarder/main.c: - removed a-time check for regular
+	files
+
+2004-06-20 13:14  thetom
+
+	* client/dataforwarder/main.c: - FIXED: missing size calculus for
+	FileInfo[] when error occured but we already read something - OPEN:
+	still missing and duplicate reads
+
+2004-06-20 11:12  thetom
+
+	* ChangeLog: - updated
+
+2004-06-20 11:02  thetom
+
+	* client/dataforwarder/main.c: - cleaned up laus code - OPEN:
+	sometimes records are read multiple times - OPEN: sometimes records
+	are skipped - need to look at it later...
+
+2004-06-20 10:57  thetom
+
+	* client/dataforwarder/main.c: - cleaned up laus record parsing
+	code - OPEN: sometimes ready records multiple times - OPEN:
+	sometimes skips records - need to have a look on it later...
+
+2004-06-17 22:45  thetom
+
+	* client/dataforwarder/main.c: - made laus parsing work over more
+	then just one record ;) - laus code needs cleanup!!! - OPEN: we
+	seem just to get every thirs record only???
+
+2004-06-17 22:43  thetom
+
+	* modules/postprocessing/mysql/mice_mod_pop_mysql.c: - removed
+	skipping of record header because we dont forward it anymore
+
+2004-06-15 19:13  thetom
+
+	* modules/postprocessing/mysql/: mice_mod_pop_mysql.c, syscall.c: -
+	#ifdef was made to early in code, result: syscall parsing code
+	wasnt compiled - FIXED several bugs in syscall parsing code
+
+2004-06-15 16:22  thetom
+
+	* modules/postprocessing/syslog/mice_mod_pop_syslog.h: - just added
+	a newline at EOF to make gcc happy
+
+2004-06-15 13:07  thetom
+
+	* ChangeLog: - updated
+
+2004-06-15 12:21  thetom
+
+	* modules/postprocessing/mysql/: mice_mod_pop_mysql.c, syscall.c,
+	syscall.h: - cleaned up namespace
+
+2004-06-15 10:28  thetom
+
+	* client/dataforwarder/main.c: - removed debug_message()
+
+2004-06-15 09:12  thetom
+
+	* client/dataforwarder/main.c,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c: - LAuS support
+	seems not work now!!!!!
+
+2004-06-14 11:48  thetom
+
+	* ChangeLog: - updated
+
+2004-06-13 18:06  thetom
+
+	* etc/: bufferdaemon-aa.conf, bufferdaemon-mngmthost.conf,
+	bufferdaemon-rawlogdb.conf, bufferdaemon.conf: - changed for new
+	syntax
+
+2004-06-13 17:37  thetom
+
+	* client/dataforwarder/main.c: - fixed alot of problems with
+	parsing LAuS records (skipping laus file header) - message gots
+	still crippled after some iterations, maybe bytes_read calculus is
+	erroneous
+
+2004-06-13 17:33  thetom
+
+	* modules/postprocessing/mysql/mice_mod_pop_mysql.c: - LAuS code
+	seems to work now
+
+2004-06-13 17:30  thetom
+
+	* mysql/create_mysql_tab_for_raw_logs.txt: 
+	- added tables for LAuS
+
+2004-06-12 15:06  thetom
+
+	* libs/pid_file.c: - replaced tabs with spaces
+
+2004-06-12 00:59  thetom
+
+	* modules/postprocessing/mysql/: Makefile.am, mice_mod_pop_mysql.c,
+	syscall.c, syscall.h: - ADDED functionality to handle LAuS records
+	in a simple manner - OPEN: no argument parsing
+
+2004-06-12 00:52  thetom
+
+	* modules/format/simple/mice_mod_fmt_simple.c: - replaced strncpy
+	with memcpy
+
+2004-06-11 21:34  thetom
+
+	* server/buffer-daemon/bufferdaemon.h: - updated section names
+
+2004-06-11 21:33  thetom
+
+	* server/buffer-daemon/main.c: - changed occurence of "enc" into
+	"dec" and "out" into "pop"
+
+2004-06-06 14:32  thetom
+
+	* modules/postprocessing/mysql/mice_mod_pop_mysql.c,
+	mysql/create_mysql_tab_for_raw_logs.txt: - ADDED the stubs needed
+	for LAuS parsing - MISSING: syscall, netlink - NOT TESTED
+
+2004-06-04 14:18  thetom
+
+	* client/dataforwarder/main.c: - FIXED: number of copied bytes in
+	intReadFile() for LAuS - FIXED: return value in intReadFile() for
+	LAuS
+
+2004-05-31 15:03  thetom
+
+	* client/dataforwarder/main.c: - fixed jump marks - make sleep more
+	stable to avoid resssource starvation
+
+2004-05-31 15:01  thetom
+
+	* modules/postprocessing/mysql/mice_mod_pop_mysql.c: - disabled
+	LAuS support till it working correctly
+
+2004-05-31 13:25  thetom
+
+	* client/dataforwarder/main.c: - cleaned up some warning functions
+
+2004-05-31 12:20  thetom
+
+	* client/dataforwarder/main.c: - did some weird debugging of the
+	intReadFile part that reads and parses the LAuS stream files. Some
+	records seem not to have the right values assigned so I need to do
+	some bad hack workarounds to make the code work TAKE CARE: this
+	code may be very unstable
+
+2004-05-31 02:43  thetom
+
+	* etc/mice_mod_fmt_simple.conf: added missinf dot
+
+2004-05-21 16:47  thetom
+
+	* ChangeLog: - updated
+
+2004-05-21 16:46  thetom
+
+	* ChangeLog, client/dataforwarder/main.c, include/logformat.h: -
+	FIXED: file type detection, text file reading is working again -
+	BUGGY: LAuS file parsing is unfortunately still buggy
+
+2004-05-20 21:48  thetom
+
+	* client/dataforwarder/main.c: - fixed intReadFile() to return
+	bytes read
+
+2004-05-20 21:40  thetom
+
+	* client/dataforwarder/main.c: - added check for access time of a
+	file to get changes
+
+2004-05-20 21:29  thetom
+
+	* client/dataforwarder/main.c: - added missing free() to fix
+	memeory leak
+
+2004-05-20 20:39  thetom
+
+	* ChangeLog: - updated
+
+2004-05-20 20:27  thetom
+
+	* client/dataforwarder/main.c: - fixed segmentation fault while
+	going through FileInfo array
+
+2004-05-20 20:10  thetom
+
+	* client/dataforwarder/main.c: - changed DBG function - still
+	problems handling laus log files
+
+2004-05-20 19:29  thetom
+
+	* etc/: dataforwarder.conf, reactiondaemon.conf: changed default
+	PID file path
+
+2004-05-20 19:00  thetom
+
+	* client/dataforwarder/main.c: - added warning messages to
+	intReadFile() - added missing return(0) to intReadFile()
+
+2004-05-20 18:34  thetom
+
+	* etc/reactiondaemon.conf: changed module name
+
+2004-05-20 18:29  thetom
+
+	* client/dataforwarder/main.c: - did some minor test and fixes to
+	make code work
+
+2004-05-20 17:38  thetom
+
+	* etc/: bufferdaemon-aa.conf, bufferdaemon-mngmthost.conf,
+	bufferdaemon-rawlogdb.conf, bufferdaemon.conf, dataforwarder.conf,
+	reactiondaemon.conf: - changed module search path
+
+2004-05-20 15:43  thetom
+
+	* init-scripts/MICE-dataforwarder: - added startdebug<num> sections
+
+2004-05-19 08:40  thetom
+
+	* ChangeLog: - updated
+
+2004-05-19 00:20  thetom
+
+	* include/logformat.h, modules/postprocessing/mysql/Makefile.am,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c,
+	mysql/create_mysql_tab_for_raw_logs.txt: - added LAuS stubs for
+	MySQL module - added new table for LAuS records
+
+2004-05-19 00:14  thetom
+
+	* client/dataforwarder/: dataforwarder.h, main.c: - added
+	configurable LAuS support to dataforwarder
+
+2004-05-18 23:59  thetom
+
+	* configure.ac: - added important comment for checking special
+	laussrv functions
+
+2004-05-18 23:58  thetom
+
+	* configure.ac: - added check for liblaussrv
+
+2004-05-18 23:51  thetom
+
+	* client/dataforwarder/Makefile.am: - make use of new autoheader
+	var.
+
+2004-05-18 23:50  thetom
+
+	* configure.ac: - fixed AC_DEFINE()
+
+2004-05-18 23:39  thetom
+
+	* configure.ac: - added check for liblaus
+
+2004-04-26 10:09  thetom
+
+	* client/dataforwarder/main.c: - fixed usage of wrong structure
+
+2004-04-25 20:23  thetom
+
+	* ChangeLog: - updated
+
+2004-04-25 20:05  thetom
+
+	* ChangeLog, client/dataforwarder/Makefile.am,
+	client/dataforwarder/main.c, include/logformat.h: - modified
+	dataforwarder and header files to propagate log file type to other
+	M-ICE components
+
+2004-04-25 19:57  thetom
+
+	* client/dataforwarder/libmice.h, client/dataforwarder/logformat.h,
+	modules/decoding/logformat_twofish/libmice.h,
+	modules/decoding/webstat_unixdomain/libmice.h,
+	modules/format/simple/libmice.h,
+	modules/postprocessing/aa_regex/libmice.h,
+	modules/postprocessing/act_generic/libmice.h,
+	modules/postprocessing/mysql/libmice.h,
+	modules/postprocessing/syslog/libmice.h,
+	modules/pseudo/dummy/libmice.h, modules/reaction/dummy/libmice.h,
+	reaction-agents/rid_1_write_to_syslog/libmice.h,
+	reaction-agents/rid_2_send_to_alert_db/libmice.h,
+	reaction-agents/rid_4_countermeasure/libmice.h,
+	modules/decoding/idmef_twofish/logformat.h,
+	modules/decoding/logformat_twofish/logformat.h,
+	modules/format/simple/logformat.h,
+	modules/postprocessing/aa_regex/logformat.h,
+	modules/postprocessing/act_generic/logformat.h,
+	modules/postprocessing/mysql/logformat.h,
+	modules/pseudo/dummy/logformat.h: - removed superfulous header
+	files (libmice.h and logformat.h)
+
+2004-04-24 14:40  thetom
+
+	* ChangeLog: - updated
+
+2004-04-24 14:31  thetom
+
+	* client/dataforwarder/Makefile.am,
+	client/dataforwarder/dataforwarder.h, client/dataforwarder/main.c,
+	etc/dataforwarder.conf: - added a function that reads files
+	contents (intReadFile) to handle differen fileformats like "laus",
+	"scslog", "file" - the code is NOT tested!!! (reading LAuS file may
+	not work, reading normal files may not work TAKE CARE)
+
+2004-02-04 11:54  thetom
+
+	* INSTALL, configure.ac: - changed scrdir to top_srcdir
+
+2004-01-31 19:52  thetom
+
+	* server/buffer-daemon/main.c: - just some minor code cleanup
+
+2004-01-31 19:31  thetom
+
+	* server/buffer-daemon/main.c: - updated wording
+
+2004-01-25 17:55  thetom
+
+	* ChangeLog: - updated
+
+2004-01-25 17:54  thetom
+
+	* TODO: - added laus support task
+
+2004-01-18 19:21  thetom
+
+	* modules/postprocessing/mysql/TODO: - expanded todo list because
+	of mysql error happening (maybe a setup problem)
+
+2004-01-18 19:12  thetom
+
+	* TODO, etc/bufferdaemon.conf, etc/mice_mod_pop_aa_regex.conf,
+	etc/mice_mod_pop_act_generic.conf, etc/mice_mod_pop_mysql.conf,
+	etc/rid_2_send_to_alert_db.conf: - made config files reflect
+	installation - made bufferdaemon support multiple dec and pop
+	moduels
+
+2004-01-18 18:34  thetom
+
+	* server/buffer-daemon/main.c: - fixed incorrect detection on unix
+	domaoin socket usage
+
+2004-01-18 18:18  thetom
+
+	* modules/decoding/: idmef_twofish/Makefile.am,
+	logformat_twofish/Makefile.am: - fixed stupid use of line expansion
+	\
+
+2004-01-18 17:52  thetom
+
+	* modules/decoding/:
+	logformat_twofish/mice_mod_dec_logformat_twofish.c,
+	idmef_twofish/mice_mod_dec_idmef_twofish.c: - corrected typo for
+	conf file parsing
+
+2004-01-18 17:50  thetom
+
+	* server/buffer-daemon/libmice.h: - superfluous
+
+2004-01-17 13:48  thetom
+
+	* server/buffer-daemon/TODO: - just added
+
+2004-01-17 12:16  thetom
+
+	* TODO: - updated TODO list
+
+2004-01-17 00:12  thetom
+
+	* libs/pid_file.c: - added pid file source
+
+2004-01-16 21:53  thetom
+
+	* client/dataforwarder/dataforwarder.h,
+	client/dataforwarder/exchangefd.c,
+	client/dataforwarder/exchangefd.h, client/dataforwarder/intl.h,
+	client/dataforwarder/logformat.h, client/dataforwarder/main.c,
+	client/dataforwarder/pv.c, client/dataforwarder/pv.h,
+	client/dataforwarder/unixdomainsocket.c,
+	client/dataforwarder/unixdomainsocket.h, etc/Makefile.am,
+	etc/bufferdaemon-aa.conf, etc/bufferdaemon-mngmthost.conf,
+	etc/bufferdaemon-rawlogdb.conf, etc/bufferdaemon.conf,
+	etc/dataforwarder.conf, etc/mice_mod_dec_idmef_twofish.conf,
+	etc/mice_mod_dec_logformat_twofish.conf,
+	etc/mice_mod_flt_regex.conf, etc/mice_mod_fmt_simple.conf,
+	etc/mice_mod_pop_aa_regex.conf, etc/mice_mod_pop_act_generic.conf,
+	etc/mice_mod_pop_mysql.conf, etc/mice_mod_psd_empty.conf,
+	etc/mice_mod_rct_dummy.conf, etc/reactiondaemon.conf,
+	include/libmice.h, include/logformat.h,
+	init-scripts/MICE-bufferdaemon, init-scripts/MICE-bufferdaemon-aa,
+	init-scripts/MICE-bufferdaemon-mngmthost,
+	init-scripts/MICE-bufferdaemon-rawlogdb,
+	init-scripts/MICE-dataforwarder, init-scripts/MICE-reactiondaemon,
+	init-scripts/MICE-rid_1_write_to_syslog,
+	init-scripts/MICE-rid_2_send_to_alert_db,
+	init-scripts/MICE-rid_3_save_to_file,
+	init-scripts/MICE-rid_4_countermeasure, libs/Makefile.am,
+	libs/dns_lib.c, libs/dns_lib.h, libs/errormsg.c, libs/errormsg.h,
+	libs/libsecprog.c, libs/secprog.h, libs/setsignal.c,
+	libs/setsignal.h, libs/stdnet.c, libs/stdnet.h,
+	modules/decoding/idmef_twofish/checksum.c,
+	modules/decoding/idmef_twofish/checksum.h,
+	modules/decoding/idmef_twofish/idmef-mesg-format.h,
+	modules/decoding/idmef_twofish/intl.h,
+	modules/decoding/idmef_twofish/logformat.h,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.c,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.h,
+	modules/decoding/logformat_twofish/checksum.c,
+	modules/decoding/logformat_twofish/checksum.h,
+	modules/decoding/logformat_twofish/intl.h,
+	modules/decoding/logformat_twofish/logformat.h,
+	modules/decoding/webstat_unixdomain/intl.h,
+	modules/decoding/webstat_unixdomain/webstat_response_format.h,
+	modules/filter/regex/intl.h,
+	modules/filter/regex/mice_mod_flt_regex.c,
+	modules/filter/regex/mice_mod_flt_regex.h,
+	modules/format/simple/checksum.h, modules/format/simple/intl.h,
+	modules/format/simple/logformat.h,
+	modules/format/simple/mice_mod_fmt_simple.c,
+	modules/format/simple/mice_mod_fmt_simple.conf,
+	modules/format/simple/mice_mod_fmt_simple.h,
+	modules/postprocessing/aa_regex/checksum.c,
+	modules/postprocessing/aa_regex/checksum.h,
+	modules/postprocessing/aa_regex/idmef-mesg-format.h,
+	modules/postprocessing/aa_regex/intl.h,
+	modules/postprocessing/aa_regex/logformat.h,
+	modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.c,
+	modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.h,
+	modules/postprocessing/act_generic/checksum.c,
+	modules/postprocessing/act_generic/checksum.h,
+	modules/postprocessing/act_generic/idmef-mesg-format.h,
+	modules/postprocessing/act_generic/intl.h,
+	modules/postprocessing/act_generic/logformat.h,
+	modules/postprocessing/act_generic/mice_mod_pop_act_generic.c,
+	modules/postprocessing/act_generic/rid-mesg-format.h,
+	modules/postprocessing/mysql/intl.h,
+	modules/postprocessing/mysql/logformat.h,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.h,
+	modules/postprocessing/syslog/main.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.h,
+	modules/pseudo/dummy/intl.h, modules/pseudo/dummy/logformat.h,
+	modules/pseudo/dummy/mice_mod_psd_empty.c,
+	modules/pseudo/dummy/mice_mod_psd_empty.h,
+	modules/reaction/dummy/intl.h,
+	modules/reaction/dummy/mice_mod_rct_dummy.c,
+	modules/reaction/dummy/mice_mod_rct_dummy.h,
+	reaction-agents/rid_1_write_to_syslog/idmef-mesg-format.h,
+	reaction-agents/rid_1_write_to_syslog/rid-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/idmef-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/rid-mesg-format.h,
+	reaction-agents/rid_3_save_to_file/idmef-mesg-format.h,
+	reaction-agents/rid_3_save_to_file/rid-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/checksum.c,
+	reaction-agents/rid_4_countermeasure/checksum.h,
+	reaction-agents/rid_4_countermeasure/idmef-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/reaction-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/rid-mesg-format.h,
+	server/buffer-daemon/bufferdaemon.h, server/buffer-daemon/main.c,
+	server/reaction-daemon/checksum.c,
+	server/reaction-daemon/checksum.h,
+	server/reaction-daemon/idmef-mesg-format.h,
+	server/reaction-daemon/main.c,
+	server/reaction-daemon/reaction-mesg-format.h,
+	server/reaction-daemon/reactiondaemon.h,
+	server/reaction-daemon/rid-mesg-format.h: - cleaned up code -
+	addedmake_pidfile() function to libmice - replaced function for
+	handling pid-files in bufferdaemon, dataforwarder and
+	reactiondaemon
+
+2004-01-15 19:01  thetom
+
+	* TODO, client/dataforwarder/TODO,
+	modules/decoding/idmef_twofish/TODO,
+	modules/decoding/logformat_twofish/TODO,
+	modules/decoding/webstat_unixdomain/TODO,
+	modules/postprocessing/aa_regex/TODO,
+	modules/postprocessing/act_generic/TODO,
+	modules/postprocessing/mysql/TODO, modules/reaction/dummy/TODO: -
+	updated TODO files and translated them
+
+2004-01-13 12:53  thetom
+
+	* client/dataforwarder/Makefile.am, client/dataforwarder/main.c,
+	include/libmice.h, modules/decoding/Makefile.am,
+	modules/postprocessing/Makefile.am,
+	modules/pseudo/dummy/Makefile.am,
+	reaction-agents/rid_1_write_to_syslog/Makefile.am,
+	reaction-agents/rid_2_send_to_alert_db/Makefile.am,
+	reaction-agents/rid_4_countermeasure/Makefile.am,
+	server/buffer-daemon/Makefile.am, server/buffer-daemon/main.c,
+	server/reaction-daemon/Makefile.am, server/reaction-daemon/main.c:
+	- made this code compile after adding libmice support
+
+2004-01-13 09:52  thetom
+
+	* include/dns_lib.h, include/errormsg.h, include/secprog.h,
+	include/stdnet.h, server/reaction-daemon/secprog.h: - removed
+	superfluous files
+
+2004-01-07 16:47  thetom
+
+	* configure.ac: - add LDFLAFS and CFLAGS for libxml2
+
+2004-01-07 00:15  thetom
+
+	* configure.ac, reaction-agents/rid_2_send_to_alert_db/Makefile.am,
+	reaction-agents/rid_4_countermeasure/Makefile.am: - make the code
+	compile
+
+2004-01-05 19:43  pavlov_alex
+
+	* configure.ac: [no log message]
+
+2004-01-05 17:09  thetom
+
+	* configure.ac, include/libmice.h,
+	server/buffer-daemon/Makefile.am: - added LDFLAGS to configure.ac
+	to make our ./libs/ available
+
+2004-01-05 15:59  pavlov_alex
+
+	* client/dataforwarder/: setsignal.h, Makefile.am: [no log message]
+
+2004-01-05 15:51  pavlov_alex
+
+	* client/dataforwarder/: Makefile.am, main.c, setsignal.c: [no log
+	message]
+
+2004-01-05 15:40  pavlov_alex
+
+	* reaction-agents/rid_3_save_to_file/Makefile.am: [no log message]
+
+2004-01-05 15:21  pavlov_alex
+
+	* client/dataforwarder/libmice.h, client/dataforwarder/pv.c,
+	client/dataforwarder/unixdomainsocket.h,
+	modules/pseudo/dummy/Makefile.am: [no log message]
+
+2004-01-05 14:32  pavlov_alex
+
+	* modules/pseudo/dummy/libmice.h: [no log message]
+
+2004-01-05 11:59  pavlov_alex
+
+	* include/libmice.h: [no log message]
+
+2004-01-05 11:18  pavlov_alex
+
+	* server/reaction-daemon/: main.c, Makefile.am: [no log message]
+
+2004-01-05 11:15  pavlov_alex
+
+	* server/buffer-daemon/main.c: [no log message]
+
+2004-01-05 11:11  pavlov_alex
+
+	* reaction-agents/rid_4_countermeasure/: setsignal.c, setsignal.h,
+	Makefile.am: [no log message]
+
+2004-01-05 11:06  pavlov_alex
+
+	* reaction-agents/rid_3_save_to_file/: setsignal.c, setsignal.h,
+	Makefile.am: [no log message]
+
+2004-01-05 11:02  pavlov_alex
+
+	* reaction-agents/rid_2_send_to_alert_db/: setsignal.c,
+	setsignal.h, Makefile.am: [no log message]
+
+2004-01-05 10:56  pavlov_alex
+
+	* reaction-agents/rid_1_write_to_syslog/: setsignal.c, setsignal.h,
+	Makefile.am: [no log message]
+
+2004-01-05 01:23  pavlov_alex
+
+	* server/buffer-daemon/: setsignal.c, setsignal.h, Makefile.am: [no
+	log message]
+
+2004-01-05 01:18  pavlov_alex
+
+	* server/reaction-daemon/: setsignal.c, setsignal.h, libsecprog.c,
+	secprog.h: [no log message]
+
+2004-01-05 01:14  pavlov_alex
+
+	* server/reaction-daemon/: dns_lib.c, dns_lib.h, errormsg.c,
+	errormsg.h, libsecprog.c, secprog.h, stdnet.c, stdnet.h: [no log
+	message]
+
+2004-01-05 01:11  pavlov_alex
+
+	* server/buffer-daemon/main.c: [no log message]
+
+2004-01-05 01:06  pavlov_alex
+
+	* server/buffer-daemon/: libmice.h, libsecprog.c, secprog.h,
+	Makefile.am: [no log message]
+
+2004-01-05 01:00  pavlov_alex
+
+	* server/buffer-daemon/Makefile.am: [no log message]
+
+2004-01-05 00:56  pavlov_alex
+
+	* server/buffer-daemon/: dns_lib.c, dns_lib.h, errormsg.c,
+	errormsg.h, stdnet.c, stdnet.h: [no log message]
+
+2004-01-05 00:50  pavlov_alex
+
+	* reaction-agents/rid_4_countermeasure/libmice.h: [no log message]
+
+2004-01-05 00:46  pavlov_alex
+
+	* reaction-agents/rid_4_countermeasure/: errormsg.c, errormsg.h,
+	stdnet.c, stdnet.h, Makefile.am, main.c: [no log message]
+
+2004-01-05 00:42  pavlov_alex
+
+	* reaction-agents/: rid_3_save_to_file/Makefile.am,
+	rid_1_write_to_syslog/Makefile.am, rid_3_save_to_file/main.c: [no
+	log message]
+
+2004-01-05 00:39  pavlov_alex
+
+	* reaction-agents/: rid_2_send_to_alert_db/main.c,
+	rid_3_save_to_file/errormsg.c, rid_3_save_to_file/errormsg.h: [no
+	log message]
+
+2004-01-05 00:35  pavlov_alex
+
+	* reaction-agents/rid_2_send_to_alert_db/: errormsg.c, errormsg.h,
+	libmice.h, Makefile.am: [no log message]
+
+2004-01-05 00:31  pavlov_alex
+
+	* reaction-agents/rid_1_write_to_syslog/: Makefile.am, main.c,
+	libmice.h: [no log message]
+
+2004-01-05 00:27  pavlov_alex
+
+	* modules/reaction/dummy/libmice.h,
+	modules/reaction/dummy/mice_mod_rct_dummy.c,
+	reaction-agents/rid_1_write_to_syslog/errormsg.c,
+	reaction-agents/rid_1_write_to_syslog/errormsg.h: [no log message]
+
+2004-01-05 00:23  pavlov_alex
+
+	* modules/: pseudo/dummy/mice_mod_psd_empty.h,
+	reaction/dummy/errormsg.c, reaction/dummy/errormsg.h,
+	reaction/dummy/Makefile.am: [no log message]
+
+2004-01-05 00:18  pavlov_alex
+
+	* modules/pseudo/dummy/: errormsg.c, errormsg.h, Makefile.am,
+	libmice.h: [no log message]
+
+2004-01-05 00:01  pavlov_alex
+
+	* modules/postprocessing/syslog/: libmice.h, main.c: [no log
+	message]
+
+2004-01-04 23:57  pavlov_alex
+
+	* modules/postprocessing/syslog/: Makefile.am,
+	mice_mod_pop_syslog.c: [no log message]
+
+2004-01-04 23:51  pavlov_alex
+
+	* modules/postprocessing/: mysql/mice_mod_pop_mysql.c,
+	mysql/libmice.h, syslog/errormsg.c, syslog/errormsg.h: [no log
+	message]
+
+2004-01-04 23:46  pavlov_alex
+
+	* modules/postprocessing/mysql/: errormsg.c, errormsg.h,
+	Makefile.am: [no log message]
+
+2004-01-04 23:38  pavlov_alex
+
+	* modules/postprocessing/act_generic/: libmice.h,
+	mice_mod_pop_act_generic.c: [no log message]
+
+2004-01-04 23:31  pavlov_alex
+
+	* modules/postprocessing/act_generic/: dns_lib.c, dns_lib.h,
+	errormsg.c, errormsg.h, stdnet.c, stdnet.h, Makefile.am: [no log
+	message]
+
+2004-01-04 23:15  pavlov_alex
+
+	* modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.c: [no log
+	message]
+
+2004-01-04 23:10  pavlov_alex
+
+	* modules/postprocessing/aa_regex/: dns_lib.c, dns_lib.h,
+	errormsg.c, errormsg.h, stdnet.c, stdnet.h: [no log message]
+
+2004-01-04 23:04  pavlov_alex
+
+	* modules/postprocessing/aa_regex/: Makefile.am, libmice.h: [no log
+	message]
+
+2004-01-04 22:56  pavlov_alex
+
+	* modules/format/simple/: errormsg.c, errormsg.h: [no log message]
+
+2004-01-04 22:53  pavlov_alex
+
+	* modules/format/simple/: libmice.h, dns_lib.c, dns_lib.h: [no log
+	message]
+
+2004-01-04 22:49  pavlov_alex
+
+	* modules/: filter/regex/Makefile.am, format/simple/Makefile.am,
+	format/simple/mice_mod_fmt_simple.h: [no log message]
+
+2004-01-04 22:46  pavlov_alex
+
+	* modules/filter/regex/: mice_mod_flt_regex.h, errormsg.c,
+	errormsg.h: [no log message]
+
+2004-01-04 22:42  pavlov_alex
+
+	* modules/decoding/webstat_unixdomain/Makefile.am: [no log message]
+
+2004-01-04 22:38  pavlov_alex
+
+	* client/dataforwarder/Makefile.am,
+	modules/decoding/idmef_twofish/Makefile.am,
+	modules/decoding/logformat_twofish/Makefile.am: [no log message]
+
+2004-01-04 22:32  pavlov_alex
+
+	* configure.ac: [no log message]
+
+2004-01-04 22:25  pavlov_alex
+
+	* modules/decoding/webstat_unixdomain/: errormsg.c, errormsg.h,
+	Makefile.am: [no log message]
+
+2004-01-04 22:22  pavlov_alex
+
+	* modules/decoding/logformat_twofish/libmice.h: [no log message]
+
+2004-01-04 22:18  pavlov_alex
+
+	* modules/decoding/webstat_unixdomain/libmice.h: [no log message]
+
+2004-01-04 22:14  pavlov_alex
+
+	*
+	modules/decoding/webstat_unixdomain/mice_mod_dec_webstat_unixdomain
+	.c: [no log message]
+
+2004-01-04 22:09  pavlov_alex
+
+	* modules/decoding/logformat_twofish/stdnet.h: [no log message]
+
+2004-01-04 22:06  pavlov_alex
+
+	* modules/decoding/logformat_twofish/stdnet.c: [no log message]
+
+2004-01-04 21:57  pavlov_alex
+
+	* modules/decoding/logformat_twofish/: dns_lib.h, errormsg.h,
+	errormsg.c: [no log message]
+
+2004-01-04 21:53  pavlov_alex
+
+	* modules/decoding/logformat_twofish/dns_lib.c: [no log message]
+
+2004-01-04 21:38  pavlov_alex
+
+	* modules/decoding/logformat_twofish/: Makefile.am,
+	mice_mod_dec_logformat_twofish.c: [no log message]
+
+2004-01-04 21:33  pavlov_alex
+
+	* modules/decoding/idmef_twofish/: stdnet.c, stdnet.h,
+	mice_mod_dec_idmef_twofish.c: [no log message]
+
+2004-01-04 21:29  pavlov_alex
+
+	* modules/decoding/idmef_twofish/: errormsg.c, errormsg.h: [no log
+	message]
+
+2004-01-04 21:25  pavlov_alex
+
+	* modules/decoding/idmef_twofish/: Makefile.am, dns_lib.c,
+	dns_lib.h: [no log message]
+
+2004-01-04 21:04  pavlov_alex
+
+	* client/dataforwarder/: secprog.h, stdnet.c, stdnet.h: [no log
+	message]
+
+2004-01-04 20:51  pavlov_alex
+
+	* client/dataforwarder/: errormsg.h, libsecprog.c: [no log message]
+
+2004-01-04 20:47  pavlov_alex
+
+	* client/dataforwarder/: dns_lib.c, dns_lib.h, errormsg.c: [no log
+	message]
+
+2004-01-04 19:58  pavlov_alex
+
+	* client/dataforwarder/exchangefd.h: [no log message]
+
+2004-01-04 19:53  pavlov_alex
+
+	* include/libmice.h: [no log message]
+
+2004-01-04 19:38  pavlov_alex
+
+	* client/dataforwarder/: main.c, exchangefd.c: [no log message]
+
+2004-01-04 19:30  pavlov_alex
+
+	* client/dataforwarder/: libmice.h, Makefile.am: [no log message]
+
+2004-01-04 19:27  pavlov_alex
+
+	* include/libmice.h: [no log message]
+
+2004-01-03 18:58  thetom
+
+	* INSTALL, Makefile.am, configure.ac, libs/Makefile.am: - added
+	support for libs/
+
+2004-01-03 18:18  thetom
+
+	* libs/Makefile.am: - added right source files
+
+2004-01-03 18:16  thetom
+
+	* libs/Makefile.am: - removed old laus stuff
+
+2003-09-10 08:52  thetom
+
+	* ChangeLog: - updated
+
+2003-09-09 21:51  thetom
+
+	* TODO: - updated
+
+2003-09-09 21:23  thetom
+
+	* AUTHORS, ChangeLog, INSTALL, Makefile.am, NEWS, README, TODO,
+	configure.ac, etc/bufferdaemon-mngmthost.conf,
+	etc/libresponse_mice_idmef.conf, etc/match_file_aa_webstat.txt,
+	etc/mice_mod_fmt_simple.conf, etc/mice_mod_pop_aa_regex.conf,
+	etc/mice_mod_pop_aa_webstat_fifo.conf,
+	etc/mice_mod_pop_act_generic.conf, etc/mice_mod_pop_mysql.conf,
+	etc/mice_mod_psd_empty.conf, etc/mice_mod_rct_dummy.conf,
+	etc/reactiondaemon.conf, etc/rid_2_send_to_alert_db.conf,
+	etc/rid_3_save_to_file.conf, etc/rid_4_countermeasure.conf,
+	etc/Makefile.am, etc/bufferdaemon-aa.conf,
+	etc/bufferdaemon-rawlogdb.conf, etc/bufferdaemon.conf,
+	etc/dataforwarder.conf, etc/idmef-message.dtd,
+	etc/match_file_aa_regex.txt, etc/mice_mod_dec_idmef_twofish.conf,
+	etc/mice_mod_dec_logformat_twofish.conf,
+	etc/mice_mod_dec_webstat_unixdomain.conf,
+	etc/mice_mod_flt_regex.conf, etc/mice_mod_pop_webstat_idmef.conf,
+	etc/rid_1_write_to_syslog.conf, etc/scslog-ctrl.conf,
+	libs/setsignal.c, libs/setsignal.h, libs/Makefile.am,
+	libs/dns_lib.c, libs/dns_lib.h, libs/errormsg.c, libs/errormsg.h,
+	libs/libsecprog.c, libs/stdnet.c, libs/stdnet.h,
+	client/Makefile.am, client/dataforwarder/TODO,
+	client/dataforwarder/pv.c, client/dataforwarder/pv.h,
+	init-scripts/MICE-bufferdaemon, init-scripts/MICE-bufferdaemon-aa,
+	init-scripts/MICE-bufferdaemon-mngmthost,
+	init-scripts/MICE-bufferdaemon-rawlogdb,
+	init-scripts/MICE-dataforwarder, init-scripts/MICE-reactiondaemon,
+	init-scripts/MICE-rid_1_write_to_syslog,
+	init-scripts/MICE-rid_2_send_to_alert_db,
+	init-scripts/MICE-rid_3_save_to_file,
+	init-scripts/MICE-rid_4_countermeasure,
+	init-scripts/MICE-syscallmonitor, init-scripts/Makefile.am,
+	libs/secprog.h, mysql/create_mysql_tab_for_alert_logs.txt,
+	mysql/create_mysql_tab_for_raw_logs.txt,
+	client/dataforwarder/README, client/dataforwarder/logformat.h,
+	client/dataforwarder/parsecfg.c, client/dataforwarder/parsecfg.h,
+	client/dataforwarder/setsignal.c, client/dataforwarder/setsignal.h,
+	client/dataforwarder/unixdomainsocket.c,
+	client/dataforwarder/unixdomainsocket.h,
+	client/dataforwarder/Makefile.am,
+	client/dataforwarder/dataforwarder.h,
+	client/dataforwarder/exchangefd.c,
+	client/dataforwarder/exchangefd.h, client/dataforwarder/intl.h,
+	client/dataforwarder/libsecprog.c, client/dataforwarder/errormsg.c,
+	client/dataforwarder/errormsg.h, client/dataforwarder/main.c,
+	client/dataforwarder/INSTALL, client/dataforwarder/dns_lib.c,
+	client/dataforwarder/dns_lib.h, client/dataforwarder/secprog.h,
+	client/dataforwarder/stdnet.c, client/dataforwarder/stdnet.h,
+	modules/Makefile.am, modules/postprocessing/Makefile.am,
+	modules/postprocessing/aa_regex/TODO,
+	modules/postprocessing/aa_regex/parsecfg.c,
+	modules/postprocessing/aa_regex/Makefile.am,
+	modules/postprocessing/aa_regex/checksum.c,
+	modules/postprocessing/aa_regex/checksum.h,
+	modules/postprocessing/aa_regex/errormsg.c,
+	modules/postprocessing/aa_regex/errormsg.h,
+	modules/postprocessing/aa_regex/intl.h,
+	modules/postprocessing/aa_regex/logformat.h,
+	modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.c,
+	modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.h,
+	modules/postprocessing/aa_regex/parsecfg.h,
+	modules/postprocessing/aa_regex/dns_lib.c,
+	modules/postprocessing/aa_regex/dns_lib.h,
+	modules/postprocessing/aa_regex/idmef-mesg-format.h,
+	modules/postprocessing/aa_regex/idmefxml.h,
+	modules/postprocessing/aa_regex/stdnet.c,
+	modules/postprocessing/aa_regex/stdnet.h,
+	modules/postprocessing/act_generic/Makefile.am,
+	modules/postprocessing/act_generic/TODO,
+	modules/postprocessing/act_generic/errormsg.c,
+	modules/postprocessing/act_generic/intl.h,
+	modules/postprocessing/act_generic/logformat.h,
+	modules/postprocessing/act_generic/parsecfg.c,
+	modules/postprocessing/act_generic/parsecfg.h,
+	modules/postprocessing/act_generic/rid-mesg-format.h,
+	modules/postprocessing/act_generic/checksum.c,
+	modules/postprocessing/act_generic/checksum.h,
+	modules/postprocessing/act_generic/dns_lib.c,
+	modules/postprocessing/act_generic/dns_lib.h,
+	modules/postprocessing/act_generic/errormsg.h,
+	modules/postprocessing/act_generic/idmef-mesg-format.h,
+	modules/postprocessing/act_generic/idmefxml.h,
+	modules/postprocessing/act_generic/mice_mod_pop_act_generic.c,
+	modules/postprocessing/act_generic/mice_mod_pop_act_generic.h,
+	modules/postprocessing/act_generic/stdnet.c,
+	modules/postprocessing/act_generic/stdnet.h,
+	modules/postprocessing/mysql/Makefile.am,
+	modules/postprocessing/mysql/TODO,
+	modules/postprocessing/mysql/errormsg.c,
+	modules/postprocessing/mysql/errormsg.h,
+	modules/postprocessing/mysql/intl.h,
+	modules/postprocessing/mysql/logformat.h,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.h,
+	modules/postprocessing/mysql/parsecfg.c,
+	modules/postprocessing/mysql/parsecfg.h,
+	modules/postprocessing/syslog/Makefile.am,
+	modules/postprocessing/syslog/errormsg.c,
+	modules/postprocessing/syslog/errormsg.h,
+	modules/postprocessing/syslog/main.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.h,
+	modules/decoding/Makefile.am, modules/decoding/idmef_twofish/TODO,
+	modules/decoding/idmef_twofish/Makefile.am,
+	modules/decoding/idmef_twofish/intl.h,
+	modules/decoding/idmef_twofish/logformat.h,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.c,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.h,
+	modules/decoding/idmef_twofish/parsecfg.c,
+	modules/decoding/idmef_twofish/parsecfg.h,
+	modules/decoding/idmef_twofish/checksum.c,
+	modules/decoding/idmef_twofish/checksum.h,
+	modules/decoding/idmef_twofish/dns_lib.c,
+	modules/decoding/idmef_twofish/dns_lib.h,
+	modules/decoding/idmef_twofish/errormsg.c,
+	modules/decoding/idmef_twofish/errormsg.h,
+	modules/decoding/idmef_twofish/idmef-mesg-format.h,
+	modules/decoding/idmef_twofish/stdnet.c,
+	modules/decoding/idmef_twofish/stdnet.h,
+	modules/decoding/logformat_twofish/TODO,
+	modules/decoding/logformat_twofish/Makefile.am,
+	modules/decoding/logformat_twofish/errormsg.c,
+	modules/decoding/logformat_twofish/intl.h,
+	modules/decoding/logformat_twofish/logformat.h,
+	modules/decoding/logformat_twofish/parsecfg.c,
+	modules/decoding/logformat_twofish/parsecfg.h,
+	modules/decoding/logformat_twofish/checksum.c,
+	modules/decoding/logformat_twofish/checksum.h,
+	modules/decoding/logformat_twofish/dns_lib.c,
+	modules/decoding/logformat_twofish/dns_lib.h,
+	modules/decoding/logformat_twofish/errormsg.h,
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.c
+	,
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.h
+	, modules/decoding/logformat_twofish/stdnet.c,
+	modules/decoding/logformat_twofish/stdnet.h,
+	modules/decoding/webstat_unixdomain/TODO,
+	modules/decoding/webstat_unixdomain/mice_mod_dec_webstat_unixdomain
+	.c,
+	modules/decoding/webstat_unixdomain/mice_mod_dec_webstat_unixdomain
+	.h, modules/decoding/webstat_unixdomain/parsecfg.c,
+	modules/decoding/webstat_unixdomain/Makefile.am,
+	modules/decoding/webstat_unixdomain/errormsg.c,
+	modules/decoding/webstat_unixdomain/errormsg.h,
+	modules/decoding/webstat_unixdomain/intl.h,
+	modules/decoding/webstat_unixdomain/parsecfg.h,
+	modules/decoding/webstat_unixdomain/webstat_response_format.h,
+	modules/filter/Makefile.am, modules/filter/regex/TODO,
+	modules/filter/regex/Makefile.am, modules/filter/regex/errormsg.c,
+	modules/filter/regex/errormsg.h, modules/filter/regex/intl.h,
+	modules/filter/regex/mice_mod_flt_regex.c,
+	modules/filter/regex/mice_mod_flt_regex.h,
+	modules/filter/regex/parsecfg.c, modules/filter/regex/parsecfg.h,
+	modules/format/Makefile.am, modules/format/simple/TODO,
+	modules/format/simple/Makefile.am, modules/format/simple/intl.h,
+	modules/format/simple/logformat.h,
+	modules/format/simple/mice_mod_fmt_simple.c,
+	modules/format/simple/mice_mod_fmt_simple.conf,
+	modules/format/simple/mice_mod_fmt_simple.h,
+	modules/format/simple/parsecfg.c, modules/format/simple/parsecfg.h,
+	modules/format/simple/checksum.c, modules/format/simple/checksum.h,
+	modules/format/simple/dns_lib.c, modules/format/simple/dns_lib.h,
+	modules/format/simple/errormsg.c, modules/format/simple/errormsg.h,
+	modules/pseudo/Makefile.am, modules/pseudo/dummy/TODO,
+	modules/pseudo/dummy/Makefile.am, modules/pseudo/dummy/errormsg.c,
+	modules/pseudo/dummy/errormsg.h, modules/pseudo/dummy/intl.h,
+	modules/pseudo/dummy/logformat.h,
+	modules/pseudo/dummy/mice_mod_psd_empty.c,
+	modules/pseudo/dummy/mice_mod_psd_empty.h,
+	modules/pseudo/dummy/parsecfg.c, modules/pseudo/dummy/parsecfg.h,
+	modules/reaction/Makefile.am, modules/reaction/dummy/TODO,
+	modules/reaction/dummy/Makefile.am,
+	modules/reaction/dummy/errormsg.c,
+	modules/reaction/dummy/errormsg.h, modules/reaction/dummy/intl.h,
+	modules/reaction/dummy/mice_mod_rct_dummy.c,
+	modules/reaction/dummy/mice_mod_rct_dummy.h,
+	modules/reaction/dummy/parsecfg.c,
+	modules/reaction/dummy/parsecfg.h, server/Makefile.am,
+	server/buffer-daemon/parsecfg.c, server/buffer-daemon/parsecfg.h,
+	server/buffer-daemon/setsignal.c, server/buffer-daemon/setsignal.h,
+	server/buffer-daemon/Makefile.am,
+	server/buffer-daemon/bufferdaemon.h, server/buffer-daemon/intl.h,
+	server/buffer-daemon/libsecprog.c, server/buffer-daemon/errormsg.c,
+	server/buffer-daemon/errormsg.h, server/buffer-daemon/main.c,
+	server/buffer-daemon/dns_lib.c, server/buffer-daemon/dns_lib.h,
+	server/buffer-daemon/secprog.h, server/buffer-daemon/stdnet.c,
+	server/buffer-daemon/stdnet.h,
+	server/reaction-daemon/reactiondaemon.h,
+	server/reaction-daemon/parsecfg.c,
+	server/reaction-daemon/parsecfg.h,
+	server/reaction-daemon/reaction-mesg-format.h,
+	server/reaction-daemon/setsignal.c,
+	server/reaction-daemon/setsignal.h,
+	server/reaction-daemon/Makefile.am, server/reaction-daemon/intl.h,
+	server/reaction-daemon/libsecprog.c,
+	server/reaction-daemon/checksum.c,
+	server/reaction-daemon/checksum.h,
+	server/reaction-daemon/errormsg.c,
+	server/reaction-daemon/errormsg.h, server/reaction-daemon/main.c,
+	server/reaction-daemon/rid-mesg-format.h,
+	reaction-agents/Makefile.am, server/reaction-daemon/dns_lib.c,
+	server/reaction-daemon/dns_lib.h,
+	server/reaction-daemon/idmef-mesg-format.h,
+	server/reaction-daemon/secprog.h, server/reaction-daemon/stdnet.c,
+	server/reaction-daemon/stdnet.h,
+	reaction-agents/rid_1_write_to_syslog/Makefile.am,
+	reaction-agents/rid_1_write_to_syslog/errormsg.c,
+	reaction-agents/rid_1_write_to_syslog/errormsg.h,
+	reaction-agents/rid_1_write_to_syslog/idmef-mesg-format.h,
+	reaction-agents/rid_1_write_to_syslog/intl.h,
+	reaction-agents/rid_1_write_to_syslog/main.c,
+	reaction-agents/rid_1_write_to_syslog/parsecfg.c,
+	reaction-agents/rid_1_write_to_syslog/parsecfg.h,
+	reaction-agents/rid_1_write_to_syslog/rid-mesg-format.h,
+	reaction-agents/rid_1_write_to_syslog/setsignal.c,
+	reaction-agents/rid_1_write_to_syslog/setsignal.h,
+	reaction-agents/rid_3_save_to_file/Makefile.am,
+	reaction-agents/rid_3_save_to_file/intl.h,
+	reaction-agents/rid_3_save_to_file/main.c,
+	reaction-agents/rid_3_save_to_file/parsecfg.c,
+	reaction-agents/rid_3_save_to_file/parsecfg.h,
+	reaction-agents/rid_3_save_to_file/rid-mesg-format.h,
+	reaction-agents/rid_3_save_to_file/setsignal.c,
+	reaction-agents/rid_3_save_to_file/setsignal.h,
+	reaction-agents/rid_2_send_to_alert_db/parsecfg.c,
+	reaction-agents/rid_3_save_to_file/errormsg.c,
+	reaction-agents/rid_3_save_to_file/errormsg.h,
+	reaction-agents/rid_3_save_to_file/idmef-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/Makefile.am,
+	reaction-agents/rid_2_send_to_alert_db/errormsg.c,
+	reaction-agents/rid_2_send_to_alert_db/errormsg.h,
+	reaction-agents/rid_2_send_to_alert_db/idmef-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/intl.h,
+	reaction-agents/rid_2_send_to_alert_db/main.c,
+	reaction-agents/rid_2_send_to_alert_db/parsecfg.h,
+	reaction-agents/rid_2_send_to_alert_db/rid-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/setsignal.c,
+	reaction-agents/rid_2_send_to_alert_db/setsignal.h,
+	reaction-agents/rid_4_countermeasure/Makefile.am,
+	reaction-agents/rid_4_countermeasure/intl.h,
+	reaction-agents/rid_4_countermeasure/parsecfg.c,
+	reaction-agents/rid_4_countermeasure/parsecfg.h,
+	reaction-agents/rid_4_countermeasure/reaction-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/setsignal.c,
+	reaction-agents/rid_4_countermeasure/setsignal.h,
+	reaction-agents/rid_4_countermeasure/checksum.c,
+	reaction-agents/rid_4_countermeasure/checksum.h,
+	reaction-agents/rid_4_countermeasure/errormsg.c,
+	reaction-agents/rid_4_countermeasure/errormsg.h,
+	reaction-agents/rid_4_countermeasure/main.c,
+	reaction-agents/rid_4_countermeasure/rid-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/stdnet.c,
+	reaction-agents/rid_4_countermeasure/stdnet.h, include/dns_lib.h,
+	include/errormsg.h, include/intl.h, include/logformat.h,
+	include/parsecfg.h, include/secprog.h, include/stdnet.h,
+	reaction-agents/rid_4_countermeasure/idmef-mesg-format.h: Modular
+	Intrusion Countermeasure
+
+2003-09-09 21:23  thetom
+
+	* AUTHORS, ChangeLog, INSTALL, Makefile.am, NEWS, README, TODO,
+	configure.ac, etc/bufferdaemon-mngmthost.conf,
+	etc/libresponse_mice_idmef.conf, etc/match_file_aa_webstat.txt,
+	etc/mice_mod_fmt_simple.conf, etc/mice_mod_pop_aa_regex.conf,
+	etc/mice_mod_pop_aa_webstat_fifo.conf,
+	etc/mice_mod_pop_act_generic.conf, etc/mice_mod_pop_mysql.conf,
+	etc/mice_mod_psd_empty.conf, etc/mice_mod_rct_dummy.conf,
+	etc/reactiondaemon.conf, etc/rid_2_send_to_alert_db.conf,
+	etc/rid_3_save_to_file.conf, etc/rid_4_countermeasure.conf,
+	etc/Makefile.am, etc/bufferdaemon-aa.conf,
+	etc/bufferdaemon-rawlogdb.conf, etc/bufferdaemon.conf,
+	etc/dataforwarder.conf, etc/idmef-message.dtd,
+	etc/match_file_aa_regex.txt, etc/mice_mod_dec_idmef_twofish.conf,
+	etc/mice_mod_dec_logformat_twofish.conf,
+	etc/mice_mod_dec_webstat_unixdomain.conf,
+	etc/mice_mod_flt_regex.conf, etc/mice_mod_pop_webstat_idmef.conf,
+	etc/rid_1_write_to_syslog.conf, etc/scslog-ctrl.conf,
+	libs/setsignal.c, libs/setsignal.h, libs/Makefile.am,
+	libs/dns_lib.c, libs/dns_lib.h, libs/errormsg.c, libs/errormsg.h,
+	libs/libsecprog.c, libs/stdnet.c, libs/stdnet.h,
+	client/Makefile.am, client/dataforwarder/TODO,
+	client/dataforwarder/pv.c, client/dataforwarder/pv.h,
+	init-scripts/MICE-bufferdaemon, init-scripts/MICE-bufferdaemon-aa,
+	init-scripts/MICE-bufferdaemon-mngmthost,
+	init-scripts/MICE-bufferdaemon-rawlogdb,
+	init-scripts/MICE-dataforwarder, init-scripts/MICE-reactiondaemon,
+	init-scripts/MICE-rid_1_write_to_syslog,
+	init-scripts/MICE-rid_2_send_to_alert_db,
+	init-scripts/MICE-rid_3_save_to_file,
+	init-scripts/MICE-rid_4_countermeasure,
+	init-scripts/MICE-syscallmonitor, init-scripts/Makefile.am,
+	libs/secprog.h, mysql/create_mysql_tab_for_alert_logs.txt,
+	mysql/create_mysql_tab_for_raw_logs.txt,
+	client/dataforwarder/README, client/dataforwarder/logformat.h,
+	client/dataforwarder/parsecfg.c, client/dataforwarder/parsecfg.h,
+	client/dataforwarder/setsignal.c, client/dataforwarder/setsignal.h,
+	client/dataforwarder/unixdomainsocket.c,
+	client/dataforwarder/unixdomainsocket.h,
+	client/dataforwarder/Makefile.am,
+	client/dataforwarder/dataforwarder.h,
+	client/dataforwarder/exchangefd.c,
+	client/dataforwarder/exchangefd.h, client/dataforwarder/intl.h,
+	client/dataforwarder/libsecprog.c, client/dataforwarder/errormsg.c,
+	client/dataforwarder/errormsg.h, client/dataforwarder/main.c,
+	client/dataforwarder/INSTALL, client/dataforwarder/dns_lib.c,
+	client/dataforwarder/dns_lib.h, client/dataforwarder/secprog.h,
+	client/dataforwarder/stdnet.c, client/dataforwarder/stdnet.h,
+	modules/Makefile.am, modules/postprocessing/Makefile.am,
+	modules/postprocessing/aa_regex/TODO,
+	modules/postprocessing/aa_regex/parsecfg.c,
+	modules/postprocessing/aa_regex/Makefile.am,
+	modules/postprocessing/aa_regex/checksum.c,
+	modules/postprocessing/aa_regex/checksum.h,
+	modules/postprocessing/aa_regex/errormsg.c,
+	modules/postprocessing/aa_regex/errormsg.h,
+	modules/postprocessing/aa_regex/intl.h,
+	modules/postprocessing/aa_regex/logformat.h,
+	modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.c,
+	modules/postprocessing/aa_regex/mice_mod_pop_aa_regex.h,
+	modules/postprocessing/aa_regex/parsecfg.h,
+	modules/postprocessing/aa_regex/dns_lib.c,
+	modules/postprocessing/aa_regex/dns_lib.h,
+	modules/postprocessing/aa_regex/idmef-mesg-format.h,
+	modules/postprocessing/aa_regex/idmefxml.h,
+	modules/postprocessing/aa_regex/stdnet.c,
+	modules/postprocessing/aa_regex/stdnet.h,
+	modules/postprocessing/act_generic/Makefile.am,
+	modules/postprocessing/act_generic/TODO,
+	modules/postprocessing/act_generic/errormsg.c,
+	modules/postprocessing/act_generic/intl.h,
+	modules/postprocessing/act_generic/logformat.h,
+	modules/postprocessing/act_generic/parsecfg.c,
+	modules/postprocessing/act_generic/parsecfg.h,
+	modules/postprocessing/act_generic/rid-mesg-format.h,
+	modules/postprocessing/act_generic/checksum.c,
+	modules/postprocessing/act_generic/checksum.h,
+	modules/postprocessing/act_generic/dns_lib.c,
+	modules/postprocessing/act_generic/dns_lib.h,
+	modules/postprocessing/act_generic/errormsg.h,
+	modules/postprocessing/act_generic/idmef-mesg-format.h,
+	modules/postprocessing/act_generic/idmefxml.h,
+	modules/postprocessing/act_generic/mice_mod_pop_act_generic.c,
+	modules/postprocessing/act_generic/mice_mod_pop_act_generic.h,
+	modules/postprocessing/act_generic/stdnet.c,
+	modules/postprocessing/act_generic/stdnet.h,
+	modules/postprocessing/mysql/Makefile.am,
+	modules/postprocessing/mysql/TODO,
+	modules/postprocessing/mysql/errormsg.c,
+	modules/postprocessing/mysql/errormsg.h,
+	modules/postprocessing/mysql/intl.h,
+	modules/postprocessing/mysql/logformat.h,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.c,
+	modules/postprocessing/mysql/mice_mod_pop_mysql.h,
+	modules/postprocessing/mysql/parsecfg.c,
+	modules/postprocessing/mysql/parsecfg.h,
+	modules/postprocessing/syslog/Makefile.am,
+	modules/postprocessing/syslog/errormsg.c,
+	modules/postprocessing/syslog/errormsg.h,
+	modules/postprocessing/syslog/main.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.c,
+	modules/postprocessing/syslog/mice_mod_pop_syslog.h,
+	modules/decoding/Makefile.am, modules/decoding/idmef_twofish/TODO,
+	modules/decoding/idmef_twofish/Makefile.am,
+	modules/decoding/idmef_twofish/intl.h,
+	modules/decoding/idmef_twofish/logformat.h,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.c,
+	modules/decoding/idmef_twofish/mice_mod_dec_idmef_twofish.h,
+	modules/decoding/idmef_twofish/parsecfg.c,
+	modules/decoding/idmef_twofish/parsecfg.h,
+	modules/decoding/idmef_twofish/checksum.c,
+	modules/decoding/idmef_twofish/checksum.h,
+	modules/decoding/idmef_twofish/dns_lib.c,
+	modules/decoding/idmef_twofish/dns_lib.h,
+	modules/decoding/idmef_twofish/errormsg.c,
+	modules/decoding/idmef_twofish/errormsg.h,
+	modules/decoding/idmef_twofish/idmef-mesg-format.h,
+	modules/decoding/idmef_twofish/stdnet.c,
+	modules/decoding/idmef_twofish/stdnet.h,
+	modules/decoding/logformat_twofish/TODO,
+	modules/decoding/logformat_twofish/Makefile.am,
+	modules/decoding/logformat_twofish/errormsg.c,
+	modules/decoding/logformat_twofish/intl.h,
+	modules/decoding/logformat_twofish/logformat.h,
+	modules/decoding/logformat_twofish/parsecfg.c,
+	modules/decoding/logformat_twofish/parsecfg.h,
+	modules/decoding/logformat_twofish/checksum.c,
+	modules/decoding/logformat_twofish/checksum.h,
+	modules/decoding/logformat_twofish/dns_lib.c,
+	modules/decoding/logformat_twofish/dns_lib.h,
+	modules/decoding/logformat_twofish/errormsg.h,
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.c
+	,
+	modules/decoding/logformat_twofish/mice_mod_dec_logformat_twofish.h
+	, modules/decoding/logformat_twofish/stdnet.c,
+	modules/decoding/logformat_twofish/stdnet.h,
+	modules/decoding/webstat_unixdomain/TODO,
+	modules/decoding/webstat_unixdomain/mice_mod_dec_webstat_unixdomain
+	.c,
+	modules/decoding/webstat_unixdomain/mice_mod_dec_webstat_unixdomain
+	.h, modules/decoding/webstat_unixdomain/parsecfg.c,
+	modules/decoding/webstat_unixdomain/Makefile.am,
+	modules/decoding/webstat_unixdomain/errormsg.c,
+	modules/decoding/webstat_unixdomain/errormsg.h,
+	modules/decoding/webstat_unixdomain/intl.h,
+	modules/decoding/webstat_unixdomain/parsecfg.h,
+	modules/decoding/webstat_unixdomain/webstat_response_format.h,
+	modules/filter/Makefile.am, modules/filter/regex/TODO,
+	modules/filter/regex/Makefile.am, modules/filter/regex/errormsg.c,
+	modules/filter/regex/errormsg.h, modules/filter/regex/intl.h,
+	modules/filter/regex/mice_mod_flt_regex.c,
+	modules/filter/regex/mice_mod_flt_regex.h,
+	modules/filter/regex/parsecfg.c, modules/filter/regex/parsecfg.h,
+	modules/format/Makefile.am, modules/format/simple/TODO,
+	modules/format/simple/Makefile.am, modules/format/simple/intl.h,
+	modules/format/simple/logformat.h,
+	modules/format/simple/mice_mod_fmt_simple.c,
+	modules/format/simple/mice_mod_fmt_simple.conf,
+	modules/format/simple/mice_mod_fmt_simple.h,
+	modules/format/simple/parsecfg.c, modules/format/simple/parsecfg.h,
+	modules/format/simple/checksum.c, modules/format/simple/checksum.h,
+	modules/format/simple/dns_lib.c, modules/format/simple/dns_lib.h,
+	modules/format/simple/errormsg.c, modules/format/simple/errormsg.h,
+	modules/pseudo/Makefile.am, modules/pseudo/dummy/TODO,
+	modules/pseudo/dummy/Makefile.am, modules/pseudo/dummy/errormsg.c,
+	modules/pseudo/dummy/errormsg.h, modules/pseudo/dummy/intl.h,
+	modules/pseudo/dummy/logformat.h,
+	modules/pseudo/dummy/mice_mod_psd_empty.c,
+	modules/pseudo/dummy/mice_mod_psd_empty.h,
+	modules/pseudo/dummy/parsecfg.c, modules/pseudo/dummy/parsecfg.h,
+	modules/reaction/Makefile.am, modules/reaction/dummy/TODO,
+	modules/reaction/dummy/Makefile.am,
+	modules/reaction/dummy/errormsg.c,
+	modules/reaction/dummy/errormsg.h, modules/reaction/dummy/intl.h,
+	modules/reaction/dummy/mice_mod_rct_dummy.c,
+	modules/reaction/dummy/mice_mod_rct_dummy.h,
+	modules/reaction/dummy/parsecfg.c,
+	modules/reaction/dummy/parsecfg.h, server/Makefile.am,
+	server/buffer-daemon/parsecfg.c, server/buffer-daemon/parsecfg.h,
+	server/buffer-daemon/setsignal.c, server/buffer-daemon/setsignal.h,
+	server/buffer-daemon/Makefile.am,
+	server/buffer-daemon/bufferdaemon.h, server/buffer-daemon/intl.h,
+	server/buffer-daemon/libsecprog.c, server/buffer-daemon/errormsg.c,
+	server/buffer-daemon/errormsg.h, server/buffer-daemon/main.c,
+	server/buffer-daemon/dns_lib.c, server/buffer-daemon/dns_lib.h,
+	server/buffer-daemon/secprog.h, server/buffer-daemon/stdnet.c,
+	server/buffer-daemon/stdnet.h,
+	server/reaction-daemon/reactiondaemon.h,
+	server/reaction-daemon/parsecfg.c,
+	server/reaction-daemon/parsecfg.h,
+	server/reaction-daemon/reaction-mesg-format.h,
+	server/reaction-daemon/setsignal.c,
+	server/reaction-daemon/setsignal.h,
+	server/reaction-daemon/Makefile.am, server/reaction-daemon/intl.h,
+	server/reaction-daemon/libsecprog.c,
+	server/reaction-daemon/checksum.c,
+	server/reaction-daemon/checksum.h,
+	server/reaction-daemon/errormsg.c,
+	server/reaction-daemon/errormsg.h, server/reaction-daemon/main.c,
+	server/reaction-daemon/rid-mesg-format.h,
+	reaction-agents/Makefile.am, server/reaction-daemon/dns_lib.c,
+	server/reaction-daemon/dns_lib.h,
+	server/reaction-daemon/idmef-mesg-format.h,
+	server/reaction-daemon/secprog.h, server/reaction-daemon/stdnet.c,
+	server/reaction-daemon/stdnet.h,
+	reaction-agents/rid_1_write_to_syslog/Makefile.am,
+	reaction-agents/rid_1_write_to_syslog/errormsg.c,
+	reaction-agents/rid_1_write_to_syslog/errormsg.h,
+	reaction-agents/rid_1_write_to_syslog/idmef-mesg-format.h,
+	reaction-agents/rid_1_write_to_syslog/intl.h,
+	reaction-agents/rid_1_write_to_syslog/main.c,
+	reaction-agents/rid_1_write_to_syslog/parsecfg.c,
+	reaction-agents/rid_1_write_to_syslog/parsecfg.h,
+	reaction-agents/rid_1_write_to_syslog/rid-mesg-format.h,
+	reaction-agents/rid_1_write_to_syslog/setsignal.c,
+	reaction-agents/rid_1_write_to_syslog/setsignal.h,
+	reaction-agents/rid_3_save_to_file/Makefile.am,
+	reaction-agents/rid_3_save_to_file/intl.h,
+	reaction-agents/rid_3_save_to_file/main.c,
+	reaction-agents/rid_3_save_to_file/parsecfg.c,
+	reaction-agents/rid_3_save_to_file/parsecfg.h,
+	reaction-agents/rid_3_save_to_file/rid-mesg-format.h,
+	reaction-agents/rid_3_save_to_file/setsignal.c,
+	reaction-agents/rid_3_save_to_file/setsignal.h,
+	reaction-agents/rid_2_send_to_alert_db/parsecfg.c,
+	reaction-agents/rid_3_save_to_file/errormsg.c,
+	reaction-agents/rid_3_save_to_file/errormsg.h,
+	reaction-agents/rid_3_save_to_file/idmef-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/Makefile.am,
+	reaction-agents/rid_2_send_to_alert_db/errormsg.c,
+	reaction-agents/rid_2_send_to_alert_db/errormsg.h,
+	reaction-agents/rid_2_send_to_alert_db/idmef-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/intl.h,
+	reaction-agents/rid_2_send_to_alert_db/main.c,
+	reaction-agents/rid_2_send_to_alert_db/parsecfg.h,
+	reaction-agents/rid_2_send_to_alert_db/rid-mesg-format.h,
+	reaction-agents/rid_2_send_to_alert_db/setsignal.c,
+	reaction-agents/rid_2_send_to_alert_db/setsignal.h,
+	reaction-agents/rid_4_countermeasure/Makefile.am,
+	reaction-agents/rid_4_countermeasure/intl.h,
+	reaction-agents/rid_4_countermeasure/parsecfg.c,
+	reaction-agents/rid_4_countermeasure/parsecfg.h,
+	reaction-agents/rid_4_countermeasure/reaction-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/setsignal.c,
+	reaction-agents/rid_4_countermeasure/setsignal.h,
+	reaction-agents/rid_4_countermeasure/checksum.c,
+	reaction-agents/rid_4_countermeasure/checksum.h,
+	reaction-agents/rid_4_countermeasure/errormsg.c,
+	reaction-agents/rid_4_countermeasure/errormsg.h,
+	reaction-agents/rid_4_countermeasure/main.c,
+	reaction-agents/rid_4_countermeasure/rid-mesg-format.h,
+	reaction-agents/rid_4_countermeasure/stdnet.c,
+	reaction-agents/rid_4_countermeasure/stdnet.h, include/dns_lib.h,
+	include/errormsg.h, include/intl.h, include/logformat.h,
+	include/parsecfg.h, include/secprog.h, include/stdnet.h,
+	reaction-agents/rid_4_countermeasure/idmef-mesg-format.h: Initial
+	revision
+

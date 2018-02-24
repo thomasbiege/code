@@ -1,0 +1,59 @@
+#! /bin/bash
+#
+# /etc/init.d/MICE-dataforwarder
+#
+### BEGIN INIT INFO
+# Provides:       MICE-dataforwarder
+# Required-Start: $network
+# Required-Stop:
+# Default-Start:  3 5
+# Default-Stop:   0 1 2 6
+# Description:    M-ICE: Starts DataForwarder
+### END INIT INFO
+
+. /etc/rc.status
+#. /etc/rc.config
+
+return=$rc_done
+case "$1" in
+    start)
+	echo -n "M-ICE IDS: Starting DataForwarder"
+	startproc /usr/sbin/dataforwarder || return=$rc_failed
+	echo -e "$return"
+	;;
+    startdebug)
+        echo -n "M-ICE IDS: Starting DataForwarder"
+        startproc /usr/sbin/dataforwarder -d 1 || return=$rc_failed
+        echo -e "$return"
+        ;;
+    startdebug2)
+        echo -n "M-ICE IDS: Starting DataForwarder"
+        startproc /usr/sbin/dataforwarder -d 2 || return=$rc_failed
+        echo -e "$return"
+        ;;
+    startdebug3)
+        echo -n "M-ICE IDS: Starting DataForwarder"
+        startproc /usr/sbin/dataforwarder -d 3 || return=$rc_failed
+        echo -e "$return"
+        ;;
+    stop)
+	echo -n "M-ICE IDS: Stopping DataForwarder"
+	killproc /usr/sbin/dataforwarder || return=$rc_failed
+	#rm -f /var/run/M-ICE/datafwd-*
+	echo -e "$return"
+	;;
+    restart)
+	$0 stop && $0 start
+	;;
+    status)
+	echo "M-ICE IDS: Status of DataForwarder"
+	checkproc -v /usr/sbin/dataforwarder || return=$rc_failed
+        echo -e "$return"
+	;;
+    *)
+	echo "Usage: $0 {start|startdebug|startdebug2|startdebug3|stop|status|restart}"
+	exit 1
+esac
+test "$return" = "$rc_done" || exit 1
+exit 0
+

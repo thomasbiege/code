@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ***************************************************************
+ *******************************************************************
+ *** Intrusion Detection Message Exchange Format (IDMEF) XML DTD ***
+ ***                 Version 1.0, 16 February 2002               ***
+ ***                                                             ***
+ *** The use and extension of the IDMEF XML DTD are described in ***
+ *** RFC XXXX, "Intrusion Detection Message Exchange Format Data ***
+ *** Model and Extensible Markup Language (XML) Document Type    ***
+ *** Definition," D. Curry and H. Debar.                         ***
+ *******************************************************************
+ *************************************************************** -->
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 1. Attribute list declarations.
+ ===================================================================
+ =============================================================== -->
+
+<!--
+ | Attributes of the IDMEF element.  In general, the fixed values of
+ | these attributes will change each time a new version of the DTD
+ | is released.
+ -->
+<!ENTITY % attlist.idmef                "
+    version             CDATA                   #FIXED    '1.0'
+  ">
+
+<!--
+ | Attributes of all elements.  These are the "XML" attributes that
+ | every element should have.  Space handling, language, and name
+ | space.
+ -->
+<!ENTITY % attlist.global               "
+    xmlns:idmef         CDATA                   #FIXED
+        'urn:iana:xml:ns:idmef'
+    xmlns               CDATA                   #FIXED
+        'urn:iana:xml:ns:idmef'
+    xml:space           (default | preserve)    'default'
+    xml:lang            NMTOKEN                 #IMPLIED
+  ">
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 2. Attribute value declarations.  Enumerated values for
+ ===            many of the element-specific attribute lists.
+ ===================================================================
+ =============================================================== -->
+
+<!--
+ | Values for the Action.category attribute.
+ -->
+<!ENTITY % attvals.actioncat            "
+    ( block-installed | notification-sent | taken-offline | other )
+  ">
+
+<!--
+ | Values for the Address.category attribute.
+ -->
+<!ENTITY % attvals.addrcat              "
+    ( unknown | atm | e-mail | lotus-notes | mac | sna | vm |
+      ipv4-addr | ipv4-addr-hex | ipv4-net | ipv4-net-mask |
+      ipv6-addr | ipv6-addr-hex | ipv6-net | ipv6-net-mask )
+  ">
+
+<!--
+ | Values for the AdditionalData.type attribute.
+ -->
+<!ENTITY % attvals.adtype               "
+    ( boolean | byte | character | date-time | integer | ntpstamp |
+      portlist | real | string | xml )
+  ">
+
+<!--
+ | Values for the Impact.completion attribute.
+ -->
+<!ENTITY % attvals.completion           "
+    ( failed | succeeded )
+  ">
+
+<!--
+ | Values for the File.category attribute.
+ -->
+<!ENTITY % attvals.filecat              "
+    ( current | original )
+  ">
+
+<!--
+ | Values for the Id.type attribute.
+ -->
+<!ENTITY % attvals.idtype               "
+    ( current-user | original-user | target-user | user-privs |
+      current-group | group-privs | other-privs )
+  ">
+
+<!--
+ | Values for the Impact.type attribute.
+ -->
+<!ENTITY % attvals.impacttype           "
+    ( admin | dos | file | recon | user | other )
+  ">
+
+<!--
+ | Values for the Linkage.category attribute.
+ -->
+<!ENTITY % attvals.linkcat              "
+    ( hard-link | mount-point | reparse-point | shortcut | stream |
+      symbolic-link )
+  ">
+
+<!--
+ | Values for the Node.category attribute.
+ -->
+<!ENTITY % attvals.nodecat              "
+    ( unknown | ads | afs | coda | dfs | dns | hosts | kerberos |
+      nds | nis | nisplus | nt | wfw )
+  ">
+
+<!--
+ | Values for the Classification.origin attribute.
+ -->
+<!ENTITY % attvals.origin               "
+    ( unknown | bugtraqid | cve | vendor-specific )
+  ">
+
+<!--
+ | Values for the Confidence.rating attribute.
+ -->
+<!ENTITY % attvals.rating               "
+    ( low | medium | high | numeric )
+  ">
+
+<!--
+ | Values for the Impact.severity attribute.
+ -->
+<!ENTITY % attvals.severity             "
+    ( low | medium | high )
+  ">
+
+<!--
+ | Values for the User.category attribute.
+ -->
+<!ENTITY % attvals.usercat              "
+    ( unknown | application | os-device )
+  ">
+
+<!--
+ | Values for yes/no attributes such as Source.spoofed and
+ | Target.decoy.
+ -->
+<!ENTITY % attvals.yesno                "
+    ( unknown | yes | no )
+  ">
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 3. Top-level element declarations.  The IDMEF-Message
+ ===            element and the types of messages it can include.
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT IDMEF-Message                 (
+    (Alert | Heartbeat)*
+  )>
+<!ATTLIST IDMEF-Message
+    %attlist.global;
+    %attlist.idmef;
+  >
+
+<!ELEMENT Alert                         (
+    Analyzer, CreateTime, DetectTime?, AnalyzerTime?, Source*,
+    Target*, Classification+, Assessment?, (ToolAlert |
+    OverflowAlert | CorrelationAlert)?, AdditionalData*
+  )>
+<!ATTLIST Alert
+    ident               CDATA                   '0'
+    %attlist.global;
+  >
+
+<!ELEMENT Heartbeat                     (
+    Analyzer, CreateTime, AnalyzerTime?, AdditionalData*
+  )>
+<!ATTLIST Heartbeat
+    ident               CDATA                   '0'
+    %attlist.global;
+  >
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 4. Subclasses of the Alert element that provide more
+ ===            data for specific types of alerts.
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT CorrelationAlert              (
+    name, alertident+
+  )>
+<!ATTLIST CorrelationAlert
+    %attlist.global;
+  >
+
+<!ELEMENT OverflowAlert                 (
+    program, size?, buffer?
+  )>
+<!ATTLIST OverflowAlert
+    %attlist.global;
+  >
+
+<!ELEMENT ToolAlert                     (
+    name, command?, alertident+
+  )>
+<!ATTLIST ToolAlert
+    %attlist.global;
+  >
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 5.  The AdditionalData element.  This element allows an
+ ===             alert to include additional information that cannot
+ ===             be encoded elsewhere in the data model.
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT AdditionalData            ANY >
+<!ATTLIST AdditionalData
+    type                %attvals.adtype;        'string'
+    meaning             CDATA                   #IMPLIED
+    %attlist.global;
+  >
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 6. Elements related to identifying entities - analyzers
+ ===            (the senders of these messages), sources (of
+ ===            attacks), and targets (of attacks).
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT Analyzer                      (
+    Node?, Process?
+  )>
+<!ATTLIST Analyzer
+    analyzerid          CDATA                   '0'
+    manufacturer        CDATA                   #IMPLIED
+    model               CDATA                   #IMPLIED
+    version             CDATA                   #IMPLIED
+    class               CDATA                   #IMPLIED
+    ostype              CDATA                   #IMPLIED
+    osversion           CDATA                   #IMPLIED
+    %attlist.global;
+  >
+
+<!ELEMENT Source                        (
+    Node?, User?, Process?, Service?
+  )>
+<!ATTLIST Source
+    ident               CDATA                   '0'
+    spoofed             %attvals.yesno;         'unknown'
+    interface           CDATA                   #IMPLIED
+    %attlist.global;
+  >
+
+<!ELEMENT Target                        (
+    Node?, User?, Process?, Service?, FileList?
+  )>
+<!ATTLIST Target
+    ident               CDATA                   '0'
+    decoy               %attvals.yesno;         'unknown'
+    interface           CDATA                   #IMPLIED
+    %attlist.global;
+  >
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 7. Support elements used for providing detailed info
+ ===            about entities - addresses, names, etc.
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT Address                       (
+    address, netmask?
+  )>
+<!ATTLIST Address
+    ident               CDATA                   '0'
+    category            %attvals.addrcat;       'unknown'
+    vlan-name           CDATA                   #IMPLIED
+    vlan-num            CDATA                   #IMPLIED
+    %attlist.global;
+  >
+
+<!ELEMENT Assessment                    (
+    Impact?, Action*, Confidence?
+  )>
+<!ATTLIST Assessment
+    %attlist.global;
+  >
+
+<!ELEMENT Classification                (
+    name, url
+  )>
+<!ATTLIST Classification
+    origin              %attvals.origin;        'unknown'
+    %attlist.global;
+  >
+
+<!ELEMENT File                          (
+    name, path, create-time?, modify-time?, access-time?,
+    data-size?, disk-size?, FileAccess*, Linkage*, Inode?
+  )>
+<!ATTLIST File
+    ident               CDATA                   '0'
+    category            %attvals.filecat;       #REQUIRED
+    fstype              CDATA                   #REQUIRED
+    %attlist.global;
+  >
+
+<!ELEMENT FileAccess                    (
+    UserId, permission+
+  )>
+<!ATTLIST FileAccess
+    %attlist.global;
+  >
+
+<!ELEMENT FileList                      (
+    File+
+  )>
+<!ATTLIST FileList
+    %attlist.global;
+  >
+
+<!ELEMENT Inode                         (
+    change-time?, (number, major-device, minor-device)?,
+    (c-major-device, c-minor-device)?
+  )>
+<!ATTLIST Inode
+    %attlist.global;
+  >
+
+<!ELEMENT Linkage                       (
+    (name, path) | File
+  )>
+<!ATTLIST Linkage
+    category            %attvals.linkcat;       #REQUIRED
+    %attlist.global;
+  >
+
+<!ELEMENT Node                          (
+    location?, (name | Address), Address*
+  )>
+<!ATTLIST Node
+    ident               CDATA                   '0'
+    category            %attvals.nodecat;       'unknown'
+    %attlist.global;
+  >
+
+<!ELEMENT Process                       (
+    name, pid?, path?, arg*, env*
+  )>
+<!ATTLIST Process
+    ident               CDATA                   '0'
+    %attlist.global;
+  >
+
+<!ELEMENT Service                       (
+    ((name?, port?) | portlist), protocol?, SNMPService?,
+    WebService?
+  )>
+<!ATTLIST Service
+    ident               CDATA                   '0'
+    %attlist.global;
+  >
+
+<!ELEMENT SNMPService                   (
+    oid?, community?, command?
+  )>
+<!ATTLIST SNMPService
+    %attlist.global;
+  >
+
+<!ELEMENT User                          (
+    UserId+
+  )>
+<!ATTLIST User
+    ident               CDATA                   '0'
+    category            %attvals.usercat;       'unknown'
+    %attlist.global;
+  >
+
+<!ELEMENT UserId                        (
+    name?, number?
+  )>
+<!ATTLIST UserId
+    ident               CDATA                   '0'
+    type                %attvals.idtype;        'original-user'
+    %attlist.global;
+  >
+
+<!ELEMENT WebService                    (
+    url, cgi?, http-method?, arg*
+  )>
+<!ATTLIST WebService
+    %attlist.global;
+  >
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 8. Simple elements with sub-elements or attributes of a
+ ===            special nature.
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT Action              (#PCDATA) >
+<!ATTLIST Action
+    category            %attvals.actioncat;     'other'
+    %attlist.global;
+  >
+
+<!ELEMENT AnalyzerTime        (#PCDATA) >
+<!ATTLIST AnalyzerTime
+    ntpstamp            CDATA                   #REQUIRED
+    %attlist.global;
+  >
+
+<!ELEMENT Confidence          (#PCDATA) >
+<!ATTLIST Confidence
+    rating              %attvals.rating;        'numeric'
+    %attlist.global;
+  >
+
+<!ELEMENT CreateTime          (#PCDATA) >
+<!ATTLIST CreateTime
+    ntpstamp            CDATA                   #REQUIRED
+    %attlist.global;
+  >
+
+<!ELEMENT DetectTime          (#PCDATA) >
+<!ATTLIST DetectTime
+    ntpstamp            CDATA                   #REQUIRED
+    %attlist.global;
+
+  >
+
+<!ELEMENT Impact              (#PCDATA) >
+<!ATTLIST Impact
+    severity            %attvals.severity;      #IMPLIED
+    completion          %attvals.completion;    #IMPLIED
+    type                %attvals.impacttype;    'other'
+    %attlist.global;
+  >
+
+<!ELEMENT alertident          (#PCDATA) >
+<!ATTLIST alertident
+    analyzerid          CDATA                   #IMPLIED
+    %attlist.global;
+  >
+
+<!-- ===============================================================
+ ===================================================================
+ === SECTION 9. Simple elements with no sub-elements and no special
+ ===            attributes.
+ ===================================================================
+ =============================================================== -->
+
+<!ELEMENT access-time         (#PCDATA) >
+<!ATTLIST access-time
+    %attlist.global;
+  >
+
+<!ELEMENT address             (#PCDATA) >
+<!ATTLIST address
+    %attlist.global;
+  >
+
+<!ELEMENT arg                 (#PCDATA) >
+<!ATTLIST arg
+    %attlist.global;
+  >
+
+<!ELEMENT buffer              (#PCDATA) >
+<!ATTLIST buffer
+    %attlist.global;
+  >
+
+<!ELEMENT c-major-device      (#PCDATA) >
+<!ATTLIST c-major-device
+    %attlist.global;
+  >
+
+<!ELEMENT c-minor-device      (#PCDATA) >
+<!ATTLIST c-minor-device
+    %attlist.global;
+  >
+
+<!ELEMENT cgi                 (#PCDATA) >
+<!ATTLIST cgi
+    %attlist.global;
+  >
+
+<!ELEMENT change-time         (#PCDATA) >
+<!ATTLIST change-time
+    %attlist.global;
+  >
+
+<!ELEMENT command             (#PCDATA) >
+<!ATTLIST command
+    %attlist.global;
+  >
+
+<!ELEMENT community           (#PCDATA) >
+<!ATTLIST community
+    %attlist.global;
+  >
+
+<!ELEMENT create-time         (#PCDATA) >
+<!ATTLIST create-time
+    %attlist.global;
+  >
+
+<!ELEMENT data-size           (#PCDATA) >
+<!ATTLIST data-size
+    %attlist.global;
+  >
+
+<!ELEMENT disk-size           (#PCDATA) >
+<!ATTLIST disk-size
+    %attlist.global;
+  >
+
+<!ELEMENT env                 (#PCDATA) >
+<!ATTLIST env
+    %attlist.global;
+  >
+
+<!ELEMENT http-method         (#PCDATA) >
+<!ATTLIST http-method
+    %attlist.global;
+  >
+
+<!ELEMENT location            (#PCDATA) >
+<!ATTLIST location
+    %attlist.global;
+  >
+
+<!ELEMENT major-device        (#PCDATA) >
+<!ATTLIST major-device
+    %attlist.global;
+  >
+
+<!ELEMENT minor-device        (#PCDATA) >
+<!ATTLIST minor-device
+    %attlist.global;
+  >
+
+<!ELEMENT modify-time         (#PCDATA) >
+<!ATTLIST modify-time
+    %attlist.global;
+  >
+
+<!ELEMENT name                (#PCDATA) >
+<!ATTLIST name
+    %attlist.global;
+  >
+
+<!ELEMENT netmask             (#PCDATA) >
+<!ATTLIST netmask
+    %attlist.global;
+  >
+
+<!ELEMENT number              (#PCDATA) >
+<!ATTLIST number
+    %attlist.global;
+  >
+
+<!ELEMENT oid                 (#PCDATA) >
+<!ATTLIST oid
+    %attlist.global;
+  >
+
+<!ELEMENT path                (#PCDATA) >
+<!ATTLIST path
+    %attlist.global;
+  >
+
+<!ELEMENT permission          (#PCDATA) >
+<!ATTLIST permission
+    %attlist.global;
+  >
+
+<!ELEMENT pid                 (#PCDATA) >
+<!ATTLIST pid
+    %attlist.global;
+  >
+
+<!ELEMENT port                (#PCDATA) >
+<!ATTLIST port
+    %attlist.global;
+  >
+
+<!ELEMENT portlist            (#PCDATA) >
+<!ATTLIST portlist
+    %attlist.global;
+  >
+
+<!ELEMENT program             (#PCDATA) >
+<!ATTLIST program
+    %attlist.global;
+  >
+
+<!ELEMENT protocol            (#PCDATA) >
+<!ATTLIST protocol
+    %attlist.global;
+  >
+
+<!ELEMENT size                (#PCDATA) >
+<!ATTLIST size
+    %attlist.global;
+  >
+
+<!ELEMENT url                 (#PCDATA) >
+<!ATTLIST url
+    %attlist.global;
+  >

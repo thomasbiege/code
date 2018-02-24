@@ -1,0 +1,6 @@
+- encryption
+	* it looks like some data is send in cleartext
+	* CipherMsg.cCipherText[1*sizeof(LogFormat)] is too small, should be of dynamic size
+
+- log-type
+	* netmask should be included

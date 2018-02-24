@@ -1,0 +1,227 @@
+Making all in .
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice'
+make[1]: Für das Ziel »all-am« ist nichts zu tun.
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice'
+Making all in libs
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/libs'
+make[1]: Für das Ziel »all« ist nichts zu tun.
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/libs'
+Making all in client
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/client'
+Making all in .
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/client'
+make[2]: Für das Ziel »all-am« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/client'
+Making all in dataforwarder
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/client/dataforwarder'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/client/dataforwarder'
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/client'
+Making all in etc
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/etc'
+make[1]: Für das Ziel »all« ist nichts zu tun.
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/etc'
+Making all in init-scripts
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/init-scripts'
+make[1]: Für das Ziel »all« ist nichts zu tun.
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/init-scripts'
+Making all in server
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server'
+Making all in .
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server'
+make[2]: Für das Ziel »all-am« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server'
+Making all in buffer-daemon
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server/buffer-daemon'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server/buffer-daemon'
+Making all in reaction-daemon
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server/reaction-daemon'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server/reaction-daemon'
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/server'
+Making all in reaction-agents
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents'
+Making all in .
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents'
+make[2]: Für das Ziel »all-am« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents'
+Making all in rid_1_write_to_syslog
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_1_write_to_syslog'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_1_write_to_syslog'
+Making all in rid_2_send_to_alert_db
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_2_send_to_alert_db'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_2_send_to_alert_db'
+Making all in rid_3_save_to_file
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_3_save_to_file'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_3_save_to_file'
+Making all in rid_4_countermeasure
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_4_countermeasure'
+make[2]: Für das Ziel »all« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents/rid_4_countermeasure'
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/reaction-agents'
+Making all in modules
+make[1]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules'
+Making all in .
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules'
+make[2]: Für das Ziel »all-am« ist nichts zu tun.
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules'
+Making all in decoding
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding'
+Making all in .
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding'
+make[3]: Für das Ziel »all-am« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding'
+Making all in idmef_twofish
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding/idmef_twofish'
+make[3]: Für das Ziel »all« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding/idmef_twofish'
+Making all in logformat_twofish
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding/logformat_twofish'
+make[3]: Für das Ziel »all« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding/logformat_twofish'
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/decoding'
+Making all in filter
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/filter'
+Making all in .
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/filter'
+make[3]: Für das Ziel »all-am« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/filter'
+Making all in regex
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/filter/regex'
+make[3]: Für das Ziel »all« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/filter/regex'
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/filter'
+Making all in format
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/format'
+Making all in .
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/format'
+make[3]: Für das Ziel »all-am« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/format'
+Making all in simple
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/format/simple'
+make[3]: Für das Ziel »all« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/format/simple'
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/format'
+Making all in postprocessing
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing'
+Making all in .
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing'
+make[3]: Für das Ziel »all-am« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing'
+Making all in aa_regex
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/aa_regex'
+make[3]: Für das Ziel »all« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/aa_regex'
+Making all in act_generic
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/act_generic'
+make[3]: Für das Ziel »all« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/act_generic'
+Making all in mysql
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/mysql'
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT syscall.lo -MD -MP -MF ".deps/syscall.Tpo" \
+  -c -o syscall.lo `test -f 'syscall.c' || echo './'`syscall.c; \
+then mv -f ".deps/syscall.Tpo" ".deps/syscall.Plo"; \
+else rm -f ".deps/syscall.Tpo"; exit 1; \
+fi
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT syscall.lo -MD -MP -MF .deps/syscall.Tpo -c syscall.c  -fPIC -DPIC -o .libs/syscall.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT syscall.lo -MD -MP -MF .deps/syscall.Tpo -c syscall.c -o syscall.o >/dev/null 2>&1
+/bin/sh ../../../libtool --mode=link gcc  -I../../../include -I/usr/include/libxml2  -L../../../libs -L/usr/lib -lxml2 -lz -lpthread -lm -o mice_mod_pop_mysql.la -rpath /usr/lib -L/usr/lib/mysql/ -module -version-info 1:0:0 mice_mod_pop_mysql.lo parsecfg.lo syscall.lo -lmysqlclient -llaussrv   
+gcc -shared  .libs/mice_mod_pop_mysql.o .libs/parsecfg.o .libs/syscall.o  -Wl,--rpath -Wl,/usr/lib/mysql -Wl,--rpath -Wl,/usr/lib/mysql -L/home/thomas/Arbeit/CVS-Projects/m-ice/libs -L/usr/lib /usr/lib/libxml2.so -lz -lpthread -lm -L/usr/lib/mysql/ /usr/lib/mysql/libmysqlclient.so /usr/lib/liblaussrv.so  -Wl,-soname -Wl,mice_mod_pop_mysql.so.1 -o .libs/mice_mod_pop_mysql.so.1.0.0
+(cd .libs && rm -f mice_mod_pop_mysql.so.1 && ln -s mice_mod_pop_mysql.so.1.0.0 mice_mod_pop_mysql.so.1)
+(cd .libs && rm -f mice_mod_pop_mysql.so && ln -s mice_mod_pop_mysql.so.1.0.0 mice_mod_pop_mysql.so)
+ar cru .libs/mice_mod_pop_mysql.a  mice_mod_pop_mysql.o parsecfg.o syscall.o
+ranlib .libs/mice_mod_pop_mysql.a
+creating mice_mod_pop_mysql.la
+(cd .libs && rm -f mice_mod_pop_mysql.la && ln -s ../mice_mod_pop_mysql.la mice_mod_pop_mysql.la)
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/mysql'
+Making all in syslog
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/syslog'
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT mice_mod_pop_syslog.lo -MD -MP -MF ".deps/mice_mod_pop_syslog.Tpo" \
+  -c -o mice_mod_pop_syslog.lo `test -f 'mice_mod_pop_syslog.c' || echo './'`mice_mod_pop_syslog.c; \
+then mv -f ".deps/mice_mod_pop_syslog.Tpo" ".deps/mice_mod_pop_syslog.Plo"; \
+else rm -f ".deps/mice_mod_pop_syslog.Tpo"; exit 1; \
+fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_pop_syslog.lo -MD -MP -MF .deps/mice_mod_pop_syslog.Tpo -c mice_mod_pop_syslog.c  -fPIC -DPIC -o .libs/mice_mod_pop_syslog.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_pop_syslog.lo -MD -MP -MF .deps/mice_mod_pop_syslog.Tpo -c mice_mod_pop_syslog.c -o mice_mod_pop_syslog.o >/dev/null 2>&1
+/bin/sh ../../../libtool --mode=link gcc  -I../../../include -I/usr/include/libxml2  -L../../../libs -L/usr/lib -lxml2 -lz -lpthread -lm -o mice_mod_pop_syslog.la -rpath /usr/lib -module -version-info 1:0:0 mice_mod_pop_syslog.lo -lmice 
+gcc -shared  .libs/mice_mod_pop_syslog.o  -Wl,--rpath -Wl,/home/thomas/Arbeit/CVS-Projects/m-ice/libs/.libs -L/home/thomas/Arbeit/CVS-Projects/m-ice/libs -L/usr/lib /usr/lib/libxml2.so -lz -lpthread -lm /home/thomas/Arbeit/CVS-Projects/m-ice/libs/.libs/libmice.so  -Wl,-soname -Wl,mice_mod_pop_syslog.so.1 -o .libs/mice_mod_pop_syslog.so.1.0.0
+(cd .libs && rm -f mice_mod_pop_syslog.so.1 && ln -s mice_mod_pop_syslog.so.1.0.0 mice_mod_pop_syslog.so.1)
+(cd .libs && rm -f mice_mod_pop_syslog.so && ln -s mice_mod_pop_syslog.so.1.0.0 mice_mod_pop_syslog.so)
+ar cru .libs/mice_mod_pop_syslog.a  mice_mod_pop_syslog.o
+ranlib .libs/mice_mod_pop_syslog.a
+creating mice_mod_pop_syslog.la
+(cd .libs && rm -f mice_mod_pop_syslog.la && ln -s ../mice_mod_pop_syslog.la mice_mod_pop_syslog.la)
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing/syslog'
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/postprocessing'
+Making all in pseudo
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/pseudo'
+Making all in .
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/pseudo'
+make[3]: Für das Ziel »all-am« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/pseudo'
+Making all in dummy
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/pseudo/dummy'
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT mice_mod_psd_empty.lo -MD -MP -MF ".deps/mice_mod_psd_empty.Tpo" \
+  -c -o mice_mod_psd_empty.lo `test -f 'mice_mod_psd_empty.c' || echo './'`mice_mod_psd_empty.c; \
+then mv -f ".deps/mice_mod_psd_empty.Tpo" ".deps/mice_mod_psd_empty.Plo"; \
+else rm -f ".deps/mice_mod_psd_empty.Tpo"; exit 1; \
+fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_psd_empty.lo -MD -MP -MF .deps/mice_mod_psd_empty.Tpo -c mice_mod_psd_empty.c  -fPIC -DPIC -o .libs/mice_mod_psd_empty.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_psd_empty.lo -MD -MP -MF .deps/mice_mod_psd_empty.Tpo -c mice_mod_psd_empty.c -o mice_mod_psd_empty.o >/dev/null 2>&1
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF ".deps/parsecfg.Tpo" \
+  -c -o parsecfg.lo `test -f 'parsecfg.c' || echo './'`parsecfg.c; \
+then mv -f ".deps/parsecfg.Tpo" ".deps/parsecfg.Plo"; \
+else rm -f ".deps/parsecfg.Tpo"; exit 1; \
+fi
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF .deps/parsecfg.Tpo -c parsecfg.c  -fPIC -DPIC -o .libs/parsecfg.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF .deps/parsecfg.Tpo -c parsecfg.c -o parsecfg.o >/dev/null 2>&1
+/bin/sh ../../../libtool --mode=link gcc  -I../../../include -I/usr/include/libxml2  -L../../../libs -L/usr/lib -lxml2 -lz -lpthread -lm -o mice_mod_psd_empty.la -rpath /usr/lib -module -version-info 1:0:0 mice_mod_psd_empty.lo parsecfg.lo -lmice 
+gcc -shared  .libs/mice_mod_psd_empty.o .libs/parsecfg.o  -Wl,--rpath -Wl,/home/thomas/Arbeit/CVS-Projects/m-ice/libs/.libs -L/home/thomas/Arbeit/CVS-Projects/m-ice/libs -L/usr/lib /usr/lib/libxml2.so -lz -lpthread -lm /home/thomas/Arbeit/CVS-Projects/m-ice/libs/.libs/libmice.so  -Wl,-soname -Wl,mice_mod_psd_empty.so.1 -o .libs/mice_mod_psd_empty.so.1.0.0
+(cd .libs && rm -f mice_mod_psd_empty.so.1 && ln -s mice_mod_psd_empty.so.1.0.0 mice_mod_psd_empty.so.1)
+(cd .libs && rm -f mice_mod_psd_empty.so && ln -s mice_mod_psd_empty.so.1.0.0 mice_mod_psd_empty.so)
+ar cru .libs/mice_mod_psd_empty.a  mice_mod_psd_empty.o parsecfg.o
+ranlib .libs/mice_mod_psd_empty.a
+creating mice_mod_psd_empty.la
+(cd .libs && rm -f mice_mod_psd_empty.la && ln -s ../mice_mod_psd_empty.la mice_mod_psd_empty.la)
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/pseudo/dummy'
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/pseudo'
+Making all in reaction
+make[2]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/reaction'
+Making all in .
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/reaction'
+make[3]: Für das Ziel »all-am« ist nichts zu tun.
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/reaction'
+Making all in dummy
+make[3]: Entering directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/reaction/dummy'
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT mice_mod_rct_dummy.lo -MD -MP -MF ".deps/mice_mod_rct_dummy.Tpo" \
+  -c -o mice_mod_rct_dummy.lo `test -f 'mice_mod_rct_dummy.c' || echo './'`mice_mod_rct_dummy.c; \
+then mv -f ".deps/mice_mod_rct_dummy.Tpo" ".deps/mice_mod_rct_dummy.Plo"; \
+else rm -f ".deps/mice_mod_rct_dummy.Tpo"; exit 1; \
+fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_rct_dummy.lo -MD -MP -MF .deps/mice_mod_rct_dummy.Tpo -c mice_mod_rct_dummy.c  -fPIC -DPIC -o .libs/mice_mod_rct_dummy.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT mice_mod_rct_dummy.lo -MD -MP -MF .deps/mice_mod_rct_dummy.Tpo -c mice_mod_rct_dummy.c -o mice_mod_rct_dummy.o >/dev/null 2>&1
+if /bin/sh ../../../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I../../../include     -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF ".deps/parsecfg.Tpo" \
+  -c -o parsecfg.lo `test -f 'parsecfg.c' || echo './'`parsecfg.c; \
+then mv -f ".deps/parsecfg.Tpo" ".deps/parsecfg.Plo"; \
+else rm -f ".deps/parsecfg.Tpo"; exit 1; \
+fi
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF .deps/parsecfg.Tpo -c parsecfg.c  -fPIC -DPIC -o .libs/parsecfg.o
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../../include -I../../../include -I/usr/include/libxml2 -MT parsecfg.lo -MD -MP -MF .deps/parsecfg.Tpo -c parsecfg.c -o parsecfg.o >/dev/null 2>&1
+/bin/sh ../../../libtool --mode=link gcc  -I../../../include -I/usr/include/libxml2  -L../../../libs -L/usr/lib -lxml2 -lz -lpthread -lm -o mice_mod_rct_dummy.la -rpath /usr/lib -module -version-info 1:0:0 mice_mod_rct_dummy.lo parsecfg.lo -lmice 
+gcc -shared  .libs/mice_mod_rct_dummy.o .libs/parsecfg.o  -Wl,--rpath -Wl,/home/thomas/Arbeit/CVS-Projects/m-ice/libs/.libs -L/home/thomas/Arbeit/CVS-Projects/m-ice/libs -L/usr/lib /usr/lib/libxml2.so -lz -lpthread -lm /home/thomas/Arbeit/CVS-Projects/m-ice/libs/.libs/libmice.so  -Wl,-soname -Wl,mice_mod_rct_dummy.so.1 -o .libs/mice_mod_rct_dummy.so.1.0.0
+(cd .libs && rm -f mice_mod_rct_dummy.so.1 && ln -s mice_mod_rct_dummy.so.1.0.0 mice_mod_rct_dummy.so.1)
+(cd .libs && rm -f mice_mod_rct_dummy.so && ln -s mice_mod_rct_dummy.so.1.0.0 mice_mod_rct_dummy.so)
+ar cru .libs/mice_mod_rct_dummy.a  mice_mod_rct_dummy.o parsecfg.o
+ranlib .libs/mice_mod_rct_dummy.a
+creating mice_mod_rct_dummy.la
+(cd .libs && rm -f mice_mod_rct_dummy.la && ln -s ../mice_mod_rct_dummy.la mice_mod_rct_dummy.la)
+make[3]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/reaction/dummy'
+make[2]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules/reaction'
+make[1]: Leaving directory `/home/thomas/Arbeit/CVS-Projects/m-ice/modules'
