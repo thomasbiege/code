@@ -1,0 +1,9 @@
+- add switch for public sites to not do authC head_bypass ettc.
+- interesting file extensions/types
+	- backup files
+- checks
+	- inconsistency in CSRF protection
+	- POST bypass using GET and vice versa
+	- test if authed pages can be accessed over HTTP w/o S too?
+- list all hidden fields (<input type="hidden" name="admin" value="no">)
+- http://malerisch.net/articles/unusual_web_spidering_techniques.html

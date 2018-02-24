@@ -1,0 +1,47 @@
+Features
+========
+- crawls pages behind the login page, session cookie is stored at ~/.spider_cookies.dat
+- test if page is also accessible without a session cookie, CWE-425, aka Forced Browsing
+- parses each page for documents, sheets, videos, pictures, feeds, VCS, VCF, audio
+- detects fuzzable GET URLs
+- puts result in a sqlite db
+- uses caching
+- does not leave target domain
+
+Config File
+===========
+Example from web-pages.txt:
+  2 https://example.suse.de/ POST[/Login.php username=admin&password=admin] failed\s+auth
+
+Fields:
+  1: crawling depth
+  2: target URL
+  3: POST or COOKIE to define authC method followed by [] block for details
+  4: for POST it is the relative path to the login code,
+     for COOKIE it is the session cookie name
+  5: for POST it defines the POST parameters for the login form,
+     for COOKIE it is the value of the session cookie
+  6: this field it optional and can be used to detect a missed login
+     for example if the server does not return 401 on an authentication
+     failure but just redirects to another site with a special word in it
+     like "login failed" this can be detected with this field by specifying
+     a regex pattern
+
+Database
+========
+spider/example_suse> sqlite3 example_suse.db
+SQLite version 3.6.16
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> select uri from url where fuzzable = 1;
+https://example.suse.de/systems/view.php?empty_set=true&url=%2F%2Faccount%2FLPreferences.php
+https://example.suse.de/systems/view.php?empty_set=true&url=%2F%2Faccount%2FPreferences.php
+https://example.suse.de/systems/view.php?empty_set=true&url=%2F%2Faccount%2FDetails.php
+https://example.suse.de/systems/view.php?empty_set=true&url=%2F%2FYour.php
+sqlite> select uri from url where without_auth = 1;
+https://example.suse.de/help/about.php
+https://example.suse.de/help
+https://example.suse.de//help/index.php
+
+Enjoy!
+Thomas Biege <tom@electric-sheep.org>
