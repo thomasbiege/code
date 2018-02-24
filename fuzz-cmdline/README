@@ -1,0 +1,51 @@
+
+date: 2010/01/05
+
+description
+-----------
+this perl script can be used to fuzz the command-line arguments of a
+unix command-line tool.
+
+
+author
+------
+Thomas Biege <tom@electric-sheep.org>
+
+
+pattern file
+------------
+the pattern file is used to define the program to call, its command-line
+options and the way to fuzz their arguments.
+
+See file 'pattern-file.opiepasswd'.
+
+example:
+	opiepasswd	-> program
+	-n:RND		-> cmd-line opt. -n using random integer
+	-s:FUZZINT32	-> cmd-line opt. -s using big 32bit integers
+	:FUZZBOFFUZZSEPFUZZBOF
+			-> last cmd-line argument w/o option name, using
+			   a long string a separator and another long string
+
+
+test run
+--------
+use 'gcc -o testrun testrun.c' to compile the testrun tool. you can use this
+tool with the 'pattern-file.test-*' files provided within this package. you can
+use symlinks to point to the pattern-file you want and to name it 'pattern-
+file.txt'; after that run the fuzzer.
+
+
+crash log
+---------
+the file 'crash-log.txt' contains the options and parameters that eventually
+trigger a bug. example:
+	./testrun -n 395 -s AAAAAAAAAAAAAAAAAAAAAA...
+
+to be absolutely sure about the behavior of the program you have to run it in a
+debugger. example:
+	sh> gdb ./testrun
+	gdb> run -n 395 -s AAAAAAAAAAAAAAAAAAAAAA...
+	...
+
+

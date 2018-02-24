@@ -1,0 +1,156 @@
+2010-03-01 08:01  thomas
+
+	* LICENSE: add
+
+2010-02-03 15:27  thomas
+
+	* Fuzz.pm: updated to new version
+
+2010-01-05 14:44  thomas
+
+	* ChangeLog: updated
+
+2010-01-05 14:43  thomas
+
+	* pattern-file.test, pattern-file.txt, pattern-file_pkexec.txt,
+	  config.txt: rm
+
+2010-01-05 14:43  thomas
+
+	* VERSION: add
+
+2010-01-05 14:37  thomas
+
+	* pattern-file.test-fmt, pattern-file.test-sep,
+	  pattern-file.test-shell, pattern-file.test-sql,
+	  pattern-file.test-stringascii, lastrun.txt: rm
+
+2010-01-05 14:34  thomas
+
+	* pattern-file.opiepasswd, ChangeLog: updated
+
+2010-01-05 12:30  thomas
+
+	* ChangeLog: updated
+
+2010-01-05 12:25  thomas
+
+	* Fuzz.pm, main.pl: - added int32, uint32 and bof fuzz types to
+	  Fuzz.pm
+
+2010-01-04 18:12  thomas
+
+	* main.pl:  fixed typo (missing ':') file calling
+	  Fuzz::reset_type()
+
+2010-01-04 17:08  thomas
+
+	* pattern-file_pkexec.txt, config_opiepasswd.txt: add
+
+2009-12-30 10:15  thomas
+
+	* config.txt: add
+
+2009-12-18 16:03  thomas
+
+	* TODO, lastrun.txt, main.pl, pattern-file.opiepasswd: major
+	  rewirte - switch to Fuzz.pm - enhanded Fuzz.pm - config file
+	  support - nested fuzzing - and more
+
+2009-12-18 16:01  thomas
+
+	* Fuzzled-patching.tgz: rm
+
+2009-12-18 16:01  thomas
+
+	* Fuzz.pm: add
+
+2009-11-16 18:24  thomas
+
+	* main.pl, pattern-file.txt: - improved pattern file handling a bit
+
+2009-11-16 18:16  thomas
+
+	* pp.c: added code to print privileges
+
+2009-11-11 22:37  thomas
+
+	* TODO: updated
+
+2009-11-10 15:55  thomas
+
+	* README, ChangeLog: updated
+
+2009-11-10 15:53  thomas
+
+	* Fuzzled-patching.tgz: added
+
+2009-11-10 15:10  thomas
+
+	* ChangeLog: updated
+
+2009-11-10 15:09  thomas
+
+	* README: typo fixing
+
+2008-04-03 17:18  thomas
+
+	* ChangeLog: updated
+
+2008-04-03 17:18  thomas
+
+	* README, main.pl, pattern-file.test-sql: added SQL injection
+	  fuzzing
+
+2008-04-03 17:10  thomas
+
+	* testrun.c: added option -Q for SQL support
+
+2008-04-03 17:08  thomas
+
+	* testrun.c: added SQL support
+
+2008-04-03 16:29  thomas
+
+	* main.pl: minor bugfixes
+
+2008-04-03 14:35  thomas
+
+	* pattern-file.test-stringascii: int32 -> len32
+
+2008-04-03 12:49  thomas
+
+	* pattern-file.test-fmt, pattern-file.test-sep,
+	  pattern-file.test-shell, pattern-file.test-stringascii: added
+	  pattern-file for different fuzzing cases
+
+2008-04-03 12:48  thomas
+
+	* testrun.c: updated with status output
+
+2008-01-11 17:12  thomas
+
+	* main.pl, pattern-file.txt: - added separator fuzzing
+
+2008-01-11 15:40  thomas
+
+	* main.pl, pattern-file.txt: - added format-string fuzzing
+
+2008-01-11 14:22  thomas
+
+	* lastrun.txt, main.pl, pattern-file.txt: - added shell fuzzing
+
+2008-01-11 14:22  thomas
+
+	* pattern-file.opiepasswd, pattern-file.test: added
+
+2008-01-08 16:03  thomas
+
+	* AUTHOR, INSTALL, README, TODO, gdb-batch.txt, lastrun.txt,
+	  main.pl, pattern-file.txt: Fuzzer for Command-Line Options
+
+2008-01-08 16:03  thomas
+
+	* AUTHOR, INSTALL, README, TODO, gdb-batch.txt, lastrun.txt,
+	  main.pl, pattern-file.txt: Initial revision
+

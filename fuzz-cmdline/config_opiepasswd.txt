@@ -1,0 +1,7 @@
+lastrun=lastrun_opiepasswd.txt
+pattern=pattern-file.opiepasswd
+crashlog=crash-log_opiepasswd.txt
+#initscript=/bin/echo "INITSCRIPT"
+#prescript=doesnotexist
+#postscript=
+#timeout=3

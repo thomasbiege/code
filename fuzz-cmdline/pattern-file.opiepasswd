@@ -1,0 +1,4 @@
+/usr/bin/opiepasswd
+-n:RND
+-s:FUZZINT32
+:FUZZBOFFUZZSEPFUZZBOF

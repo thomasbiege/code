@@ -1,0 +1,9 @@
+- reload
+- escape non-printable fuzz chars
+- also support
+	+ stdin
+	+ local IPC
+- beep on segv and sigbus
+- better benchmarking, for example: crasches ber runs
+- allow specifying the start, end, step parameter in the pattern file
+
