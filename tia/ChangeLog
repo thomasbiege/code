@@ -1,0 +1,19 @@
+2008-07-24 13:22  thomas
+
+	* hex2bin.c: - support now hex and dec -> trxid and portnum
+
+2008-07-24 13:14  thomas
+
+	* hex2bin.c: - converts the output files of tia into a binary
+	  format and repeats numbers   as often as they occur, this is
+	  useful as iput for tools like xnoisesph   or ent
+
+2008-07-11 15:59  thomas
+
+	* dns_lib.c, dns_lib.h, tia.c: DNS query TRXID and UDP source-port
+	  analyzer
+
+2008-07-11 15:59  thomas
+
+	* dns_lib.c, dns_lib.h, tia.c: Initial revision
+
