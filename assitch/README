@@ -1,0 +1,183 @@
+]-----------------------------------------------------------------------------[
+                                    AssItch
+
+                Tool for analyzing none state-full packet filters
+
+                     Author: Thomas Biege <tom@electric-sheep.org>
+                             Last Update: 2000/01/04
+
+]-----------------------------------------------------------------------------[
+
+
+<[ Preface ]>
+
+This tool demonstrates how none dynamic packet filters (like Linux' ipchains)
+could be analyzed for incoming and outgoing TCP traffic (filter rules).
+I wrote AssItch nearly 2 years ago. It's far from perfet and maybe out of date.
+
+
+<[ Simple Filterrule ]>
+
+So let's look at a typically filterrule for (only outgoing) telnet
+connections (TCP):
+
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+Rule | Direction | Src Addr | Dest Addr | Src Port | Dest Port | ACK | Action  
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+A    | out       | intern   | *         | > 1023   | 23        | *   | permit
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+B    | in        | *        | intern    | 23       | > 1023    | set | permit
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+C    | *         | *        | *         | *        | *         | *   | deny
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+
+[If the packetfilter isn't able to check the ACK flag in a TCP packet, then an
+attacker could access TCP services, which are bind to a unprivileged port
+(i.e., X Windows) by using a privileged source port.]
+
+
+<[ How ACK|RST Scanning works ]>
+
+Furtunately the TCP specifikation (RFC 793 -> SEGMENT ARRIVES) says,
+that if a ACK packet (ACK != 0) arrives to a port (LISTEN or CLOSED; state
+doesn't matter), which isn't part of a connection, then the receiving host will
+send back a RST packet with a sequence number equal to our ACK number.
+So, 'AssItch' will only send a ACK packet with tcp.source = 23 to a host and
+waits for a RST. If we get a RST packet then we know that telnet con. from this
+host are allowed; otherwise we know it's denied.
+[Unfortunately not all OS's TCP/IP stack follow the RFCs. (s. nmap OS
+fingerprint)]
+
+
+<[ How AssItch works ]>
+
+'AssItch' fires off 2 different scans (ACK|RST and SYN) from 2 different
+source ports for one TCP service (port):
+  1.  method:   ACK|RST
+      src_port: service port
+      dst_port: < 1024
+      purpose:  With the first scan we can determine if the protected host
+                could access the TCP serv. from a privileged port.
+      results:  deny
+                permit
+
+  2.  method    SYN
+      src_port: < 1024
+      dst_port: service port
+      purpose:  Now we check the other way.
+                With the second scan we are able to determine if we could
+                reach the 'service port' from a privileged port.
+      results:  deny
+                closed
+                listen
+
+   3./4. It's the same as 1/2 but know we use a non-privileged port.
+
+'AssItch' also detects ICMP unreachable messages (type: 3 and 13). These
+messages will be send by a router if a packet violates the filterrules.
+
+
+<[ How to play with AssItch ]>
+
+assitch  wintermute   pf.dod.de              21-750 -html
+          ^           ^                      ^    ^   ^-- if you set the HTML flag
+          |           |                      |    |       AssItch will use HTML to
+          |           +- host to scan        |    |       create a Table
+          |              (ip or name)        |    |
+          +- our hostname                    |    +- high port
+             (ip or name)                    +- low port
+
+
+<[ Example ]>
+
+Ok, know let's use 'AssItch' to check the above filterrule
+
+Output:
+-------------------------8<---------------------------------------------------
+AssItch Scan for pf.dod.de
+
+                              (*) AssItch V2.5 (*)
+                          (*) Author: Thomas Biege (*)
+
++-------------------------------------------------------------------------------
+|       DENIED: pf.dod.de:1020  => wintermute:21
+|       DENIED: wintermute:1020 => pf.dod.de:21
+|
+|       PERMIT: pf.dod.de:5999  => wintermute:21
+|       DENIED: wintermute:5999 => pf.dod.de:21
+|
+|-------------------------------------------------------------------------------
+
+-------------------------8<---------------------------------------------------
+
+Description:
+  1st Line "DENIED: pf.dod.de:1020 => wintermute:21"
+    - we didn't get a RST packet for our ACK, this means that it's denied
+      to open connections from the inside to the outside from a privileged
+      port
+    - this matchs our rule
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+A    | out       | intern   | *         | > 1023   | 23        | *   | permit
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+                                         ^^^^^^^^^^
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+B    | in        | *        | intern    | 23       | > 1023    | set | permit
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+                                                    ^^^^^^^^^^^
+
+  2nd Line "DENIED: wintermute:1020 => pf.dod.de:21"
+    - we fire off a SYN but didn't get a SYN+ACK back, so we know that we
+      aren't allowed to establishing TCP connections to the target host
+      from privileged ports
+    - this behavior matchs our rule
+
+  3rd Line "PERMIT: pf.dod.de:5999 => wintermute:21"
+    - phew, we got a hit!
+      we get back a RST packet for our ACK (from a unprivileged port)
+    - the packet passes rule B (s. above)
+
+  4th Line "DENIED: wintermute:5999 => pf.dod.de:21"
+    - and a again: we can't establishing TCP connections to the target host
+      even if we try a unprivileged port :(
+
+Conclusion:
+  Ok, we know...
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+B    | in        | *        | intern    | 23       | > 1023    | set | permit
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+  ... (from 3rd Scan) so rule A must (?... should) be...
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+A    | out       | intern   | *         | > 1023   | 23        | *   | permit
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+  ... and rule C is...
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+C    | *         | *        | *         | *        | *         | *   | deny
+-----+-----------+----------+-----------+----------+-----------+-----+--------
+
+
+<[ Stuff ]>
+
+State-full packet filters couldn't be checked with ACK|RST scanning.
+AssItch gets useless informations by receiving TCP_RST packets generated by
+packet filters for deny rules. (These packets should be analyzed further
+to decide which packets are generated by the pf or by the TCP stack of
+he target host... but as long as you are the guy who set up the rules it
+shouldn't be a problem ;-) )
+
+The source code is protected by the GPL.
+
+
+<[ Things to improve ]>
+
+'AssItch' is very slow, because of the RTT algorithm and it uses only one
+socket.
+The output of 'AssItch' could be better interpreted, i.e., 'AssItch' could
+show the whole filterrule like the format in section "<[ Simple Filterrule ]>".
+
+Also take a look in the TODO file.
+I'm too lazy to do this stuff, it's up to you.
+
+
+Bye,
+    Thomas
+

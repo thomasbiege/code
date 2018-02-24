@@ -1,0 +1,6 @@
+- mount the flash card
+- cat /dev/sdxn > flash.bin
+- gcc -O2 -o jpeg-extractor jpeg-extractor.c
+- ./jpeg-extractor flash.bin
+- drink a cup of coffee
+

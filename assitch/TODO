@@ -1,0 +1,8 @@
+- fuer permitted ACK Scan einen FIN Scan anhaengen
+- kein dyn. RTT ???
+- ACK scanning -> th_win wird bei open port geaendert
+- random port generation !!!!!!!
+- source routing
+- libnet und libpcap benutzen!
+- BSD broadcast handling bug ausnutzen
+
