@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/60/trunk/attack-payloads/xss
+END
+xss-uri.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/60/trunk/attack-payloads/xss/xss-uri.txt
+END
+xss-rsnake.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/60/trunk/attack-payloads/xss/xss-rsnake.txt
+END

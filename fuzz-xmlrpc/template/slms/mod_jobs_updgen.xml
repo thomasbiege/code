@@ -1,0 +1,6 @@
+<job>
+  <foreign-id>2</foreign-id>
+  <id>5</id>
+  <name>FUZZ</name>
+  <output-file>FUZZ</output-file>
+</job>

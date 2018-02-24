@@ -1,0 +1,8 @@
+<de-register xmlns="http://www.novell.com/xml/center/regsvc-1_0" lang="en">
+	<guid>1bbe0ea8-63eb-45bb-b9ea-32ebad7779d5</guid>
+	<smtguid>1bbe0ea8-63eb-45bb-b9ea-32ebad7779d5</smtguid>
+	<authuser>FUZZ</authuser>
+	<authpass>FUZZ</authpass>
+	<param id="ostarget"><![CDATA[test_i586]]></param>
+	<param id="ostarget-bak"><![CDATA[test_i586]]></param>
+</de-register>

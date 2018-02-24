@@ -1,0 +1,4 @@
+to install Fuzz.pm:
+	git clone git@gitorious.org:fuzzer/fuzz_pm.git
+to install fuzzdb:
+	svn checkout http://fuzzdb.googlecode.com/svn/trunk/ fuzzdb-read-only

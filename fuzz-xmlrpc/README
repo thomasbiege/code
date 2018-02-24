@@ -1,0 +1,190 @@
+This tool can be used to STRESS-TEST an application with an XMLRPC API by
+sending PUT or POST requests.
+
+Requirements
+============
+
+- http://gitorious.org/fuzzer/fuzz-cmdline
+- perl-File-BaseDir
+- perl-File-MimeInfo
+
+Usage
+=====
+
+See main.pl --help
+
+Example:
+   ./main.pl fuzz=all auth=tux:pwnme \
+    target-list_WebYAST.txt https://localhost:4984
+
+The keywords
+============
+The fuzzer understand some keywords and replace them:
+- FUZZ: replace the occurence of "FUZZ" with a string from the Fuzz module
+- INC : is replaced by an incrementing integer (only used to load files ATM)
+- RND : replace with a random integer (sometimes useful for generating unique
+        IDs or names)
+
+
+The target file
+===============
+Adjust the target-list.txt (or specify an individual one on
+the command line, must start with "target" and have ".txt" suffix) file to
+define the HTTP request.
+
+There a are three kind of fuzzing
+1. XML payload fuzzing using an xml template file
+2. only the parameters in the URL
+3. upload a file (s. RFC1867) with fuzzed filename and/or content
+
+Example target file:
+-------------------------------------------------------------------------------
+POST /api/v1/user/appliances?clone_from=15&name=thomas@suse.de&arch=FUZZ urlfuzz notnew
+POST /api/v1/user/rpms?base_system=SLES11 template/studio_onsite/rpm/johnFUZZ-1.7.2-22.i586.rpm new
+POST /api/v1/user/repositories?url=http://www.suse.de&name=testname template/studio_onsite/new_repository.xml new
+PUT /api/v1/user/rpms/3 template/studio_onsite/rpm/johnFUZZ-1.7.2-22.i586.rpm notnew
+POST /mail.xml template/webyast/mod_mailsettings.xml notnew text/soap+xml
+-------------------------------------------------------------------------------
+
+1. field: HTTP method PUT or POST
+2. field: path for XML API it can contain RND and FUZZ for URL fuzzing
+3. field: type of fuzzing:
+	- either path to an xml template (.xml suffix) for XML payload fuzzing
+	- the word "urlfuzz" to fuzz 3. field (FUZZ, RND)
+	- everthing else is understood as file upload fuzzing and should be the
+	  path to a file to upload
+4. field: "new" or "notnew" when mode=delete is specified on the command line
+	the fuzzer *tries* to delete the entry made by requests with the "new"
+	keyword. PUT is often used to modify data on the server, and POST is
+	sometimes used to create a new entry.
+5. field: The last field is optional and shown in the last line of the example
+	above. Here you can specify the HTTP content-type if needed. It can also
+	be specified globally via the 'data=' command-line option. The default
+	is "text/xml".
+
+
+XML fuzzing
+===========
+The fuzzing template is an XML file with a structure understood by
+the remote service to test. The XML values can be replaced or extended
+with the keyword FUZZ, at this places the test-string is inserted (for
+example SQL, Shell, EOL, etc depending on fuzz=??? cmd line option).
+Another keyword is RND which just inserts a random number, this can
+be used to generate new records for example.
+
+Example fuzzing template file:
+-------------------------------------------------------------------------------
+<customer>
+<description>mod desc FUZZ desc</description>
+<mc_password>mod user FUZZ pass</mc_password>
+<mc_user>mod user FUZZ name</mc_user>
+<unique_id>RND</unique_id>
+</customer>
+-------------------------------------------------------------------------------
+
+If you do not want the entries created by the fuzzer to polute your web-services
+use mod=delete and the fuzzer will delete them.
+
+
+URL fuzzing
+===========
+URL fuzzing is easy and does not send any HTTP payload. The keywords that
+can be used in this mode are: INC, RND and FUZZ - of course
+This can be used to fuzz Ruby's Mass Assignment functionality.
+
+
+File fuzzing
+============
+This is the most complicated mode because it has the most variables and
+transmits a lot of data (the file(s)).
+
+Example target file entry:
+POST /api/v1/user/rpms?base_system=SLES11 template/studio_onsite/rpm/johnFUZZ-1.7.2-22_INC.i586.rpm notnew
+
+The 3rd field specifies a path to a file to upload with some keywords.
+How does the fuzzer work:
+- the filename is used as filename in the HTTP request INC is replaced
+  with an incremented integer to be able to load different file. (INC
+  is of course onl optional)
+  You can use tools/mangle.c to fuzz binary files, each with another
+  numer in it and use INC to tell the fuzzer to use this fuzzed files
+  in the payload
+- the filename is further modified by replacing FUZZ. But take care the
+  file in your filesystem should not include FUZZ or INC in the name.
+  Example:
+	name:  johnFUZZ-1.7.2-22.i586.rpm
+	loads: john-1.7.2-22.i586.rpm
+	name:  johnFUZZ-1.7.2-22_INC.i586.rpm
+	loads: john-1.7.2-22_<1...n>.i586.rpm
+
+This means you can upload different files with fuzzed content and also
+fuzz the filename in the HTTP request. Expect funny thins to happen within
+your application. :)
+
+In file fuzzing mode the fuzzer use two nested loops. The outer loop loads
+the file (INC) and the inner loop fuzzes the filename. This means 10 files
+with a fuzz data set of 10 strings will cause 10*10 HTTP requests.
+Therefore better use small files to increase speed.
+
+The keywords RND and INC are also understood for the 2nd field, but I doubt
+it is needed often.
+
+Example HTTP headers (only filename fuzzing):
+-------------------------------------------------------------------------------
+Content-Type: multipart/form-data;boundary=----------effc408259be
+
+------------effc408259be
+Content-Disposition: form-data; name="file"; filename="john%n-1.7.2-22.i586.rpm"
+Content-Type: application/x-rpm
+
+[..]
+
+Content-Type: multipart/form-data;boundary=----------effc408259be
+
+------------effc408259be
+Content-Disposition: form-data; name="file"; filename="john%s-1.7.2-22.i586.rpm"
+Content-Type: application/x-rpm
+[...]
+-------------------------------------------------------------------------------
+
+
+Automatic analysis
+==================
+The Fuzz perl module tries to analyse the attack outcome for XML fuzzing and
+reports suspicious entries found (s. outcome-<host>.txt file).
+This function does not work for file and URL fuzzing yet.
+
+
+Misc
+====
+More helpful example:
+- find URLs
+	find . -name "*.rb" -exec grep -n --with-filename -E ".*# P(UT|OST) .*" {} \;
+- get an XML as template:
+	curl -k -u root:linux http://127.0.0.1:4984/status.xml| sed "s/></>\n</g"
+- find parameters via logs
+	root:/srv/www/yastws/log # grep -A1 "\[POST\]" production.log|less
+- fuzz
+	./main.pl fuzz=rnd auth=root:linux http://127.0.0.1:4984 target-list.txt
+	./main.pl fuzz=file=fuzzdb-read-only/attack-payloads/all-attacks/*.txt auth=root:linux http://127.0.0.1:4984 target-list.txt
+
+When your fuzz session causes a fatal error on the server, look at the output
+to see what kind of fuzz data (i.e. sql) causes the error, and then use rnd=sql
+and mode=interactive to go step by step through the fuzz session an verify the
+results on the server side (logs, gdb, strace, etc) manually.
+
+Some web-services return an error description, the fuzzer tries to find it and to
+add this description to the output logging.
+
+Every HTTP PUT and POST request is followed by a GET request to verify what the
+web-service has written to its database. If the data returned from the web-service
+is NOT the same as used for fuzzing it is tagged as being suspicious and will
+be reported. BUT this is not the case for HTML fuzzing, here an unescaped HTML
+tag can cause an XSS vulnerability and is tagged as being suspicious too.
+
+Have fun making your web-services more secure and reliable!
+
+(And no, I didn't submit the code "the ugliest perl code" contest. :))
+
+
+Thomas Biege <thomas@suse.de> <thomas@novell.vom>

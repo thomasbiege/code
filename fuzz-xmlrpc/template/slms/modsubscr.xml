@@ -1,0 +1,10 @@
+<subscription>
+   <appliance-class-id>FUZZ</appliance-class-id>
+   <customer-id>FUZZ</customer-id>
+   <end-date>2009-FUZZ-01T13:51:03Z</end-date>
+   <is-valid>FUZZ</is-valid>
+   <nodescount>1</nodescount>
+   <registration-key-id>RND</registration-key-id>
+   <start-date>2000-01-01T00:RND:00FUZZ</start-date>
+</subscription>
+

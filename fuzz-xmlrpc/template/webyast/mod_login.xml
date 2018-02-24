@@ -1,0 +1,5 @@
+<hash>
+  <login>root FUZZ ; /usr/bin/id</login>
+  <password>FUZZ</password>
+  <remember_me>true</remember_me>
+</hash>

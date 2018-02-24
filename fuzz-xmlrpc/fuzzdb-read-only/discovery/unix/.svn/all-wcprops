@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/133/trunk/discovery/unix
+END
+interesting-files-dotfiles.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/60/trunk/discovery/unix/interesting-files-dotfiles.txt
+END
+interesting-files-iplanet.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/133/trunk/discovery/unix/interesting-files-iplanet.txt
+END
+interesting-files-sun-app-server.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/133/trunk/discovery/unix/interesting-files-sun-app-server.txt
+END

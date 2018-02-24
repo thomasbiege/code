@@ -1,0 +1,10 @@
+- combined FUZZING like in fuzz-cmdline!!
+- better return message analysis
+- URI escape for URL fuzzing?
+- analyse function for file and url fuzzing
+- more fuzzer data
+	+ perl
+	+ http://ha.ckers.org/xss.html
+	+ fuzzdb http://code.google.com/p/fuzzdb/downloads/list
+- add support for XML file with sane parameters to set an entry to a valid state after fuzzing
+- configureable error description search string

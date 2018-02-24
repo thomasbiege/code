@@ -1,0 +1,33 @@
+<software appliance_id="42">
+  <package>aaa_base</package>
+  <package>dhcpcd</package>
+  <package>hwinfo</package>
+  <package>insserv</package>
+  <package>kbd</package>
+  <package>licenses</package>
+  <package>mkinitrd</package>
+  <package>module-init-tools</package>
+  <package>netcfg</package>
+  <package>openssh</package>
+  <package>procps</package>
+  <package>pwdutils</package>
+  <package>rpm</package>
+  <package>openSUSE-release</package>
+  <package>openSUSE-build-key</package>
+  <package>sysconfig</package>
+  <package>syslog-ng</package>
+  <package>grub</package>
+  <package>branding-openSUSE</package>
+  <package>rpcbind</package>
+  <package>PolicyKit</package>
+  <package>polkit-default-privs</package>
+  <package>SuSEfirewall2</package>
+  <package version="7.2-7.3">vim</package>
+  <package version="2.6.27.7-9.1">kernel-default</package>
+  <pattern>x11</pattern>
+  <package>MozillaFirefox</package>
+  <package>kde4-yakuake</package>
+  <pattern>laptop</pattern>
+  <package>fate</package>
+</software>
+

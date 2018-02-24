@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/141/trunk/discovery/generic
+END
+interesting-dirs-kitchensink.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/133/trunk/discovery/generic/interesting-dirs-kitchensink.txt
+END
+interesting-files-oracle-application-server.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/133/trunk/discovery/generic/interesting-files-oracle-application-server.txt
+END
+proxy-conf.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/132/trunk/discovery/generic/proxy-conf.txt
+END
+interesting-files-random.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/127/trunk/discovery/generic/interesting-files-random.txt
+END
+interesting-files-apache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/127/trunk/discovery/generic/interesting-files-apache.txt
+END
+interesting-files-websphere.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/133/trunk/discovery/generic/interesting-files-websphere.txt
+END
+tftp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/60/trunk/discovery/generic/tftp.txt
+END
+interesting-files-passwords.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/127/trunk/discovery/generic/interesting-files-passwords.txt
+END
+php-common-backdoors.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/60/trunk/discovery/generic/php-common-backdoors.txt
+END
+interesting-files-logins.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/127/trunk/discovery/generic/interesting-files-logins.txt
+END
+interesting-files-lotus-notes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/60/trunk/discovery/generic/interesting-files-lotus-notes.txt
+END
+interesting-files-hyperion.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/60/trunk/discovery/generic/interesting-files-hyperion.txt
+END
+cgi-x-platform.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/60/trunk/discovery/generic/cgi-x-platform.txt
+END
+cgi-HTTP-POST-reqd.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/60/trunk/discovery/generic/cgi-HTTP-POST-reqd.txt
+END
+interesting-files-siteminder.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/132/trunk/discovery/generic/interesting-files-siteminder.txt
+END
+interesting-files-coldfusion.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/60/trunk/discovery/generic/interesting-files-coldfusion.txt
+END
+interesting-files-apache-tomcat.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/141/trunk/discovery/generic/interesting-files-apache-tomcat.txt
+END

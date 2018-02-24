@@ -1,0 +1,6 @@
+<routes type="array">
+  <route>
+    <id>default</id>
+    <via>10.0.2.2</via>
+  </route>
+</routes>

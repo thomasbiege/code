@@ -1,0 +1,58 @@
+10
+
+dir
+142
+http://fuzzdb.googlecode.com/svn/trunk/web-backdoors
+http://fuzzdb.googlecode.com/svn
+
+
+
+2010-04-22T02:08:03.694062Z
+64
+unix23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+389a61cb-3542-a87d-fe93-12be81370f99
+
+exe
+dir
+
+c
+dir
+
+asp
+dir
+
+servlet
+dir
+
+cfm
+dir
+
+php
+dir
+
+sh
+dir
+
+pl-cgi
+dir
+
+dll
+dir
+
+jsp
+dir
+

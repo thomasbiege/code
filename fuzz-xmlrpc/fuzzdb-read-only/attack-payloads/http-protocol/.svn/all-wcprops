@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/60/trunk/attack-payloads/http-protocol
+END
+docs.http-method-defs.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/60/trunk/attack-payloads/http-protocol/docs.http-method-defs.html
+END
+http-header-cache-poison.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/60/trunk/attack-payloads/http-protocol/http-header-cache-poison.txt
+END
+user-agents.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/60/trunk/attack-payloads/http-protocol/user-agents.txt
+END
+http-protocol-methods.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/60/trunk/attack-payloads/http-protocol/http-protocol-methods.txt
+END

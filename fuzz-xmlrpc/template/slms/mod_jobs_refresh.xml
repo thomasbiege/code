@@ -1,0 +1,13 @@
+<job>
+  <created-at>2009-12-09T11:01:30Z</created-at>
+  <errmsg></errmsg>
+  <finished-at>2009-12-09T13:32:08Z</finished-at>
+  <foreign-id>1</foreign-id>
+  <id>2</id>
+  <name>refresh</name>
+  <output-file>/var/lib/slms/storage/jobs/refresh1.txt</output-file>
+  <pid></pid>
+  <started-at>2009-12-09T13:31:59Z</started-at>
+  <status>2</status>
+  <updated-at>2009-12-09T13:32:08Z</updated-at>
+</job>

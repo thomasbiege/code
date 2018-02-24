@@ -1,0 +1,33 @@
+<basesystem>
+  <finish type="boolean">false</finish>
+  <steps type="array">
+    <step>
+      <controller>language</controller>
+      <action></action>
+    </step>
+    <step>
+      <controller>eulas</controller>
+      <action></action>
+    </step>
+    <step>
+      <controller>administrator</controller>
+      <action></action>
+    </step>
+    <step>
+      <controller>network</controller>
+      <action></action>
+    </step>
+    <step>
+      <controller>systemtime</controller>
+      <action></action>
+    </step>
+    <step>
+      <controller>mail_settings</controller>
+      <action></action>
+    </step>
+    <step>
+      <controller>registration</controller>
+      <action></action>
+    </step>
+  </steps>
+</basesystem>

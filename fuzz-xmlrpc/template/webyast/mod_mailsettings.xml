@@ -1,0 +1,6 @@
+<mail>
+  <smtp_server>FUZZ.FUZZ.FUZZ</smtp_server>
+  <user>user FUZZ</user>
+  <password>pass FUZZ</password>
+  <transport_layer_security>MAY</transport_layer_security>
+</mail>

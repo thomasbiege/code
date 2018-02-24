@@ -1,0 +1,22 @@
+<systemtime>
+  <time>00:00:00</time>
+  <date>1977-05-19</date>
+  <timezone>Europe/Berlin</timezone>
+  <utcstatus>UTC</utcstatus>
+  <timezones type="array">
+    <region>
+      <name>Africa</name>
+      <central>Africa/Kampala</central>
+      <entries type="array">
+        <timezone>
+          <id>Africa/Maputo</id>
+          <name>Maputo</name>
+        </timezone>
+        <timezone>
+          <id>Africa/Johannesburg</id>
+          <name>Johannesburg</name>
+        </timezone>
+      </entries>
+    </region>
+  </timezones>
+</systemtime>

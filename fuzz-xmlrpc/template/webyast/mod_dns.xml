@@ -1,0 +1,4 @@
+<dns>
+    <nameservers>10.0.2.3</nameservers>
+    <searches>FUZZ</searches>
+</dns>

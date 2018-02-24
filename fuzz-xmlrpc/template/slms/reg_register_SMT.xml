@@ -1,0 +1,13 @@
+<register xmlns="http://www.novell.com/xml/center/regsvc-1_0" lang="en" accept=?optional?>
+	<guid>1badbeef4abadb01</guid>
+	<host>564894af454e9d12</host>
+	<smtguid>12eaf7452bcd4367</smtguid>
+	<authuser>oEocpH3OCPp2adrS</authuser>
+	<authpass>FUZZ</authpass>
+	<product version=?10? release=?? arch=?i686?>
+		<![CDATA[SUSE-Linux-Enterprise-Server-i386]]> 
+	</product>
+	<param id="processor">i686</parameter>
+	<param id="platform">i386</parameter>
+	<param id="timezone">US/Mountain</parameter>
+</register>

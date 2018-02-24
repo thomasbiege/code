@@ -1,0 +1,13 @@
+<job>
+  <created-at>2009-12-09T13:33:27Z</created-at>
+  <errmsg></errmsg>
+  <finished-at></finished-at>
+  <foreign-id>1</foreign-id>
+  <id>4</id>
+  <name>upd-pub</name>
+  <output-file>/var/lib/slms/storage/jobs/upd-pub1.txt</output-file>
+  <pid></pid>
+  <started-at></started-at>
+  <status>0</status>
+  <updated-at>2009-12-09T13:33:27Z</updated-at>
+</job>

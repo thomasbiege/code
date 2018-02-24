@@ -1,0 +1,12 @@
+<register xmlns="http://www.novell.com/xml/center/regsvc-1_0" lang="en" accept="optional">
+	<guid>e8c7053c-98d5-11df-d18e-475ae2f5345b</guid>
+	<host>fuzzarch</host>
+	<product version="0.0.1" release="e8c7053c-98d5-11df-d18e-475ae2f5345b" arch="i586"><![CDATA[test_i586]]></product>
+	<param id="processor">FUZZ</param>
+	<param id="platform">FUZZ</param>
+	<param id="timezone">FUZZ</param>
+	<param id="hostname">regtest</param>
+	<param command="zmd-secret" id="secret">FUZZ</param>
+	<param id="appliance-regcode">e8c7053c-98d5-11df-d18e-475ae2f5345b</param>
+	<mirrors count="5" />
+</register>

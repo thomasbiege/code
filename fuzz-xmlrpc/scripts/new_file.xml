@@ -1,0 +1,10 @@
+<file>
+  <id>15</id>
+  <filename>FUZZ</filename>
+  <path>/</path>
+  <owner>nobody</owner>
+  <group>nobody</group>
+  <permissions>644</permissions>
+  <enabled>true</enabled>
+  <download_url>http://www.suse.de/~thomas/contact/thomas.asc</download_url>
+</file>

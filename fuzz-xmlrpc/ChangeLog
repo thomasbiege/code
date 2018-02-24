@@ -1,0 +1,417 @@
+2010-02-03 12:24  thomas
+
+	* Fuzz.pm: updated sql data set
+
+2010-02-03 11:31  thomas
+
+	* Fuzz.pm: updated sql data set
+
+2010-02-03 11:01  thomas
+
+	* Fuzz.pm: updated data sets
+
+2010-01-29 16:17  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-29 16:17  thomas
+
+	* README, TODO, main.pl: - added more test to README to describe
+	  new modes etc
+
+2010-01-28 15:14  thomas
+
+	* ChangeLog, main.pl, target-list_Studio_Onsite.txt,
+	  template/studio_onsite/rpm/john-1.7.2-22.i586.rpm: - more bug
+	  fixing with nested dowhile loop
+
+2010-01-28 15:13  thomas
+
+	* Fuzz.pm: added dir traversal strings to shell set
+
+2010-01-28 12:15  thomas
+
+	* tools/mangle.c, mod_rpm.sh: add
+
+2010-01-28 12:10  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-28 12:10  thomas
+
+	* main.pl, target-list_Studio_Onsite.txt: - refactorized code to
+	  support xml fuzzing, file upload fuzzing and url fuzzing
+
+2010-01-27 18:08  thomas
+
+	* template/studio_onsite/rpm/johnFUZZ-1.7.2-22.i586.rpm: rm
+
+2010-01-27 18:05  thomas
+
+	* template/studio_onsite/rpm/johnFUZZ-1.7.2-22.i586.rpm: add
+
+2010-01-27 14:40  thomas
+
+	* add_rpm.sh, main.pl, target-list_Studio_Onsite.txt,
+	  template/studio_onsite/new_gpg_key.xml,
+	  template/studio_onsite/new_repository.xml: - file sending works
+	  now
+
+2010-01-27 13:09  thomas
+
+	* add_rpm.sh: add
+
+2010-01-26 16:51  thomas
+
+	* main.pl, template/studio_onsite/rpm/john-1.7.2-22.i586.rpm: -
+	  fixed form-data header
+
+2010-01-26 16:26  thomas
+
+	* README, ChangeLog: [no log message]
+
+2010-01-26 16:22  thomas
+
+	* template/: slms/new_jobs.xml, studio_onsite/new_file_with_id.xml,
+	  webyast/mod_language.xml,
+	  webyast/mod_network_interfaces_eth0.xml,
+	  webyast/new_network_interfaces_eth1.xml: add
+
+2010-01-26 16:21  thomas
+
+	* TODO, add_entries.sh, del_entries.sh, main.pl,
+	  target-list_Studio_Onsite.txt,
+	  template/studio_onsite/mod_file.xml,
+	  template/studio_onsite/new_file.xml,
+	  template/studio_onsite/new_rpm.xml: - 1st step to add file upload
+	  support via POST/PUT
+
+2010-01-26 11:01  thomas
+
+	* template/studio_onsite/rpm/john-1.7.2-22.i586.rpm: add
+
+2010-01-25 10:07  thomas
+
+	* Fuzz.pm: fixed bof_more()
+
+2010-01-22 14:59  thomas
+
+	* TODO, target-list_Studio_Onsite.txt: - URL fuzzing tested
+	  sucessfully
+
+2010-01-22 14:51  thomas
+
+	* ChangeLog: [no log message]
+
+2010-01-22 14:46  thomas
+
+	* main.pl, target-list_Studio_Onsite.txt: - 1st step to add url
+	  fuzzing - added Studio Onsite templates and target file
+
+2010-01-22 12:54  thomas
+
+	* target-list_Studio_Onsite.txt: add
+
+2010-01-22 12:28  thomas
+
+	* template/studio_onsite/: api-urls.txt, mod_file.xml,
+	  mod_gpg_key.xml, mod_repositories.xml, mod_repository.xml,
+	  mod_rpm.xml, mod_software.xml, mod_software_change.xml,
+	  new_file.xml, new_gpg_key.xml, new_repositories.xml,
+	  new_repository.xml, new_rpm.xml, new_software.xml,
+	  new_software_change.xml, x.pl: add
+
+2010-01-20 13:58  thomas
+
+	* main.pl: fixed typo in html escape
+
+2010-01-12 11:42  thomas
+
+	* TODO: updated
+
+2010-01-05 14:56  thomas
+
+	* Fuzz.pm: - switched to new version as used by fuzz-cmdline
+
+2009-12-10 16:41  thomas
+
+	* TODO, target-list_SLMS.txt, template/slms/mod_jobs_updgen.xml,
+	  template/slms/modsubscr.xml, template/slms/newsubscr.xml,
+	  template/slms/urls.txt: - fine tuning during SLMS fuzzing session
+
+2009-12-10 07:58  thomas
+
+	* add_entries.sh, add_job.xml, mod_entries.sh: add
+
+2009-12-09 16:50  thomas
+
+	* template/slms/: mod_jobs_globalsync.xml, mod_jobs_refresh.xml,
+	  mod_jobs_updgen.xml, mod_jobs_updpub.xml: add
+
+2009-12-09 16:31  thomas
+
+	* template/slms/mod_subscr.xml: add
+
+2009-12-09 14:29  thomas
+
+	* Fuzz.pm, del_entries.sh, main.pl, target-list_SLMS.txt,
+	  target-list_WebYAST.txt, template/slms/modcustomer.xml:
+	  improvements during SLMS fuzzing
+
+2009-12-09 11:40  thomas
+
+	* template/slms/urls.txt: add
+
+2009-12-09 11:37  thomas
+
+	* README, TODO: - updated
+
+2009-12-09 11:07  thomas
+
+	* template/webyast/: mod_login.xml, yastws_urls.txt: updted
+	  templates
+
+2009-12-09 11:07  thomas
+
+	* template/slms/: modcustomer.xml, modsubscr.xml, newcustomer.xml,
+	  newsubscr.xml: add
+
+2009-12-09 11:06  thomas
+
+	* template/: modcustomer.xml, modsubscr.xml, newcustomer.xml,
+	  newsubscr.xml: moved
+
+2009-12-08 15:31  thomas
+
+	* Fuzz.pm: fixed output in analyze()
+
+2009-12-08 15:19  thomas
+
+	* target-list_WebYAST.txt, template/webyast/mod_admin.xml,
+	  template/webyast/mod_hostname.xml,
+	  template/webyast/mod_login.xml, template/webyast/mod_routes.xml,
+	  template/webyast/yastws_urls.txt: - more templates
+
+2009-12-08 15:18  thomas
+
+	* template/webyast/mod_registration.xml: add
+
+2009-12-08 15:13  thomas
+
+	* template/webyast/mod_basesystem.xml: add
+
+2009-12-08 15:09  thomas
+
+	* Fuzz.pm: - improved analyze() for html
+
+2009-12-08 14:47  thomas
+
+	* template/webyast/mod_admin.xml: add
+
+2009-12-08 13:29  thomas
+
+	* template/webyast/mod_login.xml: add
+
+2009-12-08 12:58  thomas
+
+	* Fuzz.pm: - also show expected string in analize function
+
+2009-12-07 18:03  thomas
+
+	* main.pl, target-list_WebYAST.txt, template/webyast/mod_dns.xml,
+	  template/webyast/mod_hostname.xml,
+	  template/webyast/yastws_urls.txt: - improved error detection in
+	  main.pl - updated templates
+
+2009-12-04 19:47  thomas
+
+	* ChangeLog: u
+
+2009-12-04 19:47  thomas
+
+	* README, TODO, main.pl, target-list_WebYAST.txt,
+	  template/webyast/mod_dns.xml,
+	  template/webyast/mod_mailsettings.xml,
+	  template/webyast/mod_systemtime.xml,
+	  template/webyast/yast_urls.txt, template/webyast/yastws_urls.txt:
+	  - more fine tuning
+
+2009-12-03 19:23  thomas
+
+	* template/webyast/: mod_dns.xml, mod_hostname.xml, mod_routes.xml,
+	  mod_status.xml, mod_systemtime_timezones.xml: add
+
+2009-12-03 17:07  thomas
+
+	* template/webyast/mod_mailsettings.xml: add
+
+2009-12-03 16:15  thomas
+
+	* Fuzz.pm, README, TODO, main.pl, target-list_WebYAST.txt,
+	  template/webyast/mod_systemtime.xml,
+	  template/webyast/yast_urls.txt, template/webyast/yastws_urls.txt:
+	  - added more templates - added mode interactive
+
+2009-12-03 09:36  thomas
+
+	* template/webyast/mod_systemtime.xml: add
+
+2009-12-03 09:19  thomas
+
+	* README: updated
+
+2009-11-20 09:19  thomas
+
+	* AUTHOR: add
+
+2009-11-20 09:18  thomas
+
+	* README: updated
+
+2009-11-20 09:13  thomas
+
+	* README: add
+
+2009-11-19 18:19  thomas
+
+	* template/webyast/status.xml: add
+
+2009-11-18 14:35  thomas
+
+	* template/webyast/: yast-api.txt, yast-api_xml.txt: removed
+
+2009-11-18 14:33  thomas
+
+	* main.pl, template/webyast/yast_urls.txt,
+	  template/webyast/yastws_urls.txt: - collected URLs for WebYAST
+
+2009-11-18 09:36  thomas
+
+	* target-list_SLMS.txt, target-list_WebYAST.txt,
+	  template/webyast/modservice1.xml,
+	  template/webyast/rest-xml-templates.tgz,
+	  template/webyast/yast-api.txt, template/webyast/yast-api_xml.txt:
+	  added
+
+2009-11-18 09:36  thomas
+
+	* target-list.txt: removed
+
+2009-11-17 15:50  thomas
+
+	* ChangeLog: updated
+
+2009-11-11 11:54  thomas
+
+	* Fuzz.pm: - added more fuzzing data from Fuzzled framework
+
+2009-11-04 09:10  thomas
+
+	* TODO: updated
+
+2009-10-28 15:27  thomas
+
+	* main.pl: - little cleanup
+
+2009-10-28 15:18  thomas
+
+	* Fuzz.pm, main.pl, template/modsubscr.xml, template/newsubscr.xml:
+	  - improved fuzzing module - added binary random data fuzzer -
+	  improved logging - improved result analysis - little code cleanup
+
+2009-10-28 12:13  thomas
+
+	* main.pl, target-list.txt: - improved logging - added escaping for
+	  fuzz string - fixed hrefs for Fuzz::analyze - added support of
+	  different fuzz modes
+
+2009-10-28 12:10  thomas
+
+	* Fuzz.pm: - improved analysis function
+
+2009-10-28 09:40  thomas
+
+	* del_entries.sh: updated
+
+2009-10-28 08:40  thomas
+
+	* del_entries.sh: - added script to delete entries
+
+2009-10-27 15:46  thomas
+
+	* main.pl: - added mode=delete to delete entries created by POST
+
+2009-10-27 15:32  thomas
+
+	* Fuzz.pm, main.pl: - start working on result analysis
+
+2009-10-26 15:39  thomas
+
+	* Fuzz.pm, main.pl: - little debugging after tests
+
+2009-10-26 13:17  thomas
+
+	* Fuzz.pm, main.pl, target-list.txt, template/modcustomer.xml,
+	  template/newcustomer.xml: - a little more and a little less, code
+	  cleanup and target add
+
+2009-10-26 13:15  thomas
+
+	* template/: modsubscr.xml, newsubscr.xml: -added
+
+2009-10-26 13:07  thomas
+
+	* ChangeLog: - updated
+
+2009-10-26 13:07  thomas
+
+	* Fuzz.pm, TODO, main.pl, target-list.txt,
+	  template/modcustomer.xml, template/newcustomer.post,
+	  template/newcustomer.xml: - Fuzz::reset_all() - new
+	  http_request_xmlrpc function to send XML for PUT and POST - add
+	  RND tag for fuzzing
+
+2009-10-23 11:54  thomas
+
+	* Fuzz.pm, main.pl, template/newcustomer.xml: - fuzzing complete
+
+2009-10-23 10:46  thomas
+
+	* Fuzz.pm, main.pl, template/newcustomer.xml: - added fuzzing data
+	  for html, ldap, perl, sql, more shell...
+
+2009-10-22 17:45  thomas
+
+	* Fuzz.pm, main.pl, template/newcustomer.xml: - added Fuzz package
+
+2009-10-22 14:57  thomas
+
+	* main.pl, target-list.txt, template/newcustomer.post,
+	  template/newcustomer.xml: - it is able to send POST request based
+	  on XML teplates now
+
+2009-10-22 13:04  thomas
+
+	* template/newcustomer.xml: added
+
+2009-10-21 19:10  thomas
+
+	* TODO: updated
+
+2009-10-21 19:10  thomas
+
+	* main.pl: - and the beat goes on: http_request done, net step
+	  using XML file from GET for fuzzing
+
+2009-10-21 15:21  thomas
+
+	* ChangeLog: added
+
+2009-10-21 15:21  thomas
+
+	* TODO, main.pl, target-list.txt: Initial revision
+
+2009-10-21 15:21  thomas
+
+	* TODO, main.pl, target-list.txt: XML-RPC fuzzer
+

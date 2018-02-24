@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/60/trunk/discovery/filename-bruteforce/file-extensions
+END
+file-extensions-mostcommon.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/60/trunk/discovery/filename-bruteforce/file-extensions/file-extensions-mostcommon.txt
+END
+file-extensions-skipfish.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/60/trunk/discovery/filename-bruteforce/file-extensions/file-extensions-skipfish.txt
+END
+file-extensions-common-datafile-types.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/60/trunk/discovery/filename-bruteforce/file-extensions/file-extensions-common-datafile-types.txt
+END
+file-extensions-backup-files.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/60/trunk/discovery/filename-bruteforce/file-extensions/file-extensions-backup-files.txt
+END
+file-extensions-compressed-filetypes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/60/trunk/discovery/filename-bruteforce/file-extensions/file-extensions-compressed-filetypes.txt
+END

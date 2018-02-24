@@ -1,0 +1,13 @@
+<job>
+  <created-at>2009-12-09T09:25:30Z</created-at>
+  <errmsg></errmsg>
+  <finished-at>2009-12-09T09:36:08Z</finished-at>
+  <foreign-id></foreign-id>
+  <id>1</id>
+  <name>globalsync</name>
+  <output-file>/var/lib/slms/storage/jobs/globalsync.txt</output-file>
+  <pid>14157</pid>
+  <started-at>2009-12-09T15:45:26Z</started-at>
+  <status>1</status>
+  <updated-at>2009-12-09T15:45:26Z</updated-at>
+</job>

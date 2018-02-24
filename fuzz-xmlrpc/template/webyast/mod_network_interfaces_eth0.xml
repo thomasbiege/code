@@ -1,0 +1,5 @@
+<interface>
+  <id>eth0</id>
+  <bootproto>FUZZ</bootproto>
+  <ipaddr>FUZZ.FUZZ.FUZZ.FUZZ</ipaddr>
+</interface>

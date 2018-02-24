@@ -1,0 +1,13 @@
+<repositories>                                                                                                                                                                  
+  <repository>                                                                                                                                                                  
+    <id>7</id>                                                                                                                                                                  
+    <name>Moblin Base</name>                                                                                                                                                    
+    <type>rpm-md</type>                                                                                                                                                         
+    <base_system>11.1</base_system>                                                                                                                                             
+    <base_url>http://download.opensuse.org/repositories/Moblin:/Base/openSUSE_11.1</base_url>                                                                                   
+    <matches>                                                                                                                                                                   
+      <repository_name>moblin base</repository_name>                                                                                                                            
+      <repository_base_url>http://download.opensuse.org/repositories/moblin:/base/opensuse_11.1</repository_base_url>                                                           
+    </matches>                                                                                                                                                                  
+  </repository>                                                                                                                                                                 
+</repositories>
