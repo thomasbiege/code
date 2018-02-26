@@ -7,7 +7,7 @@
 - fuzz-ooo-xml: ... fuzz OpenOffice XML docs
 - fuzz_pm: Perl module with fuzzing patterns
 - fuzz-radius: A fuzzer written in C to check RADIUS implementations, from... long time ago.
-- fuzz-xmlrpc: Script to fuzz XMLRPC/REST APIs of we-apps
+- fuzz-xmlrpc: Script to fuzz XMLRPC/REST APIs of web-apps
 - fuzz-xss: Very simple XSS fuzzer
 - jpeg-extract: Forensic tool to find JPEGs in an image
 - ror-sec-scanner: Scan Ruby on Rails source code for insecure coding issues and creates output like "flawfinder"
