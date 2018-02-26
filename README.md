@@ -1,1 +1,16 @@
-# code
+
+- assitch: Scan a network to determine firewall rules, the interesting thing that it is able to find outgoing rules which cannot be seen fro outside the network, from 1998
+- m-ice: "Modular Intrusion Detection and Coutermeasure Environment" - A host-based, modular, distributed IDS/IPS I wrote for my Diploma thesis in 2002/2003
+- BadUSB: Just a small project to play around with Arduino and DigiSpark boards to create "Bad USB" devices, from 2017
+- copy-check: Hm, dunno....
+- fuzz-cmdline: simple script to fuzz command-line tools
+- fuzz-ooo-xml: ... fuzz OpenOffice XML docs
+- fuzz_pm: Perl module with fuzzing patterns
+- fuzz-radius: A fuzzer written in C to check RADIUS implementations, from... long time ago.
+- fuzz-xmlrpc: Script to fuzz XMLRPC/REST APIs of we-apps
+- fuzz-xss: Very simple XSS fuzzer
+- jpeg-extract: Forensic tool to find JPEGs in an image
+- ror-sec-scanner: Scan Ruby on Rails source code for insecure coding issues and creates output like "flawfinder"
+- spider: Web spider, helps find missing authC and authZ
+- tia: Sniff DNS TIA numbers
+- web-bf: Web login brute-forcer
