@@ -1,5 +1,5 @@
 
-- assitch: Scan a network to determine firewall rules, the interesting thing that it is able to find outgoing rules which cannot be seen fro outside the network, from 1998
+- assitch: Invented ACK scanning. Scan a network to determine firewall rules, the interesting thing is that the tool is able to find outgoing rules which cannot be seen from outside the network, from 1998
 - m-ice: "Modular Intrusion Detection and Coutermeasure Environment" - A host-based, modular, distributed IDS/IPS I wrote for my Diploma thesis in 2002/2003
 - BadUSB: Just a small project to play around with Arduino and DigiSpark boards to create "Bad USB" devices, from 2017
 - copy-check: Hm, dunno....
