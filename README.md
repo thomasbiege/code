@@ -1,5 +1,5 @@
 
-- assitch: Invented ACK scanning. Scan a network to determine firewall rules, the interesting thing is that the tool is able to find outgoing rules which cannot be seen from outside the network, from 1998
+- assitch: Invented ACK scanning. Scan a network to determine firewall rules, the interesting thing is that the tool is able to find outgoing filter rules which can normally not be seen from outside the network, from 1998
 - m-ice: "Modular Intrusion Detection and Coutermeasure Environment" - A host-based, modular, distributed IDS/IPS I wrote for my Diploma thesis in 2002/2003
 - BadUSB: Just a small project to play around with Arduino and DigiSpark boards to create "Bad USB" devices, from 2017
 - copy-check: Hm, dunno....
@@ -9,7 +9,7 @@
 - fuzz-radius: A fuzzer written in C to check RADIUS implementations, from... long time ago.
 - fuzz-xmlrpc: Script to fuzz XMLRPC/REST APIs of web-apps
 - fuzz-xss: Very simple XSS fuzzer
-- jpeg-extract: Forensic tool to find JPEGs in an image
+- jpeg-extract: Forensic tool to find JPEGs in a HDD image / binary blob
 - ror-sec-scanner: Scan Ruby on Rails source code for insecure coding issues and creates output like "flawfinder"
 - spider: Web spider, helps find missing authC and authZ
 - tia: Sniff DNS TIA numbers
